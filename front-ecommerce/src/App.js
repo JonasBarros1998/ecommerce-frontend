@@ -1,5 +1,5 @@
 /*** IMPORTS DEFAULT REACT ***/
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 /*** IMPORTS STYLES CSS***/
 import './styles/availability-calendar.css'
@@ -29,18 +29,22 @@ import './statics/owl.carousel.js'
 import './statics/main.js'
 
 /*** IMPORTS APLICATION ***/
-import Menu from './components/mainMenu/Menu.js'  
+import Menu from './components/mainMenu/Menu.js'
+import Slide from './components/mainSlide/Slide.js'
 
-class App extends Component{
-  
-  constructor(){
+class App extends Component {
+
+  constructor() {
     super()
     this.state = {}
   }
 
   render() {
     return (
-      <Menu></Menu>
+      <span>
+        <Menu></Menu>
+        <Slide></Slide>
+      </span>
     )
   }
 }
