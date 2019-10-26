@@ -1,5 +1,5 @@
 /*** IMPORTS DEFAULT REACT ***/
-import Component from 'react'
+import React, {Component} from 'react'
 
 /*** IMPORTS STYLES CSS***/
 import './styles/availability-calendar.css'
@@ -28,16 +28,20 @@ import './statics/countdown.js'
 import './statics/owl.carousel.js'
 import './statics/main.js'
 
-/***  ***/
-
+/*** IMPORTS APLICATION ***/
+import Menu from './components/mainMenu/Menu.js'  
 
 class App extends Component{
-
+  
   constructor(){
     super()
+    this.state = {}
   }
 
   render() {
+    return (
+      <Menu></Menu>
+    )
   }
 }
 
