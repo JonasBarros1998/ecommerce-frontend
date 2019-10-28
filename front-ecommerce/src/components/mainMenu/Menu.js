@@ -1,70 +1,72 @@
-import Component from 'react'
+import React,{Component} from 'react'
 
 class Menu extends Component {
 
     constructor() {
         super()
+        this.state = {}
+        this.linkDefault = "#"
     }
 
     render() {
 
-        return (<header class="header_area sticky-header">
-            <div class="main_menu">
-                <nav class="navbar navbar-expand-lg navbar-light main_box">
-                    <div class="container">
-                        <a class="navbar-brand logo_h" href="index.html">
+        return (<header className="header_area sticky-header">
+            <div className="main_menu">
+                <nav className="navbar navbar-expand-lg navbar-light main_box">
+                    <div className="container">
+                        <a className="navbar-brand logo_h" href={this.linkDefault}>
                             <img src="img/logo.png" alt="" />
                         </a>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
                         </button>
-                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav menu_nav ml-auto">
-                                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul className="nav navbar-nav menu_nav ml-auto">
+                                <li className="nav-item active"><a className="nav-link" href={this.linkDefault}>Home</a></li>
 
-                                <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                <li className="nav-item submenu dropdown">
+                                    <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Shop</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="single-product.html">Product
+                                    <ul className="dropdown-menu">
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Shop Category</a></li>
+                                        <li className="nav-item"><a href={this.linkDefault} className="nav-link">Product
 											Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a>
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Product Checkout</a>
                                         </li>
-                                        <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a>
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Shopping Cart</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Confirmation</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                <li className="nav-item submenu dropdown">
+                                    <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Blog</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a>
+                                    <ul className="dropdown-menu">
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Blog</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Blog Details</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                <li className="nav-item submenu dropdown">
+                                    <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Pages</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                                    <ul className="dropdown-menu">
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Login</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Tracking</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Elements</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Contact</a></li>
                             </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
-                                <li class="nav-item">
-                                    <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
+                            <ul className="nav navbar-nav navbar-right">
+                                <li className="nav-item"><a href={this.linkDefault} className="cart"><span className="ti-bag"></span></a></li>
+                                <li className="nav-item">
+                                    <button className="search"><span className="lnr lnr-magnifier" id="search"></span></button>
                                 </li>
                             </ul>
                         </div>
@@ -72,12 +74,12 @@ class Menu extends Component {
                 </nav>
             </div>
 
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between">
-                        <input type="text" class="form-control" id="search_input" placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+            <div className="search_input" id="search_input_box">
+                <div className="container">
+                    <form className="d-flex justify-content-between">
+                        <input type="text" className="form-control" id="search_input" placeholder="Search Here" />
+                        <button type="submit" className="btn"></button>
+                        <span className="lnr lnr-cross" id="close_search" title="Close Search"></span>
                     </form>
                 </div>
             </div>
