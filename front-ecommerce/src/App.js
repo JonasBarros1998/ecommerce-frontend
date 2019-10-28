@@ -1,6 +1,12 @@
 /*** IMPORTS DEFAULT REACT ***/
 import React, { Component } from 'react'
 
+/*** IMPORTS APLICATION ***/
+import Menu from './components/mainMenu/Menu.js'
+import Slide from './components/mainSlide/Slide.js'
+import Beneficies from './components/shopBeneficies/beneficies.js'
+import Category from './components/productsCategory/category.js'
+
 /*** IMPORTS STYLES CSS***/
 import './styles/availability-calendar.css'
 import './styles/bootstrap.css'
@@ -26,10 +32,6 @@ import './statics/nouislider.min.js'
 import './statics/countdown.js'
 import './statics/main.js'
 
-/*** IMPORTS APLICATION ***/
-import Menu from './components/mainMenu/Menu.js'
-import Slide from './components/mainSlide/Slide.js'
-
 class App extends Component {
 
   constructor() {
@@ -43,6 +45,8 @@ class App extends Component {
       <span>
         <Menu></Menu>
         <Slide></Slide>
+        <Beneficies></Beneficies>
+        <Category></Category>
       </span>
     )
     

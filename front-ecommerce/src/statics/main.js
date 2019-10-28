@@ -48,33 +48,6 @@ $(document).ready(function(){
 		============================*/
 			$(".sticky-header").sticky();
 
-    /*=================================
-    Javascript for single product area carousel
-    ==================================
-    $(".s_Product_carousel").owlCarousel({
-      items:1,
-      autoplay:false,
-      autoplayTimeout: 5000,
-      loop:true,
-      nav:false,
-      dots:true
-    });
-    */
-    
-    /*=================================
-    Javascript for exclusive area carousel
-    ==================================
-    $(".active-exclusive-product-slider").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
-        dots:false
-    });
-    */
-
     //--------- Accordion Icon Change ---------//
 
     $('.collapse').on('shown.bs.collapse', function(){
@@ -159,14 +132,6 @@ $(document).ready(function(){
         });
 
 
-
-
-    $(document).ready(function() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
-    });   
-
-
-
      if(document.getElementById("js-countdown")){
 
         var countdown = new Date("October 17, 2018");
@@ -186,32 +151,6 @@ $(document).ready(function(){
             'days': days
             };
         }
-
-        function initClock(id, endtime) {
-            var counter = document.getElementById(id);
-            var daysItem = counter.querySelector('.js-countdown-days');
-            var hoursItem = counter.querySelector('.js-countdown-hours');
-            var minutesItem = counter.querySelector('.js-countdown-minutes');
-            var secondsItem = counter.querySelector('.js-countdown-seconds');
-
-        function updateClock() {
-            var time = getRemainingTime(endtime);
-
-            daysItem.innerHTML = time.days;
-            hoursItem.innerHTML = ('0' + time.hours).slice(-2);
-            minutesItem.innerHTML = ('0' + time.minutes).slice(-2);
-            secondsItem.innerHTML = ('0' + time.seconds).slice(-2);
-
-            if (time.total <= 0) {
-              clearInterval(timeinterval);
-            }
-            }
-
-            updateClock();
-            var timeinterval = setInterval(updateClock, 1000);
-        }
-
-        initClock('js-countdown', countdown);
 
   };
 
