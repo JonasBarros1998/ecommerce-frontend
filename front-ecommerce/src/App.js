@@ -6,6 +6,8 @@ import Menu from './components/mainMenu/Menu.js'
 import Slide from './components/mainSlide/Slide.js'
 import Beneficies from './components/shopBeneficies/beneficies.js'
 import Category from './components/productsCategory/category.js'
+import Products from './components/mainProducts/Products.js'
+import ProdcutsSpecials from './components/mainProducts/productsSpecials.js'
 
 /*** IMPORTS STYLES CSS***/
 import './styles/availability-calendar.css'
@@ -44,9 +46,16 @@ class App extends Component {
     return (
       <span>
         <Menu></Menu>
+
         <Slide></Slide>
+
         <Beneficies></Beneficies>
+
         <Category></Category>
+
+        <Products></Products>
+        
+        <ProdcutsSpecials></ProdcutsSpecials>
       </span>
     )
     
