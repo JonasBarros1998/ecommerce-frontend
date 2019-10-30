@@ -8,6 +8,7 @@ import Beneficies from './components/shopBeneficies/beneficies.js'
 import Category from './components/productsCategory/category.js'
 import Products from './components/mainProducts/Products.js'
 import ProdcutsSpecials from './components/mainProducts/productsSpecials.js'
+import Footer from './components/mainFooter/footer.js'
 
 /*** IMPORTS STYLES CSS***/
 import './styles/availability-calendar.css'
@@ -56,6 +57,8 @@ class App extends Component {
         <Products></Products>
         
         <ProdcutsSpecials></ProdcutsSpecials>
+
+        <Footer></Footer>
       </span>
     )
     
