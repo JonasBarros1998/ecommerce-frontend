@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import {Link} from "react-router-dom";      
 
 class Menu extends Component {
 
@@ -56,7 +57,7 @@ class Menu extends Component {
                                     <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <ul className="dropdown-menu">
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Login</a></li>
+                                        <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
                                         <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Tracking</a></li>
                                         <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Elements</a></li>
                                     </ul>
