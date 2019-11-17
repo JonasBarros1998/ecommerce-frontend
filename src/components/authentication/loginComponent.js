@@ -7,6 +7,7 @@ class loginComponent extends Component {
         super()
         this.state = { name: "", password: "", verifield: "" }
         this.credentials = this.credentials.bind(this)
+        this.login = new Login()
     }
 
     stateInputs(name, event) {
@@ -18,9 +19,12 @@ class loginComponent extends Component {
     credentials(event) {
 
         event.preventDefault()
-
-        this.login = new Login()
         this.login.authentication(this.state)
+    }
+
+    verifield(event){
+        event.preventDefault()
+        this.login.
     }
 
     render() {
@@ -55,7 +59,7 @@ class loginComponent extends Component {
                         <div className="col-lg-6">
                             <div className="login_form_inner">
                                 <h3>Crie sua conta</h3>
-                                <form className="row login_form" method="post">
+                                <form className="row login_form" method="post" onSubmit={}>
                                     <div className="col-md-12 form-group">
                                         <input type="email" className="form-control"
                                                     name="verifield" placeholder="e-mail" value={this.state.verifield} 

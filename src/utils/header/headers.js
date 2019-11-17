@@ -1,5 +1,9 @@
 class Headers{
 
+    constructor(){
+        this.headers = new Headers()
+    }
+
     define(token){
 
         this.headers["Content-Type"] = "application/json"
@@ -16,8 +20,11 @@ class Headers{
         }
 
         const header  =Object.freeze(defineHeader)
-        console.log(header)
         return header
+    }
+
+    headersDefault(){
+       return this.headers["Content-Type"] = "application/json"
     }
 }
 
