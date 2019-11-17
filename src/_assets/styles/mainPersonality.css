@@ -1,0 +1,33 @@
+.box_shadow{
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.07);
+    height: 100%;
+    text-align: center;
+    padding-top: 115px;}
+
+.padding{
+    margin: 0;
+    padding: 0;}
+
+.padding_top_bottom_1{
+    padding-bottom: 1rem;
+    padding-top: 1rem;}
+
+.padding_top_bottom_2{
+    padding-bottom: 2rem;
+    padding-top: 2rem;}
+
+.padding_top_bottom_3{
+    padding-bottom: 3rem;
+    padding-top: 3rem;}
+
+.padding_left_right_1{
+    padding-left: 1rem;
+    padding-right: 1rem;}
+
+.padding_left_right_2{
+    padding-left: 2rem;
+    padding-right: 2rem;}
+
+.padding_left_right_3{
+    padding-left: 3rem;
+    padding-right: 3rem;}
