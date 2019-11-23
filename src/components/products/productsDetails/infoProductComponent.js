@@ -11,7 +11,7 @@ class InfoProductComponent extends Component {
                 <h2>$149.99</h2>
 
                 <ul className="list">
-                    <li><a className="active" href="#"><span>Category</span> : Household</a></li>
+                    <li><a className="active" href="#"><span>Categoria</span> : Household</a></li>
                     <li><a href="#"><span>Availibility</span> : In Stock</a></li>
                 </ul>
 
@@ -20,8 +20,8 @@ class InfoProductComponent extends Component {
 						               during the winter.</p>
 
                 <div className="product_count">
-                    <label for="qty">Quantity:</label>
-                    <input type="text" name="qty" maxlength="12" value="1" title="Quantity:" className="input-text qty" />
+                    <label>Quantidade:</label>
+                    <input type="text" name="qty" className="input-text qty" />
 
                     <button className="increase items-count" type="button">
                         <i className="lnr lnr-chevron-up"></i></button>

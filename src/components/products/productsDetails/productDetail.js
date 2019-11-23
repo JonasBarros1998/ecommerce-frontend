@@ -9,6 +9,7 @@ import DescriptionComponent from '../productsDetails/descriptionComponent'
 import EspecificationComponent from '../productsDetails/especificationComponent'
 import Comments from './comments&Review/comments'
 import NewComment from './comments&Review/newComments'
+import SlideProductComponent from './slideProductComponent'
 
 class ProductDetail extends Component {
     render() {
@@ -20,7 +21,7 @@ class ProductDetail extends Component {
                     <div className="container">
                         <div className="row s_product_inner">
                             <div className="col-lg-6">
-                                <h3>Slides do produto</h3>
+                                <SlideProductComponent />
                             </div>
 
                             <div className="col-lg-5 offset-lg-1">
@@ -55,8 +56,7 @@ class ProductDetail extends Component {
                                 </div>
 
                             </div>
-
-                        </div>
+                        </div>                       
                     </section>
             </div>
         );

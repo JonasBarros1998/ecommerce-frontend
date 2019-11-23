@@ -24,7 +24,7 @@ class loginComponent extends Component {
 
     verifield(event){
         event.preventDefault()
-        this.login.
+        //this.login.
     }
 
     render() {
@@ -59,7 +59,7 @@ class loginComponent extends Component {
                         <div className="col-lg-6">
                             <div className="login_form_inner">
                                 <h3>Crie sua conta</h3>
-                                <form className="row login_form" method="post" onSubmit={}>
+                                <form className="row login_form" method="post">
                                     <div className="col-md-12 form-group">
                                         <input type="email" className="form-control"
                                                     name="verifield" placeholder="e-mail" value={this.state.verifield} 
