@@ -44,9 +44,9 @@ $(document).ready(function(){
     });
 
     /*==========================
-		javaScript for sticky header
+		Efeito no menu principal
 		============================*/
-			//$(".sticky-header").sticky();
+			$(".sticky-header").sticky();
 
     //--------- Accordion Icon Change ---------//
 

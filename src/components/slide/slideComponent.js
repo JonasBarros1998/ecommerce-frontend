@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 
-class Slide extends Component {
+export default class Slide extends Component {
 
     constructor() {
         super()
@@ -71,4 +71,3 @@ class Slide extends Component {
         )
     }
 }
-export default Slide

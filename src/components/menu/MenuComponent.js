@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {Link} from "react-router-dom";      
 
-class Menu extends Component {
+export default class Menu extends Component {
 
     constructor() {
         super()
@@ -10,8 +10,8 @@ class Menu extends Component {
     }
 
     render() {
-
-        return (<header className="header_area sticky-header">
+        return (
+        <header className="header_area sticky-header">
             <div className="main_menu">
                 <nav className="navbar navbar-expand-lg navbar-light main_box">
                     <div className="container">
@@ -88,4 +88,3 @@ class Menu extends Component {
         )
     }
 }
-export default Menu
