@@ -2,10 +2,20 @@ import React, { Component } from 'react'
 
 class InfoProductComponent extends Component {
 
+    constructor(){
+        super()
+        this.state = {quantity: 1 }
+    }
+
+    stateInputs(inputName, event){
+        const field = {}
+        field[inputName] = event.target.value
+        this.setState(field)
+    }
+    
     render() {
 
         return (
-
             <div>
                 <h3>Faded SkyBlu Denim Jeans</h3>
                 <h2>$149.99</h2>
@@ -21,13 +31,8 @@ class InfoProductComponent extends Component {
 
                 <div className="product_count">
                     <label>Quantidade:</label>
-                    <input type="text" name="qty" className="input-text qty" />
-
-                    <button className="increase items-count" type="button">
-                        <i className="lnr lnr-chevron-up"></i></button>
-
-                    <button className="reduced items-count" type="button">
-                        <i className="lnr lnr-chevron-down"></i></button>
+                    <input type="number" name="quantity" className="input-text qty" 
+                    value={this.state.quantity} onChange={this.stateInputs.bind(this, 'quantity')} />
                 </div>
             </div>
         );

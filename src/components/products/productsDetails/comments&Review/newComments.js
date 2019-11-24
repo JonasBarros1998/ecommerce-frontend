@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
+import Review from '../../../../utils/review/_assets/js/index'
 
-class NewComment extends Component {
+export default class NewComment extends Component {
 
     render() {
 
         return (
             <div className="col-lg-6">
+                <Review />
                 <div className="review_box">
                     <h5>Adicionar novo comentario</h5>
                     <form className="row contact_form" method="post"
-                        id="contactForm" novalidate="novalidate">
+                        id="contactForm">
 
                         <div className="col-md-12">
                             <div className="form-group">
@@ -48,5 +50,3 @@ class NewComment extends Component {
         );
     }
 }
-
-export default NewComment

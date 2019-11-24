@@ -22,9 +22,7 @@ class Footer extends Component {
 
                                 <div className="" id="mc_embed_signup">
 
-                                    <form target="_blank" novalidate="true"
-                                        action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                        method="get" className="form-inline">
+                                    <form target="_blank" method="get" className="form-inline">
 
                                         <div className="d-flex flex-row">
 

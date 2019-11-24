@@ -31,3 +31,14 @@
 .padding_left_right_3{
     padding-left: 3rem;
     padding-right: 3rem;}
+
+/*Review da pagina de detalhes de um produtos*/
+.list_review {
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px; }
+
+.color_star{
+    color: #fff1a2
+}
