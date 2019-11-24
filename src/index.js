@@ -4,6 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import Login from "./components/authentication/loginComponent";
+import ProductDetail from './components/products/productsDetails/productDetail'
 import {
     BrowserRouter as Router,
     Route,
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Switch history={useHistory}>
             <Route path="/" exact component={App} />
             <Route path="/login" component={Login} />
+            <Route path="/details" component={ProductDetail} />
         </Switch>
 
     </Router >,

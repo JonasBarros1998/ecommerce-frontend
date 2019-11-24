@@ -7,6 +7,7 @@ class loginComponent extends Component {
         super()
         this.state = { name: "", password: "", verifield: "" }
         this.credentials = this.credentials.bind(this)
+        this.login = new Login()
     }
 
     stateInputs(name, event) {
@@ -18,9 +19,12 @@ class loginComponent extends Component {
     credentials(event) {
 
         event.preventDefault()
-
-        this.login = new Login()
         this.login.authentication(this.state)
+    }
+
+    verifield(event){
+        event.preventDefault()
+        //this.login.
     }
 
     render() {

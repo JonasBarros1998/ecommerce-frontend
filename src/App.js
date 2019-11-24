@@ -35,10 +35,7 @@ class App extends Component {
     this.state = {}
   }
 
-  componentDidMount(){
-
-  }
-
+/*reinderizar apenas a pagina inicial da aplicação*/
   render() {
 
     return (
