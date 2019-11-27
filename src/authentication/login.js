@@ -27,7 +27,9 @@ class Login {
             'password': this.data.password = state.password,
             'grant_type':'password'
         }
+
         const actionToken = action['oauth']['token']
+
         this.http.post(actionToken, header, this.data)
 
         .then(tokenResponse =>{
@@ -50,8 +52,6 @@ class Login {
         const actionVerifield = action['user']['verifield']
         this.http.post(actionVerifield, header, data)
     }
-
-
 }
 
 export default Login

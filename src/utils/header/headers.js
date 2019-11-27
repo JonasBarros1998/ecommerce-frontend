@@ -1,10 +1,8 @@
 class Headers{
 
-    constructor(){
-        this.headers = new Headers()
-    }
-
     define(token){
+
+        this.headers = new Headers()
 
         this.headers["Content-Type"] = "application/json"
         this.headers.Authorization = `Bearer ${token}`
@@ -15,8 +13,7 @@ class Headers{
     headersForGearToken(){
 
         const defineHeader = {
-            "Content-Type":"application/x-www-form-urlencoded",
-            "grant_type":"password"
+            "Content-Type":"application/x-www-form-urlencoded"
         }
 
         const header  =Object.freeze(defineHeader)
