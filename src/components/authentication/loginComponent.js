@@ -9,7 +9,7 @@ class loginComponent extends Component {
         this.credentials = this.credentials.bind(this)
         this.login = new Login()
     }
-
+    
     stateInputs(name, event) {
         let input = {}
         input[name] = event.target.value
@@ -20,11 +20,6 @@ class loginComponent extends Component {
 
         event.preventDefault()
         this.login.authentication(this.state)
-    }
-
-    verifield(event){
-        event.preventDefault()
-        //this.login.
     }
 
     render() {
