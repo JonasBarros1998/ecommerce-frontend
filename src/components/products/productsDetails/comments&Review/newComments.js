@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Review from '../../../../utils/review/_assets/js/index'
 
 export default class NewComment extends Component {
 
@@ -7,7 +6,8 @@ export default class NewComment extends Component {
 
         return (
             <div className="col-lg-6">
-                <Review />
+                {/*<Review />*/}
+                
                 <div className="review_box">
                     <h5>Adicionar novo comentario</h5>
                     <form className="row contact_form" method="post"

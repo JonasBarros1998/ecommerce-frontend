@@ -32,6 +32,19 @@
     padding-left: 3rem;
     padding-right: 3rem;}
 
+.padding_left_1{
+    padding-left: 10px;
+}
+.padding_left_2{
+    padding-left: 20px;
+}
+.padding_left_3{
+    padding-left: 30px;
+}
+.padding_left_4{
+    padding-left: 40px;
+}
+
 /*Review da pagina de detalhes de um produtos*/
 .list_review {
     display: flex;
