@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 
 import Login from "./components/authentication/loginComponent";
 import ProductDetail from './components/products/productsDetails/productDetail'
+import NewUser from './views/authentication/registerNewUser/newUser'
 import {
     BrowserRouter as Router,
     Route,
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Route path="/" exact component={App} />
             <Route path="/login" component={Login} />
             <Route path="/details" component={ProductDetail} />
+            <Route path="/register" component={NewUser}/>
         </Switch>
 
     </Router >,
