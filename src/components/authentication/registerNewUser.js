@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Input from '../forms/inputComponent.js'
 import Button from '../forms/buttonComponent'
 import InputMask from 'react-input-mask'
@@ -58,7 +58,7 @@ export default class RegisterNewUser extends Component {
                             <label>Cpf</label>
                             <InputMask className="form-control" id="cpf" name="cpf"
                                 placeholder="000-000-000.00" label="Cpf" mask="999-999-999.99"
-                                onChange={this.updateInput.bind(this, 'cpf')} value={this.state.cpf} label="Cpf" required />
+                                onChange={this.updateInput.bind(this, 'cpf')} value={this.state.cpf} required />
                         </div>
 
                         <div className="col-md-6 col-12 form-group">

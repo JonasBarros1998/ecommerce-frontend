@@ -1,16 +1,21 @@
+/*
+Pagina para especificar reinderizar todos os compoennte da pasta products e formar pa 
+pagina onde setá mostrada apenas um produto
+*/
+
 import React, { Component } from 'react'
 
 /*Imports components*/
-import InfoProductComponent from '../productsDetails/infoProductComponent'
+import InfoProductComponent from './productsDetails/description&Especification&Info/infoProductComponent'
 import CartComponent from '../cart/cartComponent'
-import NavTabs from '../productsDetails/navTabs'
-import DescriptionComponent from '../productsDetails/descriptionComponent'
-import EspecificationComponent from '../productsDetails/especificationComponent'
-import Comments from './comments&Review/comments'
-import NewComment from './comments&Review/newComments'
-import SlideProductComponent from './slideProductComponent'
-import Menu from '../../menu/MenuComponent'
-import BannerCrumb from '../../banner/bannerCrumbComponent'
+import NavTabs from './productsDetails/navTabs/navTabs'
+import DescriptionComponent from './productsDetails/description&Especification&Info/descriptionComponent'
+import EspecificationComponent from './productsDetails/description&Especification&Info/especificationComponent'
+import Comments from './productsDetails/comments&Review/comments'
+import NewComment from './productsDetails/comments&Review/newComments'
+import SlideProductComponent from '../slide/slideProductComponent'
+import Menu from '../menu/MenuComponent'
+import BannerCrumb from '../banner/bannerCrumbComponent'
 
 export default class ProductDetail extends Component {
 
@@ -37,7 +42,7 @@ export default class ProductDetail extends Component {
                     </div>
                 </div>
 
-                {/*area reponsavel pelos comentatios, review, descrição e especificação*/}
+                {/*area reponsavel pelos comentatios, review, descrição e especificação de cada produto*/}
                 <section className="product_description_area">
                     <div className="container">
                         <NavTabs />

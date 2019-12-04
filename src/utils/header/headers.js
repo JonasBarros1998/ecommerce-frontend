@@ -1,28 +1,27 @@
-class Headers{
+const HttpHeaders = {
 
-    define(token){
+    headersForRequest: token => {
 
-        this.headers = new Headers()
+        const headers = new Headers()
+        headers["Content-Type"] = "application/json"
+        headers.Authorization = `Bearer ${token}`
 
-        this.headers["Content-Type"] = "application/json"
-        this.headers.Authorization = `Bearer ${token}`
+        return headers
+    },
 
-        return this.headers
-    }
-
-    headersForGearToken(){
+    headersForGearToken: () =>{
 
         const defineHeader = {
             "Content-Type":"application/x-www-form-urlencoded"
         }
+        return defineHeader
+    },
 
-        const header  =Object.freeze(defineHeader)
-        return header
-    }
+    defaultHeaders: () =>{
 
-    headersDefault(){
-       return this.headers["Content-Type"] = "application/json"
+        const headers = new Headers() 
+        return headers["Content-Type"] = "application/json"
     }
 }
 
-export default Headers
+export default HttpHeaders

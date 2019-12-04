@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Image1 from '../../_assets/img/product/p1.jpg'
+import Image1 from '../../../_assets/img/product/p1.jpg'
 
 class Products extends Component {
 

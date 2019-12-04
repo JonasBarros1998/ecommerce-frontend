@@ -1,10 +1,13 @@
+/**
+ * 
+ */
 import React, { Component } from 'react'
 
-import categoryCftv from '../../_assets/img/category/c1.jpg'
-import categorySmartWatch from '../../_assets/img/category/c2.jpg'
-import categoryAirPhone from '../../_assets/img/category/c3.jpg'
-import categoryC4 from '../../_assets/img/category/c4.jpg'
-import categoryC5 from '../../_assets/img/category/c5.jpg'
+import categoryCftv from '../../../_assets/img/category/c1.jpg'
+import categorySmartWatch from '../../../_assets/img/category/c2.jpg'
+import categoryAirPhone from '../../../_assets/img/category/c3.jpg'
+import categoryC4 from '../../../_assets/img/category/c4.jpg'
+import categoryC5 from '../../../_assets/img/category/c5.jpg'
 
 class Category extends Component {
 
