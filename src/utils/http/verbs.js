@@ -1,11 +1,10 @@
-class Http {
-
-    get(){
+const verb = {
+    
+    get: () => {
         throw new Error("Ainda não implementado")
-    }
+    },
 
-    post(url, headers, datas) {
-
+    post: (url, headers, datas) => {
         return new Promise((resolve, reject) => {
 
             fetch(url, {
@@ -23,12 +22,11 @@ class Http {
                     throw new Error(`HELP ${error}`)
                 });
         })
-    }
+    }, 
 
-    put(){
+    put: () =>{
         throw new Error("Ainda não implementado")
     }
-
 }
 
-export default Http
+export default verb

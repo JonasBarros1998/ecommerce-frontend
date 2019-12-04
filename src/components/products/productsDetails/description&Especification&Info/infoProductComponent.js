@@ -21,8 +21,8 @@ class InfoProductComponent extends Component {
                 <h2>$149.99</h2>
 
                 <ul className="list">
-                    <li><a className="active" href="#"><span>Categoria</span> : Household</a></li>
-                    <li><a href="#"><span>Availibility</span> : In Stock</a></li>
+                    <li><a className="active" href={"http://localhost:3000"}><span>Categoria</span> : Household</a></li>
+                    <li><a href={"http://localhost:3000"}><span>Availibility</span> : In Stock</a></li>
                 </ul>
 
                 <p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for

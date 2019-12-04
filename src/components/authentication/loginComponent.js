@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Login from '../../authentication/login'
+import Login from '../../funcionalities/authentication/login'
 
 class loginComponent extends Component {
 
@@ -7,7 +7,6 @@ class loginComponent extends Component {
         super()
         this.state = { name: "", password: "", verifield: "" }
         this.credentials = this.credentials.bind(this)
-        this.login = new Login()
     }
     
     stateInputs(name, event) {
@@ -19,7 +18,7 @@ class loginComponent extends Component {
     credentials(event) {
 
         event.preventDefault()
-        this.login.authentication(this.state)
+        Login.authentication(this.state)
     }
 
     render() {

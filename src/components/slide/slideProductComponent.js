@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
-import sp1 from '../../../_assets/img/category/s-p1.jpg'
+import sp1 from '../../_assets/img/category/s-p1.jpg'
 
 class SlideProductComponent extends Component {
 

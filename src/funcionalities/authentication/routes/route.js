@@ -1,4 +1,4 @@
-const action = {
+const route = {
     oauth:{
         'token': 'http://127.0.0.1:8000/jm-ecommerce/authentication/token/',
     },
@@ -8,4 +8,4 @@ const action = {
     }
 }
 
-export default action
+export default route

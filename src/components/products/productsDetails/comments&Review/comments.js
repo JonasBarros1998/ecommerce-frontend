@@ -13,7 +13,7 @@ class ComentsReviewComponent extends Component {
                             <div className="media-body">
                                 <h4>Blake Ruiz</h4>
                                 <h5>12th Feb, 2018 at 05:56 pm</h5>
-                                <a className="reply_btn" href="#">Reply</a>
+                                <a className="reply_btn" href={"localhost://3000"}>Reply</a>
                             </div>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
