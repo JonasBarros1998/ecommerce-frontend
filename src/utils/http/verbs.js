@@ -1,4 +1,4 @@
-const verb = {
+export const verb = {
     
     get: () => {
         throw new Error("Ainda não implementado")
@@ -28,5 +28,3 @@ const verb = {
         throw new Error("Ainda não implementado")
     }
 }
-
-export default verb

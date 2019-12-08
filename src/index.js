@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-import Login from "./components/authentication/loginComponent";
-import ProductDetail from './components/products/pageDetails'
-import NewUser from './views/authentication/registerNewUser/newUser'
+import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
     Route,
     useHistory,
     Switch,
 } from "react-router-dom";
+
+import Login from "./components/authentication/loginComponent";
+import ProductDetail from './components/products/pageDetails'
+import NewUser from './views/authentication/registerNewUser/newUser'
+import {Store} from './funcionalities/authentication/store';
 
 /*** IMPORTS STYLES CSS ***/
 import './_assets/styles/bootstrap.css'
@@ -32,16 +34,18 @@ import './_assets/Js/main.js'
 
 ReactDOM.render(
 
-    <Router>
+    <Provider store = {Store}>
+        <Router>
 
-        <Switch history={useHistory}>
-            <Route path="/" exact component={App} />
-            <Route path="/login" component={Login} />
-            <Route path="/details" component={ProductDetail} />
-            <Route path="/register" component={NewUser}/>
-        </Switch>
+            <Switch history={useHistory}>
+                <Route path="/" exact component={App} />
+                <Route path="/login" component={Login} />
+                <Route path="/details" component={ProductDetail} />
+                <Route path="/register" component={NewUser} />
+            </Switch>
 
-    </Router >,
+        </Router >
+    </Provider>,
 
     document.getElementById('root')
 );
