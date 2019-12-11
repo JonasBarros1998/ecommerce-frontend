@@ -1,5 +1,5 @@
-const verb = {
-    
+export const verb = {
+
     get: () => {
         throw new Error("Ainda não implementado")
     },
@@ -14,19 +14,13 @@ const verb = {
             })
                 .then(response => {
                     response.clone().json()
-
                         .then(respJson => resolve(respJson))
 
-                }).catch(error => {
-                    reject(error)
-                    throw new Error(`HELP ${error}`)
-                });
+                }).catch(error => reject(error));
         })
-    }, 
+    },
 
-    put: () =>{
+    put: () => {
         throw new Error("Ainda não implementado")
     }
 }
-
-export default verb

@@ -1,76 +1,68 @@
-import React, { Component } from 'react'
-import Login from '../../funcionalities/authentication/login'
+import { connect } from 'react-redux'
+import React,{ Fragment } from 'react'
 
-class loginComponent extends Component {
+import Menu from '../../components/menu/MenuComponent'
+import { MensageDanger } from '../../components/alerts&Mensages/mensages'
+import BannerCrumbComponent from '../../components/banner/bannerCrumbComponent'
+import AuthenticateContainer from '../../funcionalities/authentication/containers/authenticate.container';
+import VerifieldEmailContainer  from '../../funcionalities/authentication/containers/verifieldEmail.container';
 
-    constructor() {
-        super()
-        this.state = { name: "", password: "", verifield: "" }
-        this.credentials = this.credentials.bind(this)
-    }
-    
-    stateInputs(name, event) {
-        let input = {}
-        input[name] = event.target.value
-        this.setState(input)
-    }
+import '../../_assets/Js/main'
 
-    credentials(event) {
+const LoginComponent = props => {
 
-        event.preventDefault()
-        Login.authentication(this.state)
+    const { statusAuthenticate, statusEmail } = props
+    let viewMensage
+   // let menu
+
+    if (statusAuthenticate === true) {
+        viewMensage = <MensageDanger mensage={"usuário ou senha inválida"} />
     }
 
-    render() {
+    if(statusEmail === true){
+        viewMensage = <MensageDanger mensage={"Email já existe, por favor faça login ao lado"} />
+    }
 
-        return (
+
+
+    return (
+
+        <Fragment >
+          <Menu></Menu>
+            <BannerCrumbComponent />
+
             <section className="login_box_area section_gap">
                 <div className="container">
+                    {viewMensage}
                     <div className="row">
 
                         <div className="col-lg-6">
+
                             <div className="login_form_inner">
                                 <h3>Faça o login</h3>
-                                <form className="row login_form" id="contactForm" method="post" onSubmit={this.credentials}>
-                                    <div className="col-md-12 form-group">
-                                        <input type="text" className="form-control" id="name" name="name" 
-                                        placeholder="Nome" onChange={this.stateInputs.bind(this, 'name')} value={this.state.name} />
-                                    </div>
-
-                                    <div className="col-md-12 form-group">
-                                        <input type="password" className="form-control" id="password" name="password" 
-                                                    placeholder="Senha" onChange={this.stateInputs.bind(this, 'password')} value={this.state.password} />
-                                    </div>
-
-                                    <div className="col-md-12 form-group">
-                                        <button type="submit" value="submit" className="primary-btn">Acessar</button>
-                                        <a href={"block"}>Esqueceu sua senha</a>
-                                    </div>
-                                </form>
+                                <AuthenticateContainer />
                             </div>
                         </div>
 
                         <div className="col-lg-6">
                             <div className="login_form_inner">
                                 <h3>Crie sua conta</h3>
-                                <form className="row login_form" method="post">
-                                    <div className="col-md-12 form-group">
-                                        <input type="email" className="form-control"
-                                                    name="verifield" placeholder="e-mail" value={this.state.verifield} 
-                                                    onChange={this.stateInputs.bind(this, 'verifield')} />
-                                    </div>
-
-                                    <div className="col-md-12 form-group">
-                                        <button type="submit" value="submit" className="primary-btn">Prosseguir</button>
-                                    </div>
-                                </form>
+                                <VerifieldEmailContainer />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
-        );
+        </Fragment>
+    );
+}
+
+const mapStateToProps = store => {
+    return {
+        statusAuthenticate: store.authentication.statusAuthenticate,
+        statusEmail: store.verificateEmail.statusEmail
     }
 }
 
-export default loginComponent
+export default connect(mapStateToProps, null)(LoginComponent)

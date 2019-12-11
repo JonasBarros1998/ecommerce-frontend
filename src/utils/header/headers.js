@@ -1,4 +1,4 @@
-const HttpHeaders = {
+export const HttpHeaders = {
 
     headersForRequest: token => {
 
@@ -18,10 +18,6 @@ const HttpHeaders = {
     },
 
     defaultHeaders: () =>{
-
-        const headers = new Headers() 
-        return headers["Content-Type"] = "application/json"
+        return {"Content-Type": "application/json"}
     }
 }
-
-export default HttpHeaders
