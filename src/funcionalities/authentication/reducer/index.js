@@ -1,7 +1,8 @@
 import {combineReducers} from 'redux';
 import {authenticationUser} from './authentication.reducer';
-
+import {verifield} from './verifield.reducer'
 
 export const Reducers = combineReducers({
-    submitLogin: authenticationUser
+    authentication: authenticationUser,
+    verificateEmail: verifield //verificar se o e-mail existe
 })

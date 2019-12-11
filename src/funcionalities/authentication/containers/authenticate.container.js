@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import  { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {authentication} from '../actions/index.js'
-import { authenticationUser } from '../reducer/authentication.reducer.js';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { authentication } from '../actions/authenticate.action.js';
+
 
 const AuthenticateContainer = props => {
 
@@ -10,18 +10,20 @@ const AuthenticateContainer = props => {
     const [password, setPasword] = useState("")
 
     const {
-        msg,
         authentication
     } = props
-    
-    return (    
-        <form className="row login_form" id="contactForm" method="post" 
-        onSubmit= {e => {e.preventDefault();
-                                       authentication({password: password.value, 
-                                                                email: email.value})}}>
+
+    return (
+        <form className="row login_form"
+            id="contactForm"
+            method="post"
+            onSubmit={e => {
+                e.preventDefault();
+                authentication({ password: password.value, email: email.value })
+            }}>
             <div className="col-md-12 form-group">
                 <input type="text" className="form-control" id="name" name="name"
-                    placeholder="Nome" 
+                    placeholder="Nome"
                     ref={(stateEmail) => setEmail(email => email = stateEmail)} />
             </div>
 
@@ -32,19 +34,16 @@ const AuthenticateContainer = props => {
             </div>
 
             <div className="col-md-12 form-group">
-                <button type="submit" value="submit" className="primary-btn">Acessar</button>
+                <button type="submit" 
+                             value="submit" 
+                             className="primary-btn">Acessar</button>
+
                 <a href={"http://localhost:4000"}>Esqueceu sua senha</a>
             </div>
         </form>
     );
 }
 
-const mapStateToProps = store =>({
-    bola: store.submitLogin
-})
+const mapDispatchToProps = dispatch => (bindActionCreators({ authentication }, dispatch))
 
-const mapDispatchToProps = dispatch  =>{
-    return bindActionCreators({authentication}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AuthenticateContainer)
+export default connect(null, mapDispatchToProps)(AuthenticateContainer)

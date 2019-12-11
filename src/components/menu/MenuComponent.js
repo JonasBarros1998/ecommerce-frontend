@@ -1,21 +1,14 @@
-import React,{Component} from 'react'
-import {Link} from "react-router-dom";      
+import React from 'react'
+import { Link } from "react-router-dom";
 
-export default class Menu extends Component {
+const Menu = () => {
 
-    constructor() {
-        super()
-        this.state = {}
-        this.linkDefault = "#"
-    }
-
-    render() {
-        return (
+    return (
         <header className="header_area sticky-header">
             <div className="main_menu">
                 <nav className="navbar navbar-expand-lg navbar-light main_box">
                     <div className="container">
-                        <a className="navbar-brand logo_h" href={this.linkDefault}>
+                        <a className="navbar-brand logo_h" href={"localhost://3000"}>
                             <img src="img/logo.png" alt="" />
                         </a>
 
@@ -28,44 +21,44 @@ export default class Menu extends Component {
                         </button>
                         <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
                             <ul className="nav navbar-nav menu_nav ml-auto">
-                                <li className="nav-item active"><a className="nav-link" href={this.linkDefault}>Home</a></li>
+                                <li className="nav-item active"><a className="nav-link" href={"http://localhost:3000/"}>Pagina inicial</a></li>
 
                                 <li className="nav-item submenu dropdown">
-                                    <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Shop</a>
                                     <ul className="dropdown-menu">
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Shop Category</a></li>
-                                        <li className="nav-item"><a href={this.linkDefault} className="nav-link">Product
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Shop Category</a></li>
+                                        <li className="nav-item"><a href={"localhost://3000"} className="nav-link">Product
 											Details</a></li>
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Product Checkout</a>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Product Checkout</a>
                                         </li>
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Shopping Cart</a></li>
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Confirmation</a>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Shopping Cart</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Confirmation</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item submenu dropdown">
-                                    <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Blog</a>
                                     <ul className="dropdown-menu">
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Blog</a></li>
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Blog Details</a>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Blog</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Blog Details</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item submenu dropdown">
-                                    <a href={this.linkDefault} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <ul className="dropdown-menu">
-                                        <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Tracking</a></li>
-                                        <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Elements</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={"http://localhost:3000/login"}>Pagina inicial</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Tracking</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Elements</a></li>
                                     </ul>
                                 </li>
-                                <li className="nav-item"><a className="nav-link" href={this.linkDefault}>Contact</a></li>
+                                <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Contact</a></li>
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
-                                <li className="nav-item"><a href={this.linkDefault} className="cart"><span className="ti-bag"></span></a></li>
+                                <li className="nav-item"><a href={"localhost://3000"} className="cart"><span className="ti-bag"></span></a></li>
                                 <li className="nav-item">
                                     <button className="search"><span className="lnr lnr-magnifier" id="search"></span></button>
                                 </li>
@@ -85,6 +78,7 @@ export default class Menu extends Component {
                 </div>
             </div>
         </header>
-        )
-    }
+    )
 }
+
+export default Menu

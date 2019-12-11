@@ -22,6 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/_environment
+src/env.js
 teste.js
 src/_assets/img
