@@ -13,7 +13,7 @@ import {
 
 import App from './App';
 import ProductDetail from './components/products/pageDetails'
-import {Reducers} from './funcionalities/authentication/reducer'
+import {Reducers} from './reducer'
 import Login from "./components/authentication/loginComponent";
 import NewUser from './views/authentication/registerNewUser/newUser' 
 
