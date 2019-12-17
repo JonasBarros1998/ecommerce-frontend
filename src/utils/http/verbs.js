@@ -1,10 +1,11 @@
 export const verb = {
 
-    get: (url, header) => {
+    get: (url, header, datas) => {
         return new Promise((resolve, reject) => {
             fetch(url, {
                 method: 'GET',
-                headers: new Headers(header)
+                headers: new Headers(header),
+                body: datas
             }).then(response => {
                 response.clone().json()
                     .then(respJson => {
