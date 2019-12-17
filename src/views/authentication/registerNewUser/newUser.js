@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react'
-import RegisterNewUser from '../../../components/authentication/registerNewUser'
+import RegisterUser from '../../../components/authentication/registerNewUser'
 import Menu from '../../../components/menu/MenuComponent'
 import BannerCrumbComponent from '../../../components/banner/bannerCrumbComponent'
 
@@ -18,7 +18,7 @@ const NewUser = () => {
                                     <h3>Quer se cadastrar ?</h3>
                                     <p>Por favor, preencha os campos abaixo, é rapidinho</p>
                                 </div>
-                                <RegisterNewUser />
+                                <RegisterUser />
                             </div>
                         </div>
                     </div>
