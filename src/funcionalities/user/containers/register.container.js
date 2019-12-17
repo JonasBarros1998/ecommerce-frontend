@@ -8,7 +8,10 @@ const RegisterUserContainer = props => {
 
     console.log(props)
 
-    const { countPassword, passwordInvalid, passwordStatus, registerNewUser } = props
+    const { messageCountPassword, 
+                messageLevelPassword, 
+                messageComparationPassword, 
+                registerNewUser } = props
 
     const [name, setName] = useState("")
     const [birthDate, setBirthDate] = useState("")
@@ -110,15 +113,15 @@ const RegisterUserContainer = props => {
                             ref={(stateRepeatPass) => setRepeatPassword(repeatPassword => repeatPassword = stateRepeatPass)}/>
 
                         <div className="col-md-6">
-                            <p className="badge badge-pill badge-danger">{passwordStatus}</p>
+                            <p className="badge badge-pill badge-danger">{messageComparationPassword}</p>
                         </div>
 
                         <div className="col-md-10">
-                            <p className="badge badge-pill badge-warning">{passwordInvalid}</p>
+                            <p className="badge badge-pill badge-warning">{messageLevelPassword}</p>
                         </div>
 
                         <div className="col-md-10">
-                            <p className="badge badge-pill badge-warning">{countPassword}</p>
+                            <p className="badge badge-pill badge-warning">{messageCountPassword}</p>
                         </div>
 
                     </div>
@@ -141,9 +144,9 @@ const RegisterUserContainer = props => {
 
 const mapStateToProps = store => {
     return {
-        passwordStatus: store.registerUser.mensage,
-        passwordInvalid: store.registerUser.messagePasswordInvalid,
-        countPassword: store.registerUser.messageCountPassword
+        messageComparationPassword: store.registerUser.messageComparationPassword,
+        messageLevelPassword: store.registerUser.messageLevelPassword,
+        messageCountPassword: store.registerUser.messageCountPassword
     }
 }
 

@@ -5,21 +5,17 @@
  * E a segunda função serve para verificar se o usuario digitou 
  * a quantidade correta de caracteres  
  */
-import {passwordInvalid} from './index'
+import {listInvalidPassword} from './index'
 import {INVALID_PASSWORD, PASSWORD_VALID} from '../../constants/constants.user'
 
-let statusPassword = false
 export const validPassword = password =>{
 
-    const passwords = passwordInvalid()
+    const listPassword = listInvalidPassword()
 
-    passwords.passwordsInvalid.map(values => {
-        if(values === password){
-            statusPassword = true
-        }
-    })
-    
-    if(statusPassword){
+    //Verifica se a senha contem na lista de senhas invalidas 
+   const indicePasswords =  listPassword.passwordsInvalid.indexOf(password)
+
+    if(indicePasswords !== -1){
         return {result: INVALID_PASSWORD}
     }else{
         return {result: PASSWORD_VALID}

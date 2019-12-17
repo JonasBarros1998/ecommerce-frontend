@@ -16,5 +16,5 @@ const list = {
     ]
 }
 
-export const passwordInvalid = () => list
+export const listInvalidPassword = () => list
 
