@@ -7,6 +7,7 @@ import { verb } from '../../../utils/http/verbs.js'
 import { createBrowserHistory } from 'history'
 import { HttpHeaders } from '../../../utils/header/headers.js';
 import {VERIFIELD_EMAIL} from '../constants/index.constants'
+import {formattingObjects} from '../utils/objects/formattingObjects'
 
 const history = createBrowserHistory({ forceRefresh: true })
 
@@ -23,11 +24,13 @@ const receiverEmail = statusEmail =>{
 
 export const submitVerifieldEmail = email => {
 
+
     const header = HttpHeaders.defaultHeaders()
    const url =  route.user['verifield']
+   const datas = formattingObjects(email)
 
     return dispatch => {
-        return verb.post(url, header, email)
+        return verb.post(url, header, datas)
             .then(response => {
                 if(response.status === 409){
                     dispatch(receiverEmail(true))
