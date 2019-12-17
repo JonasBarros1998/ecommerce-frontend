@@ -50,7 +50,7 @@ const Menu = () => {
                                     <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Pages</a>
                                     <ul className="dropdown-menu">
-                                        <li className="nav-item"><a className="nav-link" href={"http://localhost:3000/login"}>Pagina inicial</a></li>
+                                        <li className="nav-item"><a className="nav-link" href={"http://localhost:3000/login"}>Login</a></li>
                                         <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Tracking</a></li>
                                         <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Elements</a></li>
                                     </ul>

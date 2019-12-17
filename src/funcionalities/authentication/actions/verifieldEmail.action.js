@@ -34,7 +34,6 @@ export const submitVerifieldEmail = email => {
                 }else{
                     routeChange("/register")
                 }
-
             }).catch(error => new Error(error))
     }
 }
