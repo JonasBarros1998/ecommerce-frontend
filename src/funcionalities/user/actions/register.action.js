@@ -40,8 +40,8 @@ const receiverCountPassword = valid => {
 
 //Faz a validação entre as senhas 
 const comparationFieldsPassword = (password, repeatPassword) => {
-
     const status = comparationFields([password, repeatPassword])
+    
     return dispatch => {
         
         /* Caso as senhas forem diferentes, lança um erro
