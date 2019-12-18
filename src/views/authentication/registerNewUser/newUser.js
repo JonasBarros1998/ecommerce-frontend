@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment } from 'react'
 import RegisterUser from '../../../components/authentication/registerNewUser'
 import Menu from '../../../components/menu/MenuComponent'
 import BannerCrumbComponent from '../../../components/banner/bannerCrumbComponent'

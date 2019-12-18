@@ -59,7 +59,7 @@ const levelPassword = password => {
     const validation = validPassword(password)
     
     return dispatch => {
-        if (validation.result == INVALID_PASSWORD) {
+        if (validation.result === INVALID_PASSWORD) {
             console.log("levelPassword", validation, password)
             dispatch(receiverPasswordInvalid(INVALID_LEVEL_PASSWORD))
             throw new Error(`Não use senhas faceis`)
@@ -71,7 +71,7 @@ const countCaracterPassword = password => {
 
     const count = countPassword(password)
     return dispatch => {
-        if (count.result == INVALID_PASSWORD) {
+        if (count.result === INVALID_PASSWORD) {
             console.log("countCaracterPassword", count, password)
             dispatch(receiverCountPassword(INVALID_PASSWORD))
             throw new Error(`Digite uma senha com mais de 8 caracteres`)

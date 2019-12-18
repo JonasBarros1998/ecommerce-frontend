@@ -27,8 +27,7 @@ class Footer extends Component {
                                         <div className="d-flex flex-row">
 
                                             <input className="form-control" name="EMAIL" placeholder="Enter Email"
-                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
-                                                required="" type="email" />
+                                              required="" type="email" />
 
                                             <button className="click-btn btn btn-default">
                                                 <i className="fa fa-long-arrow-right" aria-hidden="true"></i>

@@ -15,7 +15,7 @@ const RegisterUser = props => {
 
     return(
         useEffect(() =>{
-            if(storePassword == FIELDS_EQUAL){
+            if(storePassword === FIELDS_EQUAL){
                 statusPassword.mensagem = MENSAGE_PASSWORD
             }else{
                 statusPassword.mensagem = null
