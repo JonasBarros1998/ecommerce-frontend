@@ -48,31 +48,28 @@ const comparationFieldsPassword = (password, repeatPassword) => {
         *  e o o fluxo do programa será interrompido,
         *  la no catch da função registerNewUser */
        if (status.result === DIFERENTS_FIELDS) {
-            console.log("comparation", status.result)
             dispatch(receiverRegister(DIFERENTS_FIELDS))
             throw new Error("password equals")
         }
     }
 }
-
+//verifica se a senha tem um nivel dificil 
 const levelPassword = password => {
     const validation = validPassword(password)
     
     return dispatch => {
         if (validation.result === INVALID_PASSWORD) {
-            console.log("levelPassword", validation, password)
             dispatch(receiverPasswordInvalid(INVALID_LEVEL_PASSWORD))
             throw new Error(`Não use senhas faceis`)
         }
     }
 }
-
+//Conta os caracteres o usuario digitou
 const countCaracterPassword = password => {
 
     const count = countPassword(password)
     return dispatch => {
         if (count.result === INVALID_PASSWORD) {
-            console.log("countCaracterPassword", count, password)
             dispatch(receiverCountPassword(INVALID_PASSWORD))
             throw new Error(`Digite uma senha com mais de 8 caracteres`)
         }
@@ -94,8 +91,6 @@ export const registerNewUser = datasUser => {
                 *e o fluxo do programa será interrompido  */
             return { "response": "break" }
         }
-
-        console.log("OK, não teve erro, e continuou dentro da função")
 
         const datas = objectFormatting(datasUser)
         return verb.post(url, headers, datas)

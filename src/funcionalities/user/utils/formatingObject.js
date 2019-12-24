@@ -1,6 +1,6 @@
 /**
  * Modulo para formatar o objeto, que vem do container, 
- * e enviar da forma me que a API nos permite
+ * e enviar da forma que a API nos permite
  */
 import { convertDate } from '../../../utils/dates/date'
 
