@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Slider from 'react-slick'
 import SlidesContainer from '../../funcionalities/slides/main/containers/slide.container'
 import {Link} from 'react-router-dom'
+
 //Configuração dos slides da pagina
 const settings = () => {
     return {
@@ -17,12 +18,6 @@ const settings = () => {
 const Slide = props => {
 
     const { listingSlide } = props
-
-    useEffect(() => {
-        listingSlide.map(item => {
-
-        })
-    })
 
     return (<>
         <SlidesContainer />

@@ -2,7 +2,6 @@
 import $ from'jquery'
 import jQuery from 'jquery'
 
-
 $(document).ready(function(){
 
 	var window_width 	 = $(window).width(),
@@ -34,6 +33,7 @@ $(document).ready(function(){
     });*/
 
     // Search Toggle
+    /*
     $("#search_input_box").hide();
     $("#search").on("click", function () {
         $("#search_input_box").slideToggle();
@@ -41,7 +41,7 @@ $(document).ready(function(){
     });
     $("#close_search").on("click", function () {
         $('#search_input_box').slideUp(500);
-    });
+    });*/
 
     /*==========================
 		Efeito no menu principal
