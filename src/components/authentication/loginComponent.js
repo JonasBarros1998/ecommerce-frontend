@@ -7,8 +7,6 @@ import BannerCrumbComponent from '../../components/banner/bannerCrumbComponent'
 import AuthenticateContainer from '../../funcionalities/authentication/containers/authenticate.container';
 import VerifieldEmailContainer  from '../../funcionalities/authentication/containers/verifieldEmail.container';
 
-import '../../_assets/Js/main'
-
 const LoginComponent = props => {
 
     const { statusAuthenticate, statusEmail } = props
