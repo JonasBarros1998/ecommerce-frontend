@@ -225,6 +225,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease 0s; }
   .genric-btn:focus {
     outline: none; }
+  .genric-btn:hover{
+    outline: none;
+  }
   .genric-btn.e-large {
     padding: 0 40px;
     line-height: 50px; }

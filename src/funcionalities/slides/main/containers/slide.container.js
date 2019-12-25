@@ -27,10 +27,7 @@ const SlidesContainer = props => {
     )
 }
 
-const mapDispatchToProps = dispatch => {
-    console.log("OK, entrou no componente de slide")
-    return bindActionCreators({ slides }, dispatch)
-}
+const mapDispatchToProps = dispatch =>(bindActionCreators({ slides }, dispatch))
 
 export default connect(null, mapDispatchToProps)(SlidesContainer)
 

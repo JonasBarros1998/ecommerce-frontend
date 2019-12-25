@@ -1,4 +1,3 @@
-import { createBrowserHistory } from 'history'
 import { route } from '../routes/index.routes'
 import { verb } from '../../../../utils/http/verbs'
 import { HttpHeaders } from '../../../../utils/header/headers'
@@ -21,7 +20,6 @@ export const slides = () => {
         return verb.get(url, headers)
             .then(response => {
                 const responseListLinks = links('ecommerce-slide', response)
-                console.log("Minha action foi carregada", responseListLinks)
                 dispatch(receiverSlidesUrls(responseListLinks))
             })
             .catch(error => new Error(error))
