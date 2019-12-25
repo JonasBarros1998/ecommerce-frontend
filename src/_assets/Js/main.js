@@ -45,8 +45,9 @@ $(document).ready(function(){
 
     /*==========================
 		Efeito no menu principal
-		============================*/
-			$(".sticky-header").sticky();
+    ============================*/
+    //$(".sticky-header").sticky();
+      
 
     //--------- Accordion Icon Change ---------//
 

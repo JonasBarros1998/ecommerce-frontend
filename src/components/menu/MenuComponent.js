@@ -1,7 +1,12 @@
 import React, {useEffect} from 'react'
+import $ from 'jquery'
 import SearchField from '../search/searchFieldsComponent'
 
 const Menu = () => {
+
+    useEffect(() => {
+        $(".sticky-header").sticky();
+    })
     
     return (
         <header className="header_area sticky-header">
