@@ -52,13 +52,16 @@
   .section-title p {
     margin-bottom: 0; }
 
-/* Start Gradient Area css
+
+
+
+/* Start Gradient colors orange and yellow Area css, substituir 
 ============================================================================================ */
 .gradient-bg, .primary-btn, .add-bag .add-btn, .single-product .product-details .prd-bottom .social-info span:after, .grid-btn:hover, .list-btn:hover, .grid-btn.active, .list-btn.active, .pagination a.active, .pagination a:hover, .s_Product_carousel .owl-dots div.active, .s_product_text .card_area .icon_btn:after, .product_description_area .nav.nav-tabs li a.active, .blog-pagination .page-item.active .page-link, .single-footer-widget .click-btn {
-  background: -webkit-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: -moz-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: -o-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%); }
+  background: -webkit-linear-gradient(90deg, #02d8d8 0%, #a6f5f5  100%);
+  background: -moz-linear-gradient(90deg, #02d8d8 0%, #a6f5f5 100%);
+  background: -o-linear-gradient(90deg, #02d8d8 0%, #a6f5f5 100%);
+  background: linear-gradient(90deg, #02d8d8 0%, #a6f5f5 100%); }
 
 .gradient-bg-reverse, #search_input_box {
   background: -webkit-linear-gradient(270deg, #ffba00 0%, #ff6c00 100%);
@@ -73,6 +76,7 @@
   background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
+/*=============================================================================================*/
 
 /* Start primary btn css
 ============================================================================================ */
@@ -219,6 +223,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+  border: 1px solid transparent;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -253,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
   .genric-btn.default {
     color: #222222;
     background: #f9f9ff;
-    border: 1px solid transparent; }
+     }
     .genric-btn.default:hover {
       border: 1px solid #f9f9ff;
       background: #fff; }
@@ -1344,6 +1349,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+  
 /* start features area css
 ============================================================================================ */
 @media (max-width: 768px) {
@@ -4069,8 +4075,7 @@ label {
         font-size: 18px;
         color: #222222;
         font-family: "Roboto", sans-serif;
-        font-weight: 500;
-        margin-bottom: 10px; }
+        font-weight: 500;}
       .product_description_area .tab-content .total_rate .rating_list .list li a {
         font-size: 14px;
         color: #777777; }
