@@ -1,10 +1,17 @@
 :root{
-    --yealow: #ffc107
+    --yealow: #ffc107;
+    --color-default: #02d8d8;
 }
 
+/*Colors*/
 .yellow{
     color: var(--yealow);
 }
+
+.color-default{
+    color: var(--color-default);
+}
+
 .box_shadow{
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.07);
     height: 100%;
