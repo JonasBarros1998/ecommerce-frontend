@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+/**
+ * Esse modulo faz parte da reinderização do carrinho do ecommerce, ou seja
+ * ao clicar no botão, o produto será adicionado no carrinho 
+ */
+import React from 'react'
 
-class CartComponent extends Component {
+const CartComponent = () => {
 
-    render() {
-        return (
-            <div className="card_area d-flex align-items-center">
-                <a className="primary-btn" href={"http://localhost:3000"}>Add to Cart</a>
-                <a className="icon_btn" href={"http://localhost:3000"}><i className="lnr lnr lnr-diamond"></i></a>
-                <a className="icon_btn" href={"http://localhost:3000"}><i className="lnr lnr lnr-heart"></i></a>
-            </div>
+    return (
+        <div className="card_area d-flex align-items-center">
 
-        );
-    }
+        <button className="genric-btn success">Comprar</button>
+
+        </div>
+    );
 }
 
 export default CartComponent

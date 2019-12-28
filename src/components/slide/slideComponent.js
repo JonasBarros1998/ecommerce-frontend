@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import Slider from 'react-slick'
 import SlidesContainer from '../../funcionalities/slides/main/containers/slide.container'
