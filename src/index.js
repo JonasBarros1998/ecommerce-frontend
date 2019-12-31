@@ -11,9 +11,10 @@ import {
     Switch,
 } from "react-router-dom";
 
+/* Imports de modulos do próprio ecommerce */
 import App from './App';
-import ProductDetail from './components/products/pageDetails'
 import {Reducers} from './reducer'
+import ProductDetail from './components/products/pageDetails'
 import Login from "./components/authentication/loginComponent";
 import NewUser from './views/authentication/registerNewUser/newUser' 
 
@@ -36,8 +37,6 @@ import './_assets/Js/jquery.nice-select.min.js'
 
 const store = createStore(Reducers, applyMiddleware(thunk))
 
-
-
 ReactDOM.render(
 
     <Provider store = {store}>
@@ -46,11 +45,11 @@ ReactDOM.render(
             <Switch history={useHistory}>
                 <Route path="/" exact component={App} />
                 <Route path="/login" component={Login} />
-                <Route path="/details" component={ProductDetail} />
+                <Route path="/item/:categorie_product/:name_product/:id_product" exact component={ProductDetail} />
                 <Route path="/register" component={NewUser} />
             </Switch>
 
-        </Router >
+        </Router>
     </Provider>,
 
     document.getElementById('root')

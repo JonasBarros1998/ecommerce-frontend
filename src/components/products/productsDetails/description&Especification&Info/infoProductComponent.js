@@ -1,26 +1,40 @@
 import React from 'react'
+import {Quantity} from '../../../../funcionalities/products/container/product.container'
 
-const InfoProductComponent = () => {
+const InfoProductComponent = props => {
 
     return (
-        <div>
-            <h3>Faded SkyBlu Denim Jeans</h3>
-            <h2 className="color-default">R$ 149.99</h2>
+        props.infoProduct.map((itemProduct, index) => {
+            return (
+                <div key={index}>
+                    <h3>{itemProduct.products.title}</h3>
+                    <h2 className="color-default">{
+                        itemProduct.products.price.toLocaleString('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                        })
+                    }</h2>
 
-            <ul className="list">
-                <li><small>Categoria</small> : <small className="color-default">CFTV</small></li>
-                <li><small>Diponibilidade</small> : <small>Em estoque</small></li>
-            </ul>
+                    <ul className="list">
+                        <li>
+                            <small>Categoria</small>: <small className="color-default">
+                                {itemProduct.products.categories}
+                            </small>
+                        </li>
 
-            <p>Mill Oil is an innovative oil filled radiator with the most modern technology. 
-                If you are looking for something that can make your interior look awesome, 
-                and at the same time give you the pleasant warm feeling during the winter.</p>
+                        <li>
+                            <small>Disponível</small>: <small>{itemProduct.products.amount} items</small>
+                        </li>
+                    </ul>
 
-            <div className="product_count">
-                <label>Quantidade:</label>
-                <input type="number" name="quantity" className="input-text qty" />
-            </div>
-        </div>
+                    <p>{itemProduct.products.description}</p>
+
+                    <div className="product_count">
+                        <Quantity />
+                    </div>
+                </div>
+            )
+        })
     );
 }
 

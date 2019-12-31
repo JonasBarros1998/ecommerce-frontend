@@ -1,0 +1,8 @@
+O modulo de produtos, tem por obrigação 
+apenas reiderizar os seguintes itens. Preço, descrição, categoria, 
+disponibilidade, especificações, ou seja aquilo que esteja relacionado 
+aos detalhes dos produtos. 
+
+Os itens que comtemplam a página como avaliações, slides de fotos, e 
+adição de produtos no carrinho fazem parte de um modulo separado, e suas 
+logicas de nogocios não pode estar contida dentro desse modulo. 
