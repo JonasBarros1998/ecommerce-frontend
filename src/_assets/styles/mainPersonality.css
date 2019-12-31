@@ -8,9 +8,27 @@
     color: var(--yealow);
 }
 
+.color_star{
+    color: #fff1a2;
+}
+
 .color-default{
     color: var(--color-default);
 }
+
+/*Estilos de textos, h1, h2, h3, h4, h5, p*/
+.text_h3{
+    font-size: 18px;
+    color: #222222;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;}
+
+.text-grey-p{
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: #777777;
+    text-align:justify;}
 
 .box_shadow{
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.07);
@@ -18,34 +36,28 @@
     text-align: center;
     padding-top: 115px;}
 
+/*Estilos de padding*/
 .padding{
     margin: 0;
     padding: 0;}
-
 .padding_top_bottom_1{
     padding-bottom: 1rem;
     padding-top: 1rem;}
-
 .padding_top_bottom_2{
     padding-bottom: 2rem;
     padding-top: 2rem;}
-
 .padding_top_bottom_3{
     padding-bottom: 3rem;
     padding-top: 3rem;}
-
 .padding_left_right_1{
     padding-left: 1rem;
     padding-right: 1rem;}
-
 .padding_left_right_2{
     padding-left: 2rem;
     padding-right: 2rem;}
-
 .padding_left_right_3{
     padding-left: 3rem;
     padding-right: 3rem;}
-
 .padding_left_1{
     padding-left: 10px;}
 .padding_left_2{
@@ -54,21 +66,20 @@
     padding-left: 30px;}
 .padding_left_4{
     padding-left: 40px;}
+/*Final dos estilos de pedding*/
 
+/*Estilos de posicionamento de elementos*/
 .left-1{
     left: 10%;}
-
 .left-2{
     left: 20%;}
-
 .right-1{
     right: 10%;}
-
 .right-2{
     right: 20%;}
-
 clear_margin{
     margin: 0;}
+/*Final dos estilos de posicionamento de elementos*/
 
 /*Review da pagina de detalhes de um produtos*/
 .list_review {
@@ -77,23 +88,15 @@ clear_margin{
     margin: 0px;
     padding: 0px; }
 
-.color_star{
-    color: #fff1a2;
-}
+/*Especifico para o slide*/
 .size_image_slide{
     width: 90%;
     height: 100%;
 }
 
+/*Especifico para o slide*/
 posiiton_image_slide{
     left: 10%;
-}
-
-.text_h3{
-    font-size: 18px;
-    color: #222222;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
 }
 
 /* responsividade do slide */
