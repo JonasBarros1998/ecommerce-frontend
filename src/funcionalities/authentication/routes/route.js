@@ -5,5 +5,8 @@ export const route = {
     user:{
         'verifield': 'http://127.0.0.1:8000/jm-ecommerce/user/register/verifield/',
         'create': 'http://127.0.0.1:8000/jm-ecommerce/user/register/',
+    },
+    user_id: {
+        'id': 'http://127.0.0.1:8000/jm-ecommerce/authentication/Id'
     }
 }

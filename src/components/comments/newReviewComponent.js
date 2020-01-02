@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentContainer from '../../funcionalities/comments/container/comment.container'
 
 const NewReviewComponent = () => {
 
@@ -13,21 +14,7 @@ const NewReviewComponent = () => {
             <li><a href={"localhost://"}><i className="fa fa-star"></i></a></li>
             <li><a href={"localhost://"}><i className="fa fa-star"></i></a></li>
         </ul>
-
-        <form className="row contact_form" method="post"
-            id="contactForm">
-
-            <div className="col-md-12">
-                <div className="form-group">
-                    <textarea className="form-control" name="message" id="message" rows="1"
-                        placeholder="Mensagem"></textarea>
-                </div>
-            </div>
-
-            <div className="col-md-12 text-right">
-                <button type="submit" value="submit" className="genric-btn success">Comentar</button>
-            </div>
-        </form>
+        <CommentContainer />
         </>
     );
 }
