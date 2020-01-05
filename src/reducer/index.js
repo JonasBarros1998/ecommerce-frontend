@@ -5,6 +5,7 @@ import {register} from '../funcionalities/user/reducer/register.reducer'
 import {mainSlides} from '../funcionalities/slides/main/reducers/slides.reducer'
 import {productDetails} from '../funcionalities/products/reducers/product.reducer'
 import {comments} from '../funcionalities/comments/reducer/comment.reducer'
+import {list} from '../funcionalities/comments/reducer/list.reducer'
 
 export const Reducers = combineReducers({
     authentication: authenticationUser,
@@ -12,6 +13,7 @@ export const Reducers = combineReducers({
     registerUser: register, 
     mainSlide: mainSlides,
     productDetails: productDetails,
-    comments: comments
+    comments: comments,
+    listComment: list
 })
 

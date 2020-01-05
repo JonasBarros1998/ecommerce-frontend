@@ -1,17 +1,16 @@
-import {SAVE_COMMENT} from '../constants/comment.constants'
+import { SAVE_COMMENT } from '../constants/comment.constants'
+
 const state = {
-    comments: "" ,
+    comment: "",
     mensageComments: ""
 }
 
 export const comments = (initState = state, action) => {
     switch (action.type) {
         case SAVE_COMMENT:
-            Object.assign({}, initState, {
-
+            return Object.assign({}, initState, {
             })
-            break;
         default:
-            break;
+            return state
     }
 }

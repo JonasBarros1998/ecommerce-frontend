@@ -1,9 +1,11 @@
 import React from 'react'
+import ListReviewContainer from '../../../funcionalities/comments/container/list.container'
 
-const ReviewComponent = () => {
-
+const ListReviewComponent = props => {
+    const {productId} = props
     return (
         <>
+        <ListReviewContainer productId = {productId} />
             <div className="row total_rate">
                 <div className="col-6">
                     <div className="box_total">
@@ -69,4 +71,4 @@ const ReviewComponent = () => {
     );
 }
 
-export default ReviewComponent
+export default ListReviewComponent

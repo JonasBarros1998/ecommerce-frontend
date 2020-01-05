@@ -1,12 +1,12 @@
 export const HttpHeaders = {
 
-    headersForRequest: token => {
+    headersBearer: token => {
 
-        const headers = new Headers()
-        headers["Content-Type"] = "application/json"
-        headers.Authorization = `Bearer ${token}`
-
-        return headers
+        const header = {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+        return header
     },
 
     headersForGearToken: () =>{

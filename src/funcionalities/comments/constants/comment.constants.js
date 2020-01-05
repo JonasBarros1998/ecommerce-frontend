@@ -1,1 +1,2 @@
 export const SAVE_COMMENT = "SAVE_COMMENT"
+export const LIST_COMMENT = "LIST_COMMENT"

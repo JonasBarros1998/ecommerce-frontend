@@ -11,7 +11,7 @@ import CartComponent from '../cart/cartComponent'
 import NavTabs from './productsDetails/navTabs/navTabs'
 import BannerCrumb from '../banner/bannerCrumbComponent'
 import SlideProductComponent from '../slide/slideProductComponent'
-import ReviewComponent from '../reviews/listReviews/reviewComponent'
+import ListReviewComponent from '../reviews/listReviews/reviewComponent'
 import NewReviewComponent from '../comments/newReviewComponent'
 import ProductContainer from '../../funcionalities/products/container/product.container'
 import DescriptionComponent from './productsDetails/description&Especification&Info/descriptionComponent'
@@ -24,9 +24,10 @@ const ProductDetails = props => {
 
     return (
         <>
-            {/* Parte 1: Esse componente, está alocado em um container, 
+            {/*Parte 1: Esse componente, está alocado em um container, 
                Ele faz a chamada para a função listingProductDetails(),
-               Essa função tem a responsabilidade de fazer a chamada para uma API*/}
+               Essa função tem a responsabilidade de fazer a chamada para 
+               uma API*/}
             <ProductContainer pathname={pathname} />
             <div>
                 <BannerCrumb />
@@ -44,7 +45,7 @@ const ProductDetails = props => {
 
                             <div className="col-lg-5 offset-lg-1">
                                 <div className="s_product_text">
-                                    <InfoProductComponent infoProduct = {product} />
+                                    <InfoProductComponent infoProduct={product} />
                                     <CartComponent />
                                 </div>
                             </div>
@@ -61,11 +62,11 @@ const ProductDetails = props => {
 
                             <div className="tab-pane fade show active" id="home" role="tabpanel"
                                 aria-labelledby="home-tab">
-                                    {
-                                        product.map((itensProduct, index) => (
-                                           <DescriptionComponent key={index} descriptionProduct = {itensProduct.products.fullDescription} />
-                                        ))
-                                    }
+                                {
+                                    product.map((itensProduct, index) => (
+                                        <DescriptionComponent key={index} descriptionProduct={itensProduct.products.fullDescription} />
+                                    ))
+                                }
                             </div>
 
                             <div className="tab-pane fade" id="profile" role="tabpanel"
@@ -73,8 +74,8 @@ const ProductDetails = props => {
                                 {
                                     product.map((itensProduct, index) => {
                                         const productEspecification = itensProduct.products.especification
-                                        return <EspecificationComponent key = {index} 
-                                                    especification = {productEspecification} />
+                                        return <EspecificationComponent key={index}
+                                            especification={productEspecification} />
                                     })
                                 }
                             </div>
@@ -84,13 +85,24 @@ const ProductDetails = props => {
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <div className="comment_list">
-                                            <ReviewComponent />
+                                            {
+                                                product.map((itemProduct, index) => (
+                                                    <ListReviewComponent 
+                                                    key = {index}
+                                                    productId = {itemProduct.products.id} />
+                                                ))
+                                            }
                                         </div>
                                     </div>
 
                                     <div className="col-lg-6">
                                         <div className="review_box">
-                                            <NewReviewComponent />
+                                            {
+                                                product.map((itemProduct, index) => (
+                                                    <NewReviewComponent key={index}
+                                                        productId={itemProduct.products.id} />
+                                                ))
+                                            }
                                         </div>
                                     </div>
                                 </div>
