@@ -2,7 +2,7 @@ import { routes } from '../routes/product.routes'
 import { verb } from '../../../utils/http/verbs'
 import { tratament } from '../utils/links/urlsTratament'
 import { PRODUCT } from '../constants/product.constants'
-import { format } from '../utils/format/formatObject'
+import { format } from '../utils/objects/formattingObjects'
 
 const productDetails = product => {
     return {

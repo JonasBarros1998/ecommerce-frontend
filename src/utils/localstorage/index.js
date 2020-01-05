@@ -7,14 +7,14 @@
  * name: nome relacionado ao conteudo que foi salvo
  */
 
-export const saveLocalStorage = (value, name) =>{
+export const saveLocalStorage = (name, value) =>{
     return localStorage.setItem(name, value)
 }
 
 export const deleteLocalStorage = () =>{
-    throw new Error("Função de token ainda não implementada")
+    throw new Error("Função ainda não implementada")
 }
 
-export const searchLocalStorage = (value, name) =>{
-    return localStorage.getItem(name, value) 
+export const searchLocalStorage = (name) =>{
+    return localStorage.getItem(name) 
 }
