@@ -1,20 +1,21 @@
 import React, {useEffect} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux' 
-import {listComment} from '../actions/list.action'
+import {saveComment} from '../actions/listComment.action'
 
-const ListReviewContainer = props => {
+const ListCommentContainer = props => {
     
-    const {listComment, productId} = props
-    
+    const {saveComment, productId} = props
+
     useEffect(()=>{
-        listComment(productId)
+        saveComment(productId)
     })
 
     return (
-        <div></div>
+        <>
+        </>
     )
 }
 
-const mapDispatchToProps = dispatch => (bindActionCreators({listComment}, dispatch))
-export default connect(null, mapDispatchToProps)(ListReviewContainer)
+const mapDispatchToProps = dispatch => (bindActionCreators({saveComment}, dispatch))
+export default connect(null, mapDispatchToProps)(ListCommentContainer)

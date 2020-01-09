@@ -2,20 +2,19 @@ import { LIST_COMMENT } from '../constants/comment.constants'
 import { routes } from '../routes/comment.routes'
 import { verb } from '../../../utils/http/verbs'
 
-const ListComments = comment => {
+const listComments = comments => {
     return {
         type: LIST_COMMENT,
-        comment
+        comments
     }
 }
 
-export const listComment = (productId) => {
+export const saveComment = (productId) => {
     const url = routes.comment.list(productId)
     return dispatch => {
-
-        return verb.get(url)
+        return verb.get(`http://127.0.0.1:8000/jm-ecommerce/comments/${74}`)
             .then(response => {
-                console.log(response)
+                dispatch(listComments(response))
             })
             .catch(err => (new Error(err)))
     }

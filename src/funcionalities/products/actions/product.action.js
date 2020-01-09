@@ -12,14 +12,14 @@ const productDetails = product => {
 }
 
 export const listingProductDetails = (pathname) => {
-    //Chamando o metodo para extração de dados 
-    //especificos das  urls
+    //Chamando o metodo 'tratament' para extração de dados 
+    //para encaixarmos na url
     const {categorie, idProduct} = tratament(pathname)
     
     return dispatch => {
         const urlProduct = routes.product(idProduct, categorie)
-
-        return verb.get(urlProduct).then(response => {
+        return verb.get(urlProduct)
+        .then(response => {
             const newResponse = format(response)
             dispatch(productDetails(newResponse))
         }).catch(erro => new Error(erro))
