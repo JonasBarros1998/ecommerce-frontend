@@ -21,6 +21,7 @@ class SlideProductComponent extends Component {
 
     render() {
         return (
+            <div className="col-lg-6">
                 <div className="s_Product_carousel">
                     <Slider {...this.settings}>
                         <div className="single-prd-item">
@@ -36,6 +37,7 @@ class SlideProductComponent extends Component {
                         </div>
 
                     </Slider>
+                </div>
             </div>
         );
     }

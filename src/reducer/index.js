@@ -4,14 +4,14 @@ import {verifield} from '../funcionalities/authentication/reducer/verifield.redu
 import {register} from '../funcionalities/user/reducer/register.reducer'
 import {mainSlides} from '../funcionalities/slides/main/reducers/slides.reducer'
 import {productDetails} from '../funcionalities/products/reducers/product.reducer'
-import {comments} from '../funcionalities/comments/reducer/comment.reducer'
+import {listingComment} from '../funcionalities/comments/reducer/listComment.reducer'
 
 export const Reducers = combineReducers({
     authentication: authenticationUser,
     verificateEmail: verifield, 
     registerUser: register, 
     mainSlide: mainSlides,
-    productDetails: productDetails,
-    comments: comments
+    listingComment: listingComment,
+    productDetails: productDetails
 })
 
