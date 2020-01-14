@@ -5,6 +5,7 @@
 */
 let formatObject = []
 export const format = (datas) => {    
+
     datas.map(data => {
         const newObejct = Object.assign({}, data, {
             products: {
@@ -21,7 +22,7 @@ export const format = (datas) => {
             }
         })
         return formatObject.push(newObejct)
-    })
+    }) 
     return formatObject
 }
 

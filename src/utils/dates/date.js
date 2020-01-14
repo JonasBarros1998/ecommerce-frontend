@@ -38,11 +38,11 @@ export const convertDate = (valueDate, locale = {}) => {
             const checkMonth = parseInt(dateSpreed[1])
             const checkDay = parseInt(dateSpreed[0])
 
-            const birthday = new Date(convertYear, convertMonth, convertDay)
+            const birthday = new Date(checkYear, checkMonth, checkDay)
 
             const getyear = birthday.getFullYear(checkYear)
             const getmonth = birthday.getMonth(checkMonth)
             const getday = birthday.getDate(checkDay)
-            return `${getday}-${getmonth}-${getyear}`
+            return `${getyear}-${getmonth}-${getday}`
     }
 }

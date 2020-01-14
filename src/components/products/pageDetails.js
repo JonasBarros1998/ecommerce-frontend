@@ -67,12 +67,9 @@ const ProductDetails = props => {
                             aria-labelledby="review-tab">
                             <div className="row">
                                 <ListCommentsComponent />
-                                { //Componente para envio de novos comentarios
-                                    product.map((itemProduct, index) => (
-                                        <NewCommentComponent key={index}
-                                            productId={itemProduct.products.id} />
-                                    ))
-                                }
+                                { /*Componente para envio de novos comentarios*/}
+                                <NewCommentComponent product={product}/>
+                                    
                             </div>
                         </div>
 
@@ -83,10 +80,5 @@ const ProductDetails = props => {
     );
 }
 
-const mapStateToProps = store => {
-    return {
-        product: store.productDetails.product,
-    }
-}
-
+const mapStateToProps = store => ({ product: store.productDetails.product })
 export default connect(mapStateToProps)(ProductDetails)

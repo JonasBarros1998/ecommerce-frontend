@@ -12,12 +12,9 @@ const state = {
  * definido dentro do case, o resultado era o 
  * state comment ficando vazio, e não renderizando os comentarios. 
  */
-
 export const listingComment = (initState = state, action) => {
-    console.log("listingComment ", action.type)
     switch (action.type) {
         case LIST_COMMENT:
-            console.log("action.LIST_COMMENT ", action.comments)
             return Object.assign({}, initState, {
                 comments: action.comments
             })

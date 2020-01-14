@@ -6,7 +6,6 @@ import { listingProductDetails } from '../actions/product.action'
 const ProductContainer = props => {
     const { pathname } = props
     const { listingProductDetails } = props
-
     useEffect(() => {
         listingProductDetails(pathname)
     })
@@ -18,7 +17,6 @@ const ProductContainer = props => {
 
 const Quantity = () => {
     const [quantity, setQuantity] = useState(1)
-
     return (
         <>
             <label>Quantidade:</label>
