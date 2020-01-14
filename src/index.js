@@ -41,7 +41,6 @@ ReactDOM.render(
 
     <Provider store = {store}>
         <Router>
-
             <Switch history={useHistory}>
                 <Route path="/" exact component={App} />
                 <Route path="/login" component={Login} />

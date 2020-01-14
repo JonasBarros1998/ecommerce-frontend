@@ -1,20 +1,15 @@
 :root{
     --yealow: #ffc107;
     --color-default: #02d8d8;
+    --color-stars-active: #fbd600;
+    --color-gris-defaut: #dadada;
 }
 
 /*Colors*/
-.yellow{
-    color: var(--yealow);
-}
-
-.color_star{
-    color: #fff1a2;
-}
-
-.color-default{
-    color: var(--color-default);
-}
+.yellow{color: var(--yealow);}
+.color_star{color: #fff1a2;}
+.color-default{color: var(--color-default);}
+.color-stars-active{color: var(--color-stars-active);}
 
 /*Estilos de textos, h1, h2, h3, h4, h5, p*/
 .text_h3{
@@ -58,6 +53,8 @@
 .padding_left_right_3{
     padding-left: 3rem;
     padding-right: 3rem;}
+.padding_top_1{
+    padding-top: 1rem;}
 .padding_left_1{
     padding-left: 10px;}
 .padding_left_2{
@@ -77,9 +74,20 @@
     right: 10%;}
 .right-2{
     right: 20%;}
-clear_margin{
+.clear_margin{
     margin: 0;}
 /*Final dos estilos de posicionamento de elementos*/
+
+/*Estilos de borda*/
+.border-bt{
+    border-bottom: 1px solid var(--color-gris-defaut);}
+.border-tp{
+    border-top: 1px solid var(--color-gris-defaut);}
+.border-rg{
+    border-right: 1px solid var(--color-gris-defaut);}
+.border-lt{
+    border-left: 1px solid var(--color-gris-defaut);}
+/*Final dos estilos de bordas*/
 
 /*Review da pagina de detalhes de um produtos*/
 .list_review {
@@ -91,13 +99,20 @@ clear_margin{
 /*Especifico para o slide*/
 .size_image_slide{
     width: 90%;
-    height: 100%;
-}
+    height: 100%;}
 
 /*Especifico para o slide*/
 posiiton_image_slide{
-    left: 10%;
-}
+    left: 10%;}
+
+/* Css especifico para pagina de Comentarios*/
+
+/*Formatação das estrelas*/
+.stars:hover{
+    color: yellow}
+.stars{
+    color: #ffecb4}
+/*FIM*/
 
 /* responsividade do slide */
 @media only screen and (max-width: 768px){
@@ -107,4 +122,9 @@ posiiton_image_slide{
         width: 233px;}
     .position_slide{
         left: 0%;}
+}
+@media only screen and (max-width: 980px){
+   .text_comment{
+       margin-top: 2rem;
+   } 
 }

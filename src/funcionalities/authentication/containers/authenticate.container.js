@@ -30,7 +30,8 @@ const AuthenticateContainer = props => {
             <div className="col-md-12 form-group">
                 <input type="password" className="form-control" id="password" name="password"
                     placeholder="Senha"
-                    ref={(statePassword) => setPasword(password => password = statePassword)} />
+                    ref={(statePassword) => 
+                        setPasword(password => password = statePassword)} />
             </div>
 
             <div className="col-md-12 form-group">

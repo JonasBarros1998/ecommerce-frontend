@@ -1,20 +1,21 @@
 import { LIST_COMMENT } from '../constants/comment.constants'
 import { routes } from '../routes/comment.routes'
 import { verb } from '../../../utils/http/verbs'
+import { listObjectComment } from '../helpers/Objects/formattingObject'
 
-const listComments = comments => {
-    return {
-        type: LIST_COMMENT,
-        comments
-    }
-}
+const listComments = comments => ({ type: LIST_COMMENT, comments })
 
 export const saveComment = (productId) => {
     const url = routes.comment.list(productId)
     return dispatch => {
-        return verb.get(`http://127.0.0.1:8000/jm-ecommerce/comments/${74}`)
+        return verb.get(url)
             .then(response => {
-                dispatch(listComments(response))
+            /*listObjectComment: Função para formatação de objetos, 
+                com ela retiramos algumas responsabilidades do componente
+                como criação de função, execsso de 'map' do componente, 
+                porque listObjectComment() já deixa tudo pronto, para
+                renderização*/
+                dispatch(listComments(listObjectComment(response)))
             })
             .catch(err => (new Error(err)))
     }

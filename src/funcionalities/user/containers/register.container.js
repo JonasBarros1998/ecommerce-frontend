@@ -40,8 +40,8 @@ const RegisterUserContainer = props => {
 
                     <div className="col-md-12 form-group">
                         <label> Nome completo </label>
-                        <input type='text' className='form-control ' id='name' name='name' label="Nome"
-                            ref={(stateName) => setName(name => name = stateName)}  />
+                        <input type='text' className='form-control ' id='name' name='name'
+                            ref={(stateName) => setName(name => name = stateName)} />
                     </div>
                     <div className="col-12 col-md-12 col-lg-6  form-group">
                         <label> Data de nascimento </label>
@@ -67,21 +67,21 @@ const RegisterUserContainer = props => {
                     <div className="col-md-12 col-12 form-group">
                         <label>Cpf</label>
                         <InputMask className="form-control" id="cpf" name="cpf"
-                            placeholder="000-000-000.00" label="Cpf" mask="999-999-999.99"
+                            placeholder="000-000-000.00" mask="999-999-999.99"
                             ref={(stateCpf) => setCpf(cpf => cpf = stateCpf)} />
                     </div>
 
                     <div className="col-md-6 col-12 form-group">
                         <label>Telefone celular</label>
                         <InputMask className='form-control' id='phone' mask="(99) 99999-9999"
-                            name='phone' placeholder='(00) 00000-0000' label='Telefone celular'
+                            name='phone' placeholder='(00) 00000-0000' 
                             ref={(stateSmartPhone) => setSmartPhone(smartPhone => smartPhone = stateSmartPhone)} />
                     </div>
 
                     <div className="col-md-6 col-12 form-group">
                         <label>Telefone residêncial</label>
                         <InputMask className="form-control" id="residentialPhone" mask="(99) 9999-9999"
-                            name="residentialPhone" placeholder="(00)000-0000" label="Telefone residêncial"
+                            name="residentialPhone" placeholder="(00)000-0000"
                             ref={(statePhone) => setPhone(phone => phone = statePhone)} />
                     </div>
                 </div>
@@ -92,23 +92,23 @@ const RegisterUserContainer = props => {
 
                     <div className="col-12 form-group">
                         <label>e-mail</label>
-                        <input type='email' className='form-control' id='email'
-                            name='email' placeholder='exemplo@exemplo.com' label='e-mail' 
+                        <input type='email' className='form-control' id='registerEmail'
+                            name='email' placeholder='exemplo@exemplo.com'
                             ref={(stateEmail) => setEmail(email => email = stateEmail)} />
                     </div>
 
                     <div className="col-md-12 col-12 form-group">
                         <label>Senha</label>
-                        <input type='password' className='form-control password' id='password'
-                            name='password' label='Senha'
+                        <input type='password' className='form-control password' id='register-password'
+                            name='registerPassword' 
                             ref={(statePassword) => setPassword(password => password = statePassword)} required/>
                     </div>
 
                     <div className="col-md-12 col-12 form-group">
                         <label>Confirmar senha</label>
-                        <input type='password' className='form-control' id='password'
-                            label='Confirme a senha' name='passwordRepeat'
-                            ref={(stateRepeatPass) => setRepeatPassword(repeatPassword => repeatPassword = stateRepeatPass)}/>
+                        <input type='password' className='form-control' id='repeatPassword'
+                            name='repeat-password'
+                            ref={(stateRepeatPass) => setRepeatPassword(repeatPassword => repeatPassword = stateRepeatPass)} required/>
 
                         <div className="col-md-6">
                             <p className="badge badge-pill badge-danger">{messageComparationPassword}</p>

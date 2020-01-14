@@ -19,16 +19,30 @@ const history = createBrowserHistory({forceRefresh: true})
 const routeChange = url => {
     return history.push(url)
 }
-
-export const verifieldToken = (token, url) => {
+/*
+ *  Função para verrificar se existe o token no 
+ *  navegador do usuario. 
+ *  Parametros: 
+ *  token: array, com os tokens que deseja verificar
+ *  url: rota para qual voce seja redirecionar o usuario*/
+export const verifieldLocalStorage = (token, url) => {
     let Exist = true
     token.map(name => {
+        /* Pesquisa o token no localStorage, 
+         * Se não exister, Exist será False, 
+         * caso existir será true
+         * 
+         * Caso a variavel 'search', não encontrar nada, 
+         * ela vai retornar null*/
         const search = searchLocalStorage(name)
-        if(search == null){
+        if(search === null){
             Exist = false
         }
+        return Exist
     })
-    if(Exist == false){
+    /*Como o Exist é falso, automaticamente, 
+     *o usuario será enviado para pagina de login*/
+    if(Exist === false){
         return routeChange(url)
     }
 }

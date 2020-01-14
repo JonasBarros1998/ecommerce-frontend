@@ -4,14 +4,9 @@ const state = {
     product: []
 }
 
-export const productDetails = (initState = state, action) => {
-    console.log("action.type "+action.type)
-    
-    //console.log(action.comments)    
+export const productDetails = (initState = state, action) => { 
     switch (action.type) {
         case PRODUCT:
-            //console.log(action.product)
-            //console.log("action.Product ", action.product)
             const newStateProduct = Object.assign({}, initState, {
                 product: action.product
             })
@@ -20,7 +15,6 @@ export const productDetails = (initState = state, action) => {
             return Object.assign({}, initState, {
               comments:action.comments   
             })
-            return newStateProduct
         default:
             return state
     }
