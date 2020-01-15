@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ListCommentContainer from '../../funcionalities/comments/container/list.container'
-import { convertDate } from '../../utils/dates/date'
 import { Star } from '../../utils/stars'
 
 const ListCommentsComponent = props => {
@@ -20,13 +19,23 @@ const ListCommentsComponent = props => {
                         <div className="col-6">
                             <div className="box_total">
                                 <h5>Média geral</h5>
-                                <h4>{comments.media}</h4>
-                                <h6>({comments.length}) {comments.length <= 1 ? 'avaliação' : 'avaliações'}</h6>
+                                <h4>{isNaN(comments.media) === true ? 'S/N' : comments.media}</h4>
+                                {/**Tivemos que usar o comments.media como validação, porque se tiver uma media, então 
+                                 * quer dizer que temos um comentario. 
+                                 * Não usamos o comments.length porque mesmo quando o comments estiver vazio
+                                 * o comments.length vai estar nos retornando 1
+                                 */}
+                                <h6>({isNaN(comments.media) === true ? '0' : comments.length}) {comments.length <= 1 ? 'avaliação' : 'avaliações'}</h6>
                             </div>
                         </div>
                         <div className="col-6">
                             <div className="rating_list">
-                                <h3 className="mb-3 text_h3">Baseado em {comments.length} {comments.length <= 1 ? 'avaliação' : 'avaliações'}</h3>
+                                {/**Tivemos que usar o comments.media como validação, porque se tiver uma media, então 
+                                 * quer dizer que temos um comentario. 
+                                 * Não usamos o comments.length porque mesmo quando o comments estiver vazio
+                                 * o comments.length vai estar nos retornando 1
+                                 */}
+                                <h3 className="mb-3 text_h3">Baseado em {isNaN(comments.media) === true ? 0 : comments.length} {comments.length <= 1 ? 'avaliação' : 'avaliações'}</h3>
                                 <ul className="list">
                                     <li><small>
                                         <Star className="fa fa-star color-stars-active"
@@ -53,15 +62,13 @@ const ListCommentsComponent = props => {
                         </div>
                     </div>
                     {
-                        comments.map((itemComment, index) => {
-                            //Converter a data para o formato nacional
-                            const datenow = convertDate(itemComment.date, { format: 'PT_BR' })
+                        comments.map((itemComment, index) => {  
                             return (<>
                                 <div className="review_item padding_top_bottom_1" key={index}>
                                     <div className="media">
                                         <div className="media-body">
                                             <h4>{itemComment.name}</h4>
-                                            <h5>{datenow}</h5>
+                                                <h5>{itemComment.date}</h5>
                                             <Star
                                                 className="fa fa-star color-stars-active"
                                                 note={itemComment.avaliation}>

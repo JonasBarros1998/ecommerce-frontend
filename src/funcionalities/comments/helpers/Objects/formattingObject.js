@@ -1,26 +1,6 @@
 import { calculate } from '../media/calculateMedia'
 import { avaliations } from '../avaliation/usersAvaliation'
-/**
- * Função com o unico objetivo de chamar as demais função para
- * formatação de objetos. Nessa caso está sendo adicionado ao 
- * objeto 'datas' lista de quantas pessoas deram estrelas, e a
- * media das notas dos clientes que deram para aquele produto.
- * Ela deve receber um array de objetos, como exemplificado abaixo.
- * Param: datas = [{...}, {...}, {...}]
- */
-export const listObjectComment = (datas) => {
-    const copyDatas = datas
-    const avaliarionUser = addObjectQuantityUsers(datas)
-    return Object.assign([{}], copyDatas, {
-        ...datas,
-        oneStar: avaliarionUser.one,
-        twoStar: avaliarionUser.twoStar,
-        threeStar: avaliarionUser.threeStar,
-        fourStar: avaliarionUser.fourStar,
-        fiveStar: avaliarionUser.fiveStar,
-        media: addObjectMedia(datas)
-    })
-}
+import { convertDate } from '../../../../utils/dates/date'
 
 /**
  * Função para formatar o objeto para que seja enviado 
@@ -34,25 +14,66 @@ export const formatting = (datas, userId = {}) => {
         avaliation: datas.avaliation
     })
 }
-
-/*comments = Comments(
-    name = nameUser,
-    comment = request.data["comment"],
-    avaliation = request.data['noteProduct'])
-comments.save()*/
+/**
+ * Função com o objetivo de chamar as demais funções para
+ * formatação de objetos. 
+ * 
+ * Nessa caso está sendo adicionado ao parametro 'datas' lista de 
+ * quantas pessoas deram estrelas, e a media das notas dos clientes 
+ * que deram para aquele produto.
+ * 
+ * O parametro datas deve receber um array de objetos, 
+ * como este formato abaixo.
+ * 
+ * @param datas [{...}, {...}, {...}]
+ */
+export const listObjectComment = (datas) => {
+    const copyDatas = datas
+    const avaliarionUser = addObjectQuantityUsers(datas)
+    const newObjectDate = addobjectConvertDates(datas)
+    return Object.assign([{}], copyDatas, {
+        ...newObjectDate,
+        oneStar: avaliarionUser.one,
+        twoStar: avaliarionUser.twoStar,
+        threeStar: avaliarionUser.threeStar,
+        fourStar: avaliarionUser.fourStar,
+        fiveStar: avaliarionUser.fiveStar,
+        media: addObjectMedia(datas)
+    })
+}
 
 /**
  * Função para retornar a lista completa de 
  * comentarios com com a media de notas já calculada. 
  */
-export const addObjectMedia = (datas) => (calculate(datas))
+const addObjectMedia = (datas) => (calculate(datas))
 
 /**
- * Função para formatação de objeto para listagem de
- * essa função tem como objetivo montar um objeto de quantos
+ * Função para formatação de objeto para listagem de estrelas.
+ * 
+ * @param datas Um array de objetos
+ * 
+ * Essa função tem como objetivo montar um objeto de quantos
  * usuario deram cada estrela
+ * 
  * Ex:  2 usuario deram 4 estrelas
+ * 
  *      4 usuarios deram 2 estrelas
+ * 
  *      10 usuario deram 5 estrelas
  */
-export const addObjectQuantityUsers = (datas) => (avaliations(datas))
+const addObjectQuantityUsers = (datas) => (avaliations(datas))
+
+/** 
+ * @param datas Deve receber um array
+ * de objetos, contendo dentro o item date.
+ * 
+ * Ex: [{nome: "Jonas", date: yy/mm/dd}]
+ */
+const addobjectConvertDates = (datas) => {
+    return datas.map(itemDate =>{
+        return Object.assign({}, itemDate, {
+            date: convertDate(itemDate.date, {format: 'PT_BR'})
+        })  
+    })  
+}

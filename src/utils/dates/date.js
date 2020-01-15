@@ -1,13 +1,19 @@
 /**
- * Função para converter data que esta no formato string, para o formato dete
- * parametros: 
- * valueDate: uma data quaiquer
- * locale: aqui voce pode passar dentro desse objeto, qual o formato que 
- * voce deseja que a data seja convertida, por padrão a data vai sair 
- * no formato de ano/mes/dia.
+ * Função para conversão de datas
+ * 
+ * parametros que a função aceita:
+ * 
+ * @param valueDate uma data em formato string
+ * 
+ * @param locale aqui voce pode passar o formato que voce deseja que a data seja 
+ * convertida.
+ * 
+ * ex: {format: PT_BR}, 
+ * 
+ * Se não passar nada no locale, a data vai sair no formato ano-mes-dia
  * 
  * Para adicionar mais formatos diferentes dos padrões atuais, 
- * vai ter que adicionar mais um case, com o formato que deseja
+ * vai ter que adicionar mais um case, com o formato que desejar
  */
 
 export const convertDate = (valueDate, locale = {}) => {
@@ -15,13 +21,12 @@ export const convertDate = (valueDate, locale = {}) => {
     const replaceDate = valueDate.replace(/-/gi, "/")
     //Dividir a string em um array
     const dateSpreed = replaceDate.split('/')
-
     switch (locale.format) {
         case 'PT_BR':
             const convertYear = parseInt(dateSpreed[0])
-            const convertMonth = parseInt(dateSpreed[1])    
+            const convertMonth = parseFloat(dateSpreed[1])    
             const convertDay = parseInt(dateSpreed[2])
-
+            
             const date = new Date(convertYear, convertMonth, convertDay)
 
             const year = date.getFullYear(convertYear)

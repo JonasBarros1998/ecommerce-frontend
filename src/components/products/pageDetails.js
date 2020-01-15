@@ -33,7 +33,7 @@ const ProductDetails = props => {
                 produto(preço, pequena descrição e adicionar ao carrinho)*/}
             <div className="product_image_area">
                 <div className="container">
-                    <div className="row s_product_inner">
+                    <div className="row s_product_inner justify-content-md-center">
                         <SlideProductComponent />
                         <div className="col-lg-5 offset-lg-1">
                             <div className="s_product_text">

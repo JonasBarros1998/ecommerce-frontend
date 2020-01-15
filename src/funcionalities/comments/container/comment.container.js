@@ -7,8 +7,7 @@ import { Star } from '../../../utils/stars'
 const CommentContainer = props => {
     const { saveComment, productId } = props
     const [comment, setComment] = useState("")
-    const [avaliation, setAvaliation] = useState("")
-
+    const [avaliation, setAvaliation] = useState(1)
     useEffect(() => {
         const icons = document.querySelectorAll(`.stars-active`)
         for (let index = 0; index < icons.length; index++) {
