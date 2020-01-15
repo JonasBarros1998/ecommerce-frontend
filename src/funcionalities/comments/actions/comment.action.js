@@ -35,14 +35,13 @@ export const saveComment = (message) => {
     /*Função para a validação de token, caso o token não seja valido,  
      *automaticamente a função vai se encarregar de atualiza-lo. */
     verifieldToken({token:'token', refresh_token: 'refresh_token'})
-    
     const formatingObject = formatting(message, userId)
     return dispatch => {
         return verb.post(url, headers, formatingObject)
             .then(response => {
                 dispatch(newComment(response))
                 //fazer o refresh da pagina
-                //window.location.reload()
+                window.location.reload()
             })
             .catch(error => new Error(error))
     }

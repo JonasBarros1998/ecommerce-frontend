@@ -7,10 +7,11 @@ const listComments = comments => ({ type: LIST_COMMENT, comments })
 
 export const saveComment = (productId) => {
     const url = routes.comment.list(productId)
+    
     return dispatch => {
         return verb.get(url)
             .then(response => {
-            /*listObjectComment: Função para formatação de objetos, 
+                /*listObjectComment: Função para formatação de objetos, 
                 com ela retiramos algumas responsabilidades do componente
                 como criação de função, execsso de 'map' do componente, 
                 porque listObjectComment() já deixa tudo pronto, para
