@@ -1922,17 +1922,8 @@ h1, h2, h3, h4, h5, h6 {
           opacity: .8;
           left: 0;
           top: 0; }
-
-.organic-body .quick-view-carousel .owl-controls .owl-dots .owl-dot:nth-child(1) {
-  background: url(../img/organic-food/ob1.jpg);
-  margin-left: 0; }
-.organic-body .quick-view-carousel .owl-controls .owl-dots .owl-dot:nth-child(2) {
-  background: url(../img/organic-food/ob2.jpg); }
-.organic-body .quick-view-carousel .owl-controls .owl-dots .owl-dot:nth-child(3) {
-  background: url(../img/organic-food/ob3.jpg); }
 .organic-body .organic span {
   color: #fff; }
-
 .organic-product-top .single-product-top {
   height: 500px;
   padding: 40px;
