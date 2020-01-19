@@ -63,7 +63,7 @@ docker-compose exec -it ecommerce python manage.py makemigrations users
 docker-compose exec -it ecommerce python manage.py migrate users
 ```
 
-###### A agora crie um novo usuário: 
+A agora crie um novo usuário: 
 ```
 docker-compose exec -it ecommerce python manage.py createsuperuser
 ```
@@ -77,11 +77,11 @@ Cole esses itens dentro do arquivo env.js que está localizado dentro de src, se
 ###### Veja algumas imagens da aplicação
 ![login_verifieldEmail](https://user-images.githubusercontent.com/35241982/72686354-8c52c800-3ad2-11ea-831b-cfd0890966b8.png)
 
-![productos_2](https://user-images.githubusercontent.com/35241982/72686392-f5d2d680-3ad2-11ea-89f2-0782b8a13087.png)
-
 ![register_1](https://user-images.githubusercontent.com/35241982/72686401-08e5a680-3ad3-11ea-8153-2595c421df20.png)
 
 ![products_1](https://user-images.githubusercontent.com/35241982/72686485-2e26e480-3ad4-11ea-820a-3762b3ea6122.png)
+
+![productos_2](https://user-images.githubusercontent.com/35241982/72686392-f5d2d680-3ad2-11ea-89f2-0782b8a13087.png)
 
 **Pronto!! agora você pode acessar as urls e fazer o cadastro e o login posteriormente.**
 
