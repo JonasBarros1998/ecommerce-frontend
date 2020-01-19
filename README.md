@@ -59,7 +59,7 @@ docker compose exec -it ecommerce python manage.py migrate
 Com esses comandos já é possível acessar as rotas citadas acima, porém muitas vezes o django não consegue reconhecer o módulo users, que é responsável por autenticar novos usuário, para garantir que tudo está funcionando, faça os seguintes comandos abaixo: 
 
 ```
-docker-compose exec -it ecommerce python manage.py makemigrate users
+docker-compose exec -it ecommerce python manage.py makemigrations users
 docker-compose exec -it ecommerce python manage.py migrate users
 ```
 
