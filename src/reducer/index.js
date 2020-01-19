@@ -7,11 +7,10 @@ import {productDetails} from '../funcionalities/products/reducers/product.reduce
 import {listingComment} from '../funcionalities/comments/reducer/listComment.reducer'
 
 export const Reducers = combineReducers({
-    authentication: authenticationUser,
-    verificateEmail: verifield, 
-    registerUser: register, 
-    mainSlide: mainSlides,
-    listingComment: listingComment,
-    productDetails: productDetails
+   authentication: authenticationUser,
+   verificateEmail: verifield, 
+   registerUser: register, 
+   mainSlide: mainSlides,
+   listingComment: listingComment,
+   productDetails: productDetails
 })
-
