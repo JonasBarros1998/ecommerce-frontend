@@ -30,7 +30,10 @@ docker pull jonasflorencio/ecommerce
 ```
 git clone git@github.com:JonasBarros1998/ecommerce.git
 ```
-3. No seu terminal dentro da pasta ecommerce, rode o docker-compose. Para mais detalhes de como configurar o docker-compose.yml acesse esse [link](https://github.com/JonasBarros1998/ecommerce).
+3. No seu terminal dentro da pasta ecommerce, rode o docker-compose. Mas antes configure o arquivo .env, e o docker-compose.yml. 
+Para mais detalhes acesse esse [link](https://github.com/JonasBarros1998/ecommerce).
+
+É importante também verificar se a dataBase, nome de usuario e senha estão configurados no postgresql, caso contrário esse comando não irá funcionar. 
 ```
 docker-compose up
 ```
@@ -44,6 +47,7 @@ npm install
 
 npm start
 ```
+
 ## Fazendo a autenticação da aplicação
 
 Para acessar as rotas localhost:3000/login e  localhost:3000/register, primeiro terá que configurar seu **client_id** e **client_secret**, porque a parte de autenticação da api do ecommerce foi desenvolvida usando oauth2, e não será possível autenticar novos usuário, se os tokens de acesso não estiver configurado.
