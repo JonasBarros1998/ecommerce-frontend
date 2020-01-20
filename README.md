@@ -55,21 +55,21 @@ Para acessar as rotas localhost:3000/login e  localhost:3000/register, primeiro 
 Com os containers da api do ecommerce rodando, será preciso digitar comandos dentro do container. 
 
 ```
-docker-compose exec -it ecommerce python manage.py migrate
-docker-compose exec -it ecommerce python manage.py makemigrations
-docker compose exec -it ecommerce python manage.py migrate
+docker exec -it ecommerce python manage.py migrate
+docker exec -it ecommerce python manage.py makemigrations
+docker exec -it ecommerce python manage.py migrate
 ```
 
 Com esses comandos já é possível acessar as rotas citadas acima, porém muitas vezes o django não consegue reconhecer o módulo users, que é responsável por autenticar novos usuário, para garantir que tudo está funcionando, faça os seguintes comandos abaixo: 
 
 ```
-docker-compose exec -it ecommerce python manage.py makemigrations users
-docker-compose exec -it ecommerce python manage.py migrate users
+docker exec -it ecommerce python manage.py makemigrations users
+docker exec -it ecommerce python manage.py migrate users
 ```
 
 A agora crie um novo usuário: 
 ```
-docker-compose exec -it ecommerce python manage.py createsuperuser
+docker exec -it ecommerce python manage.py createsuperuser
 ```
 acesse a url localhost://8000/admin, faça o login com nome e senha que você acabou de cadastrar. 
 
