@@ -2,7 +2,6 @@ import { route } from '../routes/index.routes'
 import { verb } from '../../../../utils/http/verbs'
 import { HttpHeaders } from '../../../../utils/header/headers'
 import { SLIDES_LINKS } from '../constants/slide.constants'
-import {links} from '../../../../utils/links/gearLinks'
 
 const receiverSlidesUrls = links => {
     return {
@@ -18,9 +17,8 @@ export const slides = () => {
 
     return dispatch => {
         return verb.get(url, headers)
-            .then(response => {
-                const responseListLinks = links('ecommerce-slide', response)
-                dispatch(receiverSlidesUrls(responseListLinks))
+            .then(result => {
+                dispatch(receiverSlidesUrls(result.response))
             })
             .catch(error => new Error(error))
     }
