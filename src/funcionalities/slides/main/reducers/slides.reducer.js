@@ -20,17 +20,3 @@ export const mainSlides = (initState = state, action) => {
             return state
     }
 }
-
-/**
- * if (action.type === SLIDES_LINKS) {
-        return Object.assign({}, initState, {
-            listLinks: action.links
-        })
-        
-        
-    } 
-    else {
-        return state
-    }
-    
- */

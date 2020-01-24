@@ -1,0 +1,3 @@
+Esse modulo tem responsabilidade de renderizar
+todas as categorias que estão sendo vendidas
+dentro do ecommerce
