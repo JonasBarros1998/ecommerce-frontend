@@ -1,82 +1,91 @@
-/**
- * 
- */
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 
-import categoryCftv from '../../../_assets/img/category/c1.jpg'
-import categorySmartWatch from '../../../_assets/img/category/c2.jpg'
-import categoryAirPhone from '../../../_assets/img/category/c3.jpg'
-import categoryC4 from '../../../_assets/img/category/c4.jpg'
+import categoryC4 from '../../../_assets/img/category/cftv3.jpg'
 import categoryC5 from '../../../_assets/img/category/c5.jpg'
+import CategorieContainer from '../../../funcionalities/products/shop/categories/containers/categorie.container'
 
-class Category extends Component {
+const Category = props => {
 
-    render() {
-        return (
+    const { categories } = props
+    console.log(categories[0])
+
+    /*categories.map(item=>{
+        console.log("OK")
+    })*/
+
+    return (
+        <>
+            <CategorieContainer />
             <section className="category-area">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-lg-8 col-md-12">
-                            <div className="row">
+                        {categories.map((item, index) => {
+                            console.log(item)
+                            return <div className="col-lg-8 col-md-12" key={index}>
+                                <div className="row">
 
-                                {/* Photo One */}
-                                <div className="col-lg-8 col-md-8">
+                                    {/* Photo One */}
+                                    <div className="col-lg-8 col-md-8">
 
-                                    <div className="single-deal">
-                                        <div className="overlay"></div>
-                                        <img className="img-fluid w-100" src={categoryCftv} alt="" />
-                                        <a href="img/category/c1.jpg" className="img-pop-up" target="_blank">
-                                            <div className="deal-details">
-                                                <h6 className="deal-title">Sneaker for Sports</h6>
-                                            </div>
-                                        </a>
+                                        <div className="single-deal">
+                                            <div className="overlay"></div>
+                                            <img className="img-fluid w-100" src={item.CFTV.link} alt="" />
+                                            <a href="img/category/c1.jpg" className="img-pop-up" target="_blank">
+                                                <div className="deal-details">
+                                                    <h6 className="deal-title">{item.CFTV.title}</h6>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                {/* Photo One */}
+                                    {/* Photo One */}
 
-                                {/* Photo Two */}
-                                <div className="col-lg-4 col-md-4">
-                                    <div className="single-deal">
-                                        <div className="overlay"></div>
-                                        <img className="img-fluid w-100" src={categorySmartWatch} alt="" />
-                                        <a href="img/category/c2.jpg" className="img-pop-up" target="_blank">
-                                            <div className="deal-details">
-                                                <h6 className="deal-title">Sneaker for Sports</h6>
-                                            </div>
-                                        </a>
+                                    {/* Photo Two */}
+                                    <div className="col-lg-4 col-md-4">
+                                        <div className="single-deal">
+                                            <div className="overlay"></div>
+                                            <img className="img-fluid w-100" src={item.Smarttwatch.link} alt="" />
+                                            <a href="img/category/c2.jpg" className="img-pop-up" target="_blank">
+                                                <div className="deal-details">
+                                                <h6 className="deal-title">{item.Smarttwatch.tile}</h6>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                {/* Photo Two */}
+                                    {/* Photo Two */}
 
-                                {/* Photo Three */}
-                                <div className="col-lg-4 col-md-4">
-                                    <div className="single-deal">
-                                        <div className="overlay"></div>
-                                        <img className="img-fluid w-100" src={categoryAirPhone} alt="" />
-                                        <a href="img/category/c3.jpg" className="img-pop-up" target="_blank">
-                                            <div className="deal-details">
-                                                <h6 className="deal-title">Product for Couple</h6>
-                                            </div>
-                                        </a>
+                                    {/* Photo Three */}
+                                    <div className="col-lg-4 col-md-4">
+                                        <div className="single-deal">
+                                            <div className="overlay"></div>
+                                            <img className="img-fluid w-100" src={categoryC4} alt="" />
+                                            <a href="img/category/c3.jpg" className="img-pop-up" target="_blank">
+                                                <div className="deal-details">
+                                                    <h6 className="deal-title">Não tem</h6>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                {/* Photo Three */}
+                                    {/* Photo Three */}
 
-                                {/* Photo Four */}
-                                <div className="col-lg-8 col-md-8">
-                                    <div className="single-deal">
-                                        <div className="overlay"></div>
-                                        <img className="img-fluid w-100" src={categoryC4} alt="" />
-                                        <a href="img/category/c4.jpg" className="img-pop-up" target="_blank">
-                                            <div className="deal-details">
-                                                <h6 className="deal-title">Sneaker for Sports</h6>
-                                            </div>
-                                        </a>
+                                    {/* Photo Four */}
+                                    <div className="col-lg-8 col-md-8">
+                                        <div className="single-deal">
+                                            <div className="overlay"></div>
+                                            <img className="img-fluid w-100" src={item.AirPhones.link} alt="" />
+                                            <a href="img/category/c4.jpg" className="img-pop-up" target="_blank">
+                                                <div className="deal-details">
+                                                <h6 className="deal-title">{item.AirPhones.title}</h6>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
+                                    {/* Photo Four */}
                                 </div>
-                                {/* Photo Four */}
                             </div>
-                        </div>
+
+                        }
+                        )}
 
                         {/* Photo Five */}
                         <div className="col-lg-4 col-md-6">
@@ -94,8 +103,11 @@ class Category extends Component {
                     </div>
                 </div>
             </section>
-        );
-    }
+        </>
+    );
 }
 
-export default Category
+const mapStateToProps = store => {
+    return { categories: store.categorie.typeCategories }
+}
+export default connect(mapStateToProps)(Category)

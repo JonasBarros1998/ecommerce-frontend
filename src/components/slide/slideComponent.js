@@ -18,7 +18,6 @@ const settings = () => {
 const Slide = props => {
 
     const { listingSlide } = props
-    console.log(listingSlide)
 
     return (<>
         <SlidesContainer />
