@@ -1,7 +1,8 @@
 import React from 'react'
 import Slider from 'react-slick'
+/*
 import img1 from '../../_assets/img/category/img1.jpg'
-import img2 from '../../_assets/img/category/img2.jpg'
+import img2 from '../../_assets/img/category/img2.jpg'*/
 
 const SlideProductComponent = () => {
     const settings = {
