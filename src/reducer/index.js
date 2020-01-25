@@ -6,6 +6,8 @@ import {mainSlides} from '../funcionalities/slides/main/reducers/slides.reducer'
 import {productDetails} from '../funcionalities/products/reducers/product.reducer'
 import {listingComment} from '../funcionalities/comments/reducer/listComment.reducer'
 import {categories} from '../funcionalities/products/shop/categories/reducers/categories.reducers'
+import {mainProducts} from '../funcionalities/products/shop/mainProducts/reducer/mainProduct.reducer'
+
 
 export const Reducers = combineReducers({
    authentication: authenticationUser,
@@ -14,5 +16,6 @@ export const Reducers = combineReducers({
    mainSlide: mainSlides,
    listingComment: listingComment,
    productDetails: productDetails,
-   categorie: categories
+   categorie: categories,
+   mainProduct: mainProducts
 })

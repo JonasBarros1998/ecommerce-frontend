@@ -15,11 +15,11 @@ const SlideProductComponent = () => {
             <div className="s_Product_carousel">
                 <Slider {...settings}>
                     <div className="single-prd-item">
-                        <img className="img-fluid" src={img1} alt="img-1" />
+                        <img className="img-fluid" alt="img-1" />
                     </div>
 
                     <div className="single-prd-item">
-                        <img className="img-fluid" src={img2} alt="img-2" />
+                        <img className="img-fluid" alt="img-2" />
                     </div>
                 </Slider>
             </div>
