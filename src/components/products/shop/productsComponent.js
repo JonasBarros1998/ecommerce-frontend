@@ -32,8 +32,18 @@ const Products = props => {
                                         <div className="product-details">
                             <h6>{item.name}</h6>
                                             <div className="price">
-                                                <h6>{item.price}</h6>
-                                                <h6 className="l-through">{item.price}</h6>
+                                                <h6>{
+                                                item.price.toLocaleString('pt-BR', {
+                                                    style: 'currency',
+                                                    currency: 'BRL'
+                                                })
+                                                }</h6>
+                                                <h6 className="l-through">{
+                                                item.price.toLocaleString('pt-BR', {
+                                                    style: 'currency',
+                                                    currency: 'BRL'
+                                                })
+                                                }</h6>
                                             </div>
                                             <div className="prd-bottom">
 

@@ -5,6 +5,10 @@ import {mainProduts} from '../action/mainProduct.action'
 
 
 const MainProducts = props =>{
+
+
+
+    
     const {mainProduts} = props
     useEffect(() =>{
         mainProduts()
