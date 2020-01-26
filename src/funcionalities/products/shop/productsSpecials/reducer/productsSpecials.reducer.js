@@ -1,19 +1,19 @@
 import {
     MAIN_PRODUCTS,
     LISTING_CATEGORIES,
-    SLIDES_LINKS, 
+    SLIDES_LINKS,
     PRODUCTS_SPECIALS
-} from '../constants/maiProduct.contants'
+} from '../constants/productsSpecials.constants'
 
 const state = {
-    listProducts: []
+    listProductsSpecials: []
 }
 
-export const mainProducts = (initState = state, action) => {
+export const productsSpecials = (initState = state, action) => {
     switch (action.type) {
         case PRODUCTS_SPECIALS:
             return Object.assign({}, initState, {
-                listProductsSpecials: action.productsSpecials
+                listProductsSpecials: action.productsSpecials.response
             })
         case MAIN_PRODUCTS:
             return Object.assign({}, initState, {

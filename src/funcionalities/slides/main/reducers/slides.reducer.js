@@ -1,7 +1,9 @@
-import { SLIDES_LINKS, 
-            LISTING_CATEGORIES,
-            MAIN_PRODUCTS} 
-            from '../constants/slide.constants'
+import {
+    SLIDES_LINKS,
+    LISTING_CATEGORIES,
+    MAIN_PRODUCTS,
+    PRODUCTS_SPECIALS
+} from '../constants/slide.constants'
 
 const state = {
     listLinks: []
@@ -9,7 +11,7 @@ const state = {
 
 export const mainSlides = (initState = state, action) => {
     switch (action.type) {
-        case  SLIDES_LINKS:
+        case SLIDES_LINKS:
             return Object.assign({}, initState, {
                 listLinks: action.links
             })
@@ -20,6 +22,10 @@ export const mainSlides = (initState = state, action) => {
         case MAIN_PRODUCTS:
             return Object.assign({}, initState, {
                 listProducts: action.products
+            })
+        case PRODUCTS_SPECIALS:
+            return Object.assign({}, initState, {
+                listProductsSpecials: action.productsSpecials
             })
         default:
             return state
