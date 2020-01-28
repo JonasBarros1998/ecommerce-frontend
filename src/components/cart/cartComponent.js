@@ -3,15 +3,18 @@
  * ao clicar no botão, o produto será adicionado no carrinho 
  */
 import React from 'react'
+import BannerCrumbComponent from '../banner/bannerCrumbComponent'
+import Cart from '../../utils/cart/core/component/Cart'
 
-const CartComponent = () => {
+const CartComponent = props => {
 
     return (
-        <div className="card_area d-flex align-items-center">
-
-        <button className="genric-btn success">Comprar</button>
-
-        </div>
+        <>
+            <BannerCrumbComponent />
+            <div className="padding_top_6">
+                <Cart />
+            </div>
+        </>
     );
 }
 
