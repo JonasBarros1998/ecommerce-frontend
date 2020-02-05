@@ -1,8 +1,5 @@
 import React from 'react'
 import Slider from 'react-slick'
-/*
-import img1 from '../../_assets/img/category/img1.jpg'
-import img2 from '../../_assets/img/category/img2.jpg'*/
 
 const SlideProductComponent = () => {
     const settings = {
@@ -18,11 +15,11 @@ const SlideProductComponent = () => {
             <div className="s_Product_carousel">
                 <Slider {...settings}>
                     <div className="single-prd-item">
-                        <img className="img-fluid" src={img1} alt="img-1" />
+                        <img className="img-fluid" alt="img-1" />
                     </div>
 
                     <div className="single-prd-item">
-                        <img className="img-fluid" src={img2} alt="img-2" />
+                        <img className="img-fluid" alt="img-2" />
                     </div>
                 </Slider>
             </div>

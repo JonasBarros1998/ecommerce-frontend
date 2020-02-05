@@ -1,31 +1,31 @@
 import {
-    LISTING_CATEGORIES,
-    SLIDES_LINKS,
     MAIN_PRODUCTS,
+    LISTING_CATEGORIES,
+    SLIDES_LINKS, 
     PRODUCTS_SPECIALS
-} from '../constants/categories.constants'
+} from '../constants/maiProduct.contants'
 
 const state = {
-    typeCategories: []
+    listProducts: []
 }
 
-export const categories = (initState = state, action) => {
+export const mainProducts = (initState = state, action) => {
     switch (action.type) {
         case PRODUCTS_SPECIALS:
             return Object.assign({}, initState, {
                 listProductsSpecials: action.productsSpecials
             })
-        case LISTING_CATEGORIES:
+        case MAIN_PRODUCTS:
             return Object.assign({}, initState, {
-                typeCategories: action.categories.response
+                listProducts: action.products.response
             })
         case SLIDES_LINKS:
             return Object.assign({}, initState, {
                 listLinks: action.links
             })
-        case MAIN_PRODUCTS:
+        case LISTING_CATEGORIES:
             return Object.assign({}, initState, {
-                listProducts: action.products
+                typeCategories: action.categories
             })
         default:
             return state
