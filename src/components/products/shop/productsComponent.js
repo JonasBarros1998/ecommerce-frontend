@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MainProducts from '../../../funcionalities/products/shop/mainProducts/containers/mainProduct.container'
+import ActionsProductsContainer from '../../../funcionalities/products/shop/mainProducts/containers/actionsProducts.container'
 
 const Products = props => {
     const { products } = props
@@ -43,24 +44,11 @@ const Products = props => {
                                                     })
                                                 }</h6>
                                             </div>
-                                            <div className="prd-bottom">
-                                                <a href={"block"} className="social-info">
-                                                    <span className="ti-bag"></span>
-                                                    <p className="hover-text">add to bag</p>
-                                                </a>
-                                                <a href={"block"} className="social-info">
-                                                    <span className="lnr lnr-heart"></span>
-                                                    <p className="hover-text">Wishlist</p>
-                                                </a>
-                                                <a href={"block"} className="social-info">
-                                                    <span className="lnr lnr-sync"></span>
-                                                    <p className="hover-text">compare</p>
-                                                </a>
-                                                <a href={"block"} className="social-info">
-                                                    <span className="lnr lnr-move"></span>
-                                                    <p className="hover-text">view more</p>
-                                                </a>
-                                            </div>
+                                            { /**
+                                                 * Componente para adicionar o produto  ao carrinho e para os favoritos
+                                             **/ }
+
+                                            <ActionsProductsContainer itemProdut = {item} />
                                         </div>
                                     </div>
                                 </div>)

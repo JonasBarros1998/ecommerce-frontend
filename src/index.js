@@ -49,7 +49,6 @@ ReactDOM.render(
                 <Route path="/register" component={NewUser} />
                 <Route path="/cart" component={CartComponent}/>
             </Switch>
-
         </Router>
     </Provider>,
 

@@ -1,13 +1,14 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import $ from 'jquery'
 import SearchField from '../search/searchFieldsComponent'
+import { Link } from 'react-router-dom'
 
 const Menu = () => {
 
     useEffect(() => {
         $(".sticky-header").sticky();
     })
-    
+
     return (
         <header className="header_area sticky-header">
             <div className="main_menu">
@@ -63,7 +64,11 @@ const Menu = () => {
                                 <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Contact</a></li>
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
-                                <li className="nav-item"><a href={"localhost://3000"} className="cart"><span className="ti-bag"></span></a></li>
+                                <li className="nav-item">
+                                    <Link to={"/cart"} className="cart">
+                                        <span className="ti-bag"></span>
+                                    </Link>
+                                </li>
                                 <li className="nav-item">
                                     <button className="search"><span className="lnr lnr-magnifier" id="search"></span></button>
                                 </li>
