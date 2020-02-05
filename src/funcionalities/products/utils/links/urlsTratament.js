@@ -5,7 +5,7 @@
  * que queremos passar para o endpoint da api
  * Com isso a url tem que seguir um unico padrão.
  * 
- * exemplo: localhost://3000/jm-ecommerce/item/cftv/camera-1010b/1234
+ * exemplo: localhost://3000/produto/item/cftv/camera-1010b/1234
  * jm-ecommerce: Aqui pode ser qualquer nome.
  * item: Pode ser colocado qualquer nome.
  * cftv: é examente aqui, logo em seguida do "item"(ou qualquer outro

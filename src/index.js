@@ -17,6 +17,7 @@ import {Reducers} from './reducer'
 import ProductDetail from './components/products/pageDetails'
 import Login from "./components/authentication/loginComponent";
 import NewUser from './views/authentication/registerNewUser/newUser' 
+import CartComponent from './components/cart/cartComponent.js'
 
 /*** IMPORTS STYLES CSS ***/
 import './_assets/styles/main.css'
@@ -46,8 +47,8 @@ ReactDOM.render(
                 <Route path="/login" component={Login} />
                 <Route path="/item/:categorie_product/:name_product/:id_product" exact component={ProductDetail} />
                 <Route path="/register" component={NewUser} />
+                <Route path="/cart" component={CartComponent}/>
             </Switch>
-
         </Router>
     </Provider>,
 
