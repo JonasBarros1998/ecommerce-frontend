@@ -3,6 +3,7 @@
     --color-default: #02d8d8;
     --color-stars-active: #fbd600;
     --color-gris-defaut: #dadada;
+    --color-black: black;
 }
 
 /*Colors*/
@@ -10,6 +11,7 @@
 .color_star{color: #fff1a2;}
 .color-default{color: var(--color-default);}
 .color-stars-active{color: var(--color-stars-active);}
+.color-black{color: var(--color-black)}
 
 /*Estilos de textos, h1, h2, h3, h4, h5, p*/
 .text_h3{
@@ -51,6 +53,7 @@
 .padding_top_bottom_3{
     padding-bottom: 3rem;
     padding-top: 3rem;}
+
 .padding_left_right_1{
     padding-left: 1rem;
     padding-right: 1rem;}
@@ -60,6 +63,7 @@
 .padding_left_right_3{
     padding-left: 3rem;
     padding-right: 3rem;}
+
 .padding_top_1{
     padding-top: 1rem;}
 .padding_top_2{
@@ -95,17 +99,6 @@
 .clear_margin{
     margin: 0;}
 /*Final dos estilos de posicionamento de elementos*/
-
-/*Estilos de borda*/
-.border-bt{
-    border-bottom: 1px solid var(--color-gris-defaut);}
-.border-tp{
-    border-top: 1px solid var(--color-gris-defaut);}
-.border-rg{
-    border-right: 1px solid var(--color-gris-defaut);}
-.border-lt{
-    border-left: 1px solid var(--color-gris-defaut);}
-/*Final dos estilos de bordas*/
 
 /*Review da pagina de detalhes de um produtos*/
 .list_review {

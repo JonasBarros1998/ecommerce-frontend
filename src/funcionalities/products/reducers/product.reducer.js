@@ -5,6 +5,7 @@ const state = {
 }
 
 export const productDetails = (initState = state, action) => { 
+    console.log(action.type)
     switch (action.type) {
         case PRODUCT:
             const newStateProduct = Object.assign({}, initState, {

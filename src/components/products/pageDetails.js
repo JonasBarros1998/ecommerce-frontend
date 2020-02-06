@@ -5,7 +5,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 /*Imports components*/
 import Menu from '../menu/MenuComponent'
-import CartComponent from '../cart/cartComponent'
 import NavTabs from './productsDetails/navTabs/navTabs'
 import BannerCrumb from '../banner/bannerCrumbComponent'
 import NewCommentComponent from '../comments/newCommentComponent'
@@ -34,11 +33,14 @@ const ProductDetails = props => {
             <div className="product_image_area">
                 <div className="container">
                     <div className="row s_product_inner justify-content-md-center">
-                        <SlideProductComponent />
+                        {
+                            product.map((itensProduct, index) => (
+                                <SlideProductComponent images={itensProduct.products} />
+                            ))
+                        }
                         <div className="col-lg-5 offset-lg-1">
                             <div className="s_product_text">
                                 <InfoProductComponent infoProduct={product} />
-                                <CartComponent />
                             </div>
                         </div>
                     </div>
@@ -53,23 +55,22 @@ const ProductDetails = props => {
                     <div className="tab-content" id="myTabContent">
                         {//componente para renderizar a descrição
                             product.map((itensProduct, index) => (
-                                <DescriptionComponent key={index} descriptionProduct={itensProduct.products.fullDescription} />
+                                <DescriptionComponent key={index}
+                                    descriptionProduct={itensProduct.products.fullDescription} />
                             ))
                         }
                         {//Componente para renderizar a especificação
-                            product.map((itensProduct, index) => {
-                                const productEspecification = itensProduct.products.especification
-                                return <EspecificationComponent key={index}
-                                    especification={productEspecification} />
-                            })
+                            product.map((itensProduct, index) => (
+                                <EspecificationComponent key={index}
+                                    especification={itensProduct.products.especification} />
+                            ))
                         }
                         <div className="tab-pane fade" id="review" role="tabpanel"
                             aria-labelledby="review-tab">
                             <div className="row">
                                 <ListCommentsComponent />
                                 { /*Componente para envio de novos comentarios*/}
-                                <NewCommentComponent product={product}/>
-                                    
+                                <NewCommentComponent product={product} />
                             </div>
                         </div>
 

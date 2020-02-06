@@ -46,8 +46,8 @@ ReactDOM.render(
                 <Route path="/" exact component={App} />
                 <Route path="/login" component={Login} />
                 <Route path="/item/:categorie_product/:name_product/:id_product" exact component={ProductDetail} />
-                <Route path="/register" component={NewUser} />
-                <Route path="/cart" component={CartComponent}/>
+                <Route path="/register" exact component={NewUser} />
+                <Route path="/cart" exact component={CartComponent} />
             </Switch>
         </Router>
     </Provider>,
@@ -56,3 +56,4 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
+       

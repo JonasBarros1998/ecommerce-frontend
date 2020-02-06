@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const searchLocalStorage = () => (JSON.parse(localStorage.getItem('cart')))
 const saveLocalStorage = (itensCart) => (localStorage.setItem('cart', itensCart))
-
+    
 const itensCart = () => {
     let calculate = 0
     for (let { price: priceProduct } of searchLocalStorage()) {

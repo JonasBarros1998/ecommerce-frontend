@@ -1,7 +1,8 @@
 import React from 'react'
 import Slider from 'react-slick'
 
-const SlideProductComponent = () => {
+const SlideProductComponent = props => {
+    const { images } = props
     const settings = {
         dots: true,
         infinite: true,
@@ -14,13 +15,14 @@ const SlideProductComponent = () => {
         <div className="col-lg-4 col-8">
             <div className="s_Product_carousel">
                 <Slider {...settings}>
-                    <div className="single-prd-item">
-                        <img className="img-fluid" alt="img-1" />
-                    </div>
+                    {
+                        images.media.map(image => (
+                            <div className="single-prd-item">
+                                <img className="img-fluid" alt="img-1" src={image} />
+                            </div>
+                        ))
 
-                    <div className="single-prd-item">
-                        <img className="img-fluid" alt="img-2" />
-                    </div>
+                    }
                 </Slider>
             </div>
         </div>
