@@ -1,11 +1,15 @@
+/**
+ * Componente para listagem dos principais  ou o mais novos produtos 
+ * vendidos no ecommerce. Esse componente é renderizado na pagina inicial do ecommerce
+ */
 import React from 'react'
 import { connect } from 'react-redux'
 import MainProducts from '../../../funcionalities/products/shop/mainProducts/containers/mainProduct.container'
 import ActionsProductsContainer from '../../../funcionalities/products/shop/mainProducts/containers/actionsProducts.container'
+import { Link } from 'react-router-dom'
 
 const Products = props => {
     const { products } = props
-
     return (
         <section className="owl-carousel active-product-area section_gap">
             <MainProducts />
@@ -15,8 +19,8 @@ const Products = props => {
                     <div className="row justify-content-center">
                         <div className="col-lg-6 text-center">
                             <div className="section-title">
-                                <h1>Latest Products</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed 
+                                <h1>Principais produtos</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed
                             o eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             </div>
                         </div>
@@ -29,7 +33,10 @@ const Products = props => {
                                     <div className="single-product">
                                         <img className="img-fluid" src={item.link} alt="" />
                                         <div className="product-details">
-                                            <h6>{item.name}</h6>
+                                            <Link to={`/item/${item.categorie}/${item.name.replace(/ /gi, "_")}/${item.productId}`}>
+                                                <h6 className="color-black">{item.name}</h6>
+                                            </Link>
+
                                             <div className="price">
                                                 <h6>{
                                                     item.price.toLocaleString('pt-BR', {
@@ -47,8 +54,7 @@ const Products = props => {
                                             { /**
                                                  * Componente para adicionar o produto  ao carrinho e para os favoritos
                                              **/ }
-
-                                            <ActionsProductsContainer itemProdut = {item} />
+                                            <ActionsProductsContainer itemProdut={item} />
                                         </div>
                                     </div>
                                 </div>)

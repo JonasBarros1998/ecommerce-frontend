@@ -5,7 +5,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 /*Imports components*/
 import Menu from '../menu/MenuComponent'
-import CartComponent from '../cart/cartComponent'
 import NavTabs from './productsDetails/navTabs/navTabs'
 import BannerCrumb from '../banner/bannerCrumbComponent'
 import NewCommentComponent from '../comments/newCommentComponent'
@@ -19,6 +18,7 @@ import EspecificationComponent from './productsDetails/description&Especificatio
 const ProductDetails = props => {
     const { pathname } = props.location
     const { product } = props
+    console.log(product)
     return (
         <>
             {/*Parte 1: Esse componente, está alocado em um container, 
@@ -38,7 +38,6 @@ const ProductDetails = props => {
                         <div className="col-lg-5 offset-lg-1">
                             <div className="s_product_text">
                                 <InfoProductComponent infoProduct={product} />
-                                <CartComponent />
                             </div>
                         </div>
                     </div>
@@ -68,8 +67,7 @@ const ProductDetails = props => {
                             <div className="row">
                                 <ListCommentsComponent />
                                 { /*Componente para envio de novos comentarios*/}
-                                <NewCommentComponent product={product}/>
-                                    
+                                <NewCommentComponent product={product} />
                             </div>
                         </div>
 

@@ -5,8 +5,10 @@ const state = {
 }
 
 export const productDetails = (initState = state, action) => { 
+    console.log(action.type)
     switch (action.type) {
         case PRODUCT:
+            console.log(action.type)
             const newStateProduct = Object.assign({}, initState, {
                 product: action.product
             })
