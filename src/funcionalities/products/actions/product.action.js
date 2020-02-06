@@ -19,10 +19,8 @@ export const listingProductDetails = (pathname) => {
     return dispatch => {
         const urlProduct = routes.product(idProduct, categorie)
         return verb.get(urlProduct)
-        .then(response => {
-            console.log("response", response)    
-            const result = format(response)
-            console.log("result", result)    
+        .then(response => {  
+            const result = format(response)  
             dispatch(productDetails(result))
         }).catch(erro => new Error(erro))
     }

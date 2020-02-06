@@ -6,9 +6,16 @@ let formatObject = []
 export const format = (datas) => {    
     for (const {products: products} of datas){
         const especification = formattingEspecification(products.especification)
+        const media = formattingEspecification(products.media)
 
         Object.defineProperty(products, "especification", {
             value: especification, 
+            writable: true,
+            enumerable: false
+        })
+
+        Object.defineProperty(products, 'media', {
+            value: media.media,
             writable: true,
             enumerable: false
         })
@@ -25,4 +32,8 @@ const formattingEspecification = (especification) => {
     const convertStringSecondPart = convertStringFirstPart.replace(/}"/, "}")
     const especificationProduct = JSON.parse(convertStringSecondPart)
     return especificationProduct
+}
+
+const formattingMedia = media =>{
+    return JSON.parse(media)
 }
