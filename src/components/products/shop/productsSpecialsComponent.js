@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Slider from 'react-slick'
-import ProductsSpecialsContainer from '../../../funcionalities/products/shop/productsSpecials/container/productsSpecials.container'
 import { Link } from 'react-router-dom'
-
+import { addProduct } from '../../../utils/cart/core/addProduct'
+import ProductsSpecialsContainer from '../../../funcionalities/products/shop/productsSpecials/container/productsSpecials.container'
 const ProductsSpecials = props => {
 
     const { productsSpecials } = props
@@ -37,7 +37,7 @@ const ProductsSpecials = props => {
                                     productsSpecials.map((item, index) => (
                                         <Slider {...settings} key={index}>
                                             <div className="single-exclusive-slider">
-                                                <img className="img-fluid" src={item.images} alt="" />
+                                                <img className="img-fluid" src={item.link} alt="" />
                                                 <div className="product-details">
                                                     <div className="price">
                                                         <h6>{item.price.toLocaleString('pt-BR', {
@@ -56,8 +56,12 @@ const ProductsSpecials = props => {
                                                     </Link>
 
                                                     <div className="add-bag d-flex align-items-center justify-content-center">
-                                                        <a className="add-btn" href={"block"}><span className="ti-bag"></span></a>
-                                                        <span className="add-text text-uppercase">Adicionar</span>
+                                                        <a className="add-btn" onClick={
+                                                            () => addProduct(item)
+                                                        }><span className="ti-bag"></span></a>
+                                                        <span className="add-text text-uppercase">
+                                                            Adicionar
+                                                            </span>
                                                     </div>
                                                 </div>
                                             </div>

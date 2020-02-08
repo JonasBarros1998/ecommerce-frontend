@@ -33,7 +33,8 @@ const Products = props => {
                                     <div className="single-product">
                                         <img className="img-fluid" src={item.link} alt="" />
                                         <div className="product-details">
-                                            <Link to={`/item/${item.categorie}/${item.name.replace(/ /gi, "_")}/${item.productId}`}>
+                                            <Link to={`/item/${item.categorie}/${item.name.replace(/ /gi, "_")}/${item.productId}`}
+                                            style={{textDecoration:"none"}}>
                                                 <h6 className="color-black">{item.name}</h6>
                                             </Link>
 
