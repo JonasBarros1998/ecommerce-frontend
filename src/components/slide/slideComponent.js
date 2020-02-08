@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Slider from 'react-slick'
 import SlidesContainer from '../../funcionalities/slides/main/containers/slide.container'
 import {Link} from 'react-router-dom'
+import { addProduct } from '../../utils/cart/core/addProduct'
 
 //Configuração dos slides da pagina
 const settings = () => {
@@ -28,24 +29,29 @@ const Slide = props => {
                     <div className="col-lg-12 clear_margin">
                         <Slider {...settings}>
                             {
-                                listingSlide.map((linkItem, index) => (<div className="active-banner-slider" key={index}>
+                                listingSlide.map((slide, index) => (
+                                <div className="active-banner-slider" key={index}>
                                     <div className="row single-slide align-items-center d-flex" >
                                         <div className="col-lg-5 col-md-6 col-6 col-sm-6">
                                             <div className="banner-content">
-                                                <h2 className="text-center">{linkItem.title}</h2>
+                                                <h2 className="text-center">
+                                                    <Link to=
+                                                    {`/item/${slide.categorie}/${slide.title.replace(/ /gi, "_")}/${slide.productId}`}
+                                                    className="color-black"> {slide.title}</Link>
+                                                    </h2>
                                                 <br />
-                                                <p className="text-center">{linkItem.description}</p>
+                                                <p className="text-center">{slide.description}</p>
                                                 <div className="add-bag d-flex align-items-center justify-content-center">
-                                                    <Link to="/register">
-                                                    <button type="submit" className="genric-btn success circle">Compre Agora</button>
+                                                    <Link to="/cart">
+                                                    <button type="submit" className="genric-btn success circle"
+                                                    onClick={() => addProduct(slide)}>Compre Agora</button>
                                                     </Link>
-                                               
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="col-lg-5 col-md-6 col-6 col-sm-6 left-1 position_slide">
-                                            <img className="size_image_slide" src={linkItem.link} alt={"foto-slide"} />
+                                        <div className="col-lg-3 col-md-4 col-4 col-sm-6 left-1 position_slide">
+                                            <img className="size_image_slide" src={slide.link} alt={"foto-slide"} />
                                         </div>
                                     </div>
                                 </div>)
