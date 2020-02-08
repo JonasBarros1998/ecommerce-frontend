@@ -5,10 +5,9 @@
 let formatObject = []
 export const format = (datas) => {    
     for (const {products: products} of datas){
-        const especification = formattingEspecification(products.especification)
-        const media = formattingEspecification(products.media)
-
-        Object.defineProperty(products, "especification", {
+        const especification = formatting(products.especification)
+        const media = formatting(products.media)
+       Object.defineProperty(products, "especification", {
             value: especification, 
             writable: true,
             enumerable: false
@@ -26,14 +25,9 @@ export const format = (datas) => {
 //Como a especification vem do banco de dados como uma unica string, 
 //essa função é capaz de converte-la para um objeto, para
 //que possamos usa-la.
-const formattingEspecification = (especification) => {
-
+const formatting = (especification) => {
     const convertStringFirstPart = especification.replace(/"/, "")
     const convertStringSecondPart = convertStringFirstPart.replace(/}"/, "}")
     const especificationProduct = JSON.parse(convertStringSecondPart)
     return especificationProduct
-}
-
-const formattingMedia = media =>{
-    return JSON.parse(media)
 }

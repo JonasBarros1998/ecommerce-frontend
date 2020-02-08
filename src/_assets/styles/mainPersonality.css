@@ -125,6 +125,14 @@ posiiton_image_slide{
     color: #ffecb4}
 /*FIM*/
 
+.border-none{
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 /* responsividade do slide */
 @media only screen and (max-width: 768px){
     .clear_margin{
