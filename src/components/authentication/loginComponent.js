@@ -6,12 +6,12 @@ import { MensageDanger } from '../../components/alerts&Mensages/mensages'
 import BannerCrumbComponent from '../../components/banner/bannerCrumbComponent'
 import AuthenticateContainer from '../../funcionalities/authentication/containers/authenticate.container';
 import VerifieldEmailContainer  from '../../funcionalities/authentication/containers/verifieldEmail.container';
+import { Link } from 'react-router-dom'
 
 const LoginComponent = props => {
 
     const { statusAuthenticate, statusEmail } = props
     let viewMensage
-   // let menu
 
     if (statusAuthenticate === true) {
         viewMensage = <MensageDanger mensage={"usuário ou senha inválida"} />
@@ -20,8 +20,6 @@ const LoginComponent = props => {
     if(statusEmail === true){
         viewMensage = <MensageDanger mensage={"Email já existe, por favor faça login ao lado"} />
     }
-
-
 
     return (
 
@@ -39,6 +37,8 @@ const LoginComponent = props => {
                             <div className="login_form_inner">
                                 <h3>Faça o login</h3>
                                 <AuthenticateContainer />
+                            <Link className = "color-gris-default" 
+                                to="/recuperacao-de-senha">Esqueci minha senha </Link>
                             </div>
                         </div>
 

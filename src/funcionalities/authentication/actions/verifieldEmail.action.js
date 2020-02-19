@@ -24,7 +24,6 @@ const receiverEmail = statusEmail =>{
 
 export const submitVerifieldEmail = email => {
 
-
     const header = HttpHeaders.defaultHeaders()
    const url =  route.user['verifield']
    const datas = formattingObjects(email)

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { submitVerifieldEmail } from '../actions/verifieldEmail.action'
+import { Link } from 'react-router-dom'
 
 const VerifieldEmailContainer = props => {
 
@@ -30,6 +31,7 @@ const VerifieldEmailContainer = props => {
     )
 }
 
-const mapDispatchToProps = dispatch => (bindActionCreators({ submitVerifieldEmail }, dispatch))
+export default VerifieldEmailContainer
 
-export default connect(null, mapDispatchToProps)(VerifieldEmailContainer)
+//const mapDispatchToProps = dispatch => (bindActionCreators({ submitVerifieldEmail }, dispatch))
+//export default connect(null, mapDispatchToProps)(VerifieldEmailContainer)
