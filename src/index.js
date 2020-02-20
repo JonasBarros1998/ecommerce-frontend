@@ -51,7 +51,7 @@ ReactDOM.render(
                 <Route path="/register" exact component={NewUser} />
                 <Route path="/cart" exact component={CartComponent} />
                 <Route path="/recuperacao-de-senha" exact component={SubmitUrlComponent} />
-                <Route path="/jm-ecommerce/authentication/reset-password/hash/:hash" exact component={AlterPasswordComponent} />
+                <Route path="/authentication/alterar-senha/hash/:hash" exact component={AlterPasswordComponent} />
             </Switch>
         </Router>
     </Provider>,
