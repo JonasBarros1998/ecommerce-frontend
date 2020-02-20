@@ -12,7 +12,6 @@ const SubmitUrl = props => {
     const [email, setEmail] = useState("")
 
     return (
-
         <div className="login_form login_form_inner padding_top_bottom_3 padding_top_bottom_2" >
             <h3 className="text-center">e-mail de usuário</h3>
             <div className="col-md-12 form-group">
@@ -20,7 +19,6 @@ const SubmitUrl = props => {
                     name="verifield" placeholder="e-mail"
                     ref={(stateEmail) => setEmail(email => email = stateEmail)} />
             </div>
-
             <div className="col-md-12 d-flex justify-content-center">
                 <button type="button" 
                 value="submit" 

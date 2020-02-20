@@ -4,20 +4,20 @@ import { HttpHeaders as header } from '../../../../utils/header/headers.js';
 import { searchLocalStorage as storage } from '../../../../utils/localstorage'
 import { formattingObjectForgotPwd } from '../../utils/objects/formattingObjects'
 import { validatePassword } from '../../../../utils/validPassword'
-import {createBrowserHistory} from 'history'
+import { createBrowserHistory } from 'history'
 
 import {
     EASY_PASSWORD,
     COUNT_INVALID,
     EQUAL_PASSWORD,
-    REDIRECT
 } from '../../constants/index.constants'
 
 const easyPassword = () => ({ type: EASY_PASSWORD })
 const countPassword = () => ({ type: COUNT_INVALID })
 const equalPassword = () => ({ type: EQUAL_PASSWORD })
 
-const history = createBrowserHistory()
+const history = createBrowserHistory({forceRefresh: true})
+
 const paramUrl = () => {
     const url = window.location.href
     const urlArray = url.split('/')

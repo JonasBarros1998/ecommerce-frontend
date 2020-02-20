@@ -30,10 +30,13 @@ export const submitEmail = (email) => {
                 if(response.status == 204){
                     dispatch(username())
                 }else{
+                    //Salvar o email do usuario no localstorage
                     saveLocalStorage('username_forgot_pwd', email)
                     dispatch(submitRecuperatePassword())
                 }
-            })
+            },
+                 
+            )
             .catch(err => new Error(err))
     }
 }
