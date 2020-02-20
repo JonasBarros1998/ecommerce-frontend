@@ -4,8 +4,7 @@ const SelectContainer = props => {
     return (
         <div className="product_count">
             <input type="text" name="qty" id="sst" maxlength="12" 
-                title="Quantity:" className="count-quantity "
-                id={`product_${props.id}`}
+                title="Quantity:" className="count-quantity"
                 value={
                     props.quantity === undefined ? 1
                         : props.quantity

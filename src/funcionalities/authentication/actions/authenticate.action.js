@@ -41,7 +41,7 @@ const requisitionUser = (username) => {
  */
 const searchId = username => {
     const search = searchStorage({ key: 'user_id' })
-    if (search.response == EXIST_LOCALSTORAGE) {
+    if (search.response === EXIST_LOCALSTORAGE) {
         deleteLocalStorage('user_id')
         requisitionUser(username)
     } else {

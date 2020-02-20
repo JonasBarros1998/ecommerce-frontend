@@ -51,14 +51,14 @@ const ProductsSpecials = props => {
                                                             })}</h6>
                                                     </div>
                                                     <Link to={`/item/${item.categorie}/${item.title.replace(/ /gi, "_")}/${item.productId}`}
-                                                        style={{textDecoration:"none"}}>
+                                                        style={{ textDecoration: "none" }}>
                                                         <h4 className="color-black">{item.title}</h4>
                                                     </Link>
 
                                                     <div className="add-bag d-flex align-items-center justify-content-center">
-                                                        <a className="add-btn" onClick={
-                                                            () => addProduct(item)
-                                                        }><span className="ti-bag"></span></a>
+                                                        <a className="add-btn" href = {"http://localhost"}
+                                                        onClick={() => addProduct(item)}>
+                                                            <span className="ti-bag"></span></a>
                                                         <span className="add-text text-uppercase">
                                                             Adicionar
                                                             </span>

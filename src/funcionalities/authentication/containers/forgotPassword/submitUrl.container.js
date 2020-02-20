@@ -22,7 +22,7 @@ const SubmitUrl = props => {
             <div className="col-md-12 d-flex justify-content-center">
                 <button type="button" 
                 value="submit" 
-                class="genric-btn success text-uppercase mt-2 mb-3"
+                className="genric-btn success text-uppercase mt-2 mb-3"
                 onClick={() => props.submitEmail(email.value)}>Prosseguir</button>
             </div>
             <small className="color-gris-default pl-3 pr-3">Identifique-se para receber um e-mail com as instruções e o link

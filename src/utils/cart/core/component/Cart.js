@@ -41,7 +41,7 @@ const Cart = () => {
         }
         setValueCart(valueCartTotal + product.price)
         setItem([...item])
-    }, [item, valueCart]);
+    }, [item]);
 
     const subQuantity = useCallback((productId, valueCartTotal) => {
         const product = item.find(id => id.productId === productId)
@@ -63,14 +63,13 @@ const Cart = () => {
         setItem([...item])
     }, [item])
 
+    //Excluir um item no carrinho
     const deleteItem = (productId) => {
         const newCart = []
 
-        item.map(item => {
-            if (productId !== item._id) {
-                newCart.push(item)
-            }
-        })
+        item.map(item => productId !== item._id ? 
+            newCart.push(item) : 
+            console.warn("Não existe produto para ser deletado"))
 
         const ItensCartForStringfy = JSON.stringify(newCart)
         saveLocalStorage(ItensCartForStringfy)
