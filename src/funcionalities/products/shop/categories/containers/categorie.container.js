@@ -1,8 +1,7 @@
-import React, {useEffect, useReducer} from "react"
+import React, {useEffect} from "react"
 import {categorie} from '../actions/categories.action'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {LISTING_CATEGORIES} from '../constants/categories.constants'
 
 const CategorieContainer = props => {
 

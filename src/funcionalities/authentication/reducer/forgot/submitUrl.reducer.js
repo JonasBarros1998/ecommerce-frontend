@@ -4,30 +4,19 @@ import {
 } from '../../constants/index.constants'
 
 const state = {
-    username: "",
-    submitUrl: {
-        submitMessage: false,
-        title: "",
-        text: "",
-        textFooter: ""
-    }
+    username: false,
+    submitMessage: false,
 }
 
 export const submitUrl = (initState = state, action) => {
     switch (action.type) {
-        
         case USER_NOT_EXIST:
             return Object.assign({}, initState, {
-                username: "Esse usuário não existe."
+                username: true
             })
         case SUBMIT_EMAIL:
             return Object.assign({}, initState, {
-                submitUrl: {
-                    submitMessage: true,
-                    title: "Enviado!",
-                    text: `Caso não visualizar o e-mail na sua caixa de entrada, 
-                    não se squeça de visualizar também na caixa de spam.`,
-                }
+                submitMessage: true
             })
         default:
             return state

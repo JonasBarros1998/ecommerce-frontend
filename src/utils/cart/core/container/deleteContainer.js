@@ -5,7 +5,7 @@ const DeleteContainer = (props) => {
         <>
             <small>
                 <a
-                    className = "link"
+                    className = "link" href={"http://localhost"}
                     onClick={() => props.deleteItem(props.productId)}>
                     Excluir</a>
             </small>

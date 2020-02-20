@@ -7,7 +7,6 @@
  */
 import { listInvalidPassword } from './listingPassword'
 import {
-    INVALID_PASSWORD,
     PASSWORD_VALID,
     COUNT_INVALID,
     EASY_PASSWORD, 

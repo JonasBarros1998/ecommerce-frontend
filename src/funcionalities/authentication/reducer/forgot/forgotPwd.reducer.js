@@ -2,7 +2,6 @@ import {
     EASY_PASSWORD,
     COUNT_INVALID,
     EQUAL_PASSWORD,
-    REDIRECT
 } from '../../constants/index.constants'
 
 const state = {

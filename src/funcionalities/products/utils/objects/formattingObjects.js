@@ -2,9 +2,8 @@
  * Esse arquivo tem como principal funcionalidade formatar um conjunto 
  * da informações, provindas da api ecommerce.
 */
-let formatObject = []
 export const format = (datas) => {    
-    for (const {products: products} of datas){
+    for (const { products } of datas){
         const especification = formatting(products.especification)
         const media = formatting(products.media)
        Object.defineProperty(products, "especification", {

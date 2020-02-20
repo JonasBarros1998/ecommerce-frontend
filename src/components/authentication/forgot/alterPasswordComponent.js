@@ -6,12 +6,14 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import Badge from '../../alerts&Mensages/badges'
 import ForgotPasswordContainer from '../../../funcionalities/authentication/containers/forgotPassword/forgot.container'
+import BannerCrumbComponent from '../../../components/banner/bannerCrumbComponent'
 
 const AlterPassword = props => {
 
     const [passwordEqual, setPasswordEqual] = useState()
     const [passwordInvalid, setPasswordInvalid] = useState()
 
+    //Renderizar a mensagem caso haja uma senha invalida
     useEffect(() => {
         if (props.equalPassword !== "") {
             setPasswordInvalid()
@@ -23,6 +25,7 @@ const AlterPassword = props => {
         }
     }, [props.equalPassword])
 
+    //Renderizar uma mensagem caso haja um asenha invalida
     useEffect(() => {
         if (props.messagePassword !== "") {
             setPasswordEqual()
@@ -34,24 +37,29 @@ const AlterPassword = props => {
         }
     }, [props.messagePassword])
 
-    return (<section className="login_box_area section_gap">
-        <div className="container">
-            <div className="row d-flex justify-content-center">
-                <div className="col-lg-6">
-                    <div className="login_form_inner">
-                        <h3 className="text-center">Altere sua senha</h3>
-                        <ForgotPasswordContainer />
+    return (
+        <>
+        <BannerCrumbComponent />
+            <section className="login_box_area section_gap">
+                <div className="container">
+                    <div className="row d-flex justify-content-center">
+                        <div className="col-lg-6">
+                            <div className="login_form_inner">
+                                <h3 className="text-center">Altere sua senha</h3>
+                                <ForgotPasswordContainer />
 
-                        {/* Renderizar a mensagem para quem digitou senhas diferentes */}
-                        <div className="col-md-12 d-flex justify-content-center">
-                            <div>{passwordEqual}</div>
-                            <div>{passwordInvalid}</div>
+                                {/* Renderizar a mensagem para quem digitou senhas diferentes */}
+                                <div className="col-md-12 d-flex justify-content-center">
+                                    <div>{passwordEqual}</div>
+                                    <div>{passwordInvalid}</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section >)
+            </section >
+        </>
+    )
 }
 
 const mapStateToProps = store => ({

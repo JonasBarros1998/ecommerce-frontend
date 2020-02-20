@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { submitVerifieldEmail } from '../actions/verifieldEmail.action'
-import { Link } from 'react-router-dom'
 
 const VerifieldEmailContainer = props => {
 
