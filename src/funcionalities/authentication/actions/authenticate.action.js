@@ -48,14 +48,17 @@ const searchId = username => {
         requisitionUser(username)
     }
 }
+
+ //Capturar as rota que vai ser usada na requisicao
+const url = route.oauth['token']
+//Definir qual o tipo de headers será usado
+const headerToken = header.headersForGearToken()
 /**
  * Função para realização de login, obtendo o token e o 
  * refresh_token, salvando os mesmo dentro no 
- * localStorage. E por ultimo fazendo a cosulta do Id do usuario  
+ * localStorage. E por ultimo fazendo a consulta do Id do usuario  
  */
 export const authentication = value => {
-    const url = route.oauth['token']
-    const headerToken = header.headersForGearToken()
     const request = {
         "username": value.email,
         "password": value.password,
@@ -72,7 +75,7 @@ export const authentication = value => {
                 if (response.error === "invalid_grant") {
                     dispach(receiver(true))
                 } else {
-                    //salvar no localStorage
+                    //salvar token e refresh_token no localStorage
                     saveLocalStorage("token", response["access_token"])
                     saveLocalStorage("refresh_token", response['refresh_token'])
                     /**

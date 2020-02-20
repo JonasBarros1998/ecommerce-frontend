@@ -3,18 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { authentication } from '../actions/authenticate.action.js';
 
-
 const AuthenticateContainer = props => {
 
     const [email, setEmail] = useState("")
     const [password, setPasword] = useState("")
 
-    const {
-        authentication
-    } = props
+    const { authentication } = props
 
-    return (
-        <form className="row login_form"
+    return (<form className="row login_form"
             id="contactForm"
             method="post"
             onSubmit={e => {
@@ -38,8 +34,7 @@ const AuthenticateContainer = props => {
                 <button type="submit" 
                              value="submit" 
                              className="primary-btn">Acessar</button>
-
-                <a href={"http://localhost:4000"}>Esqueceu sua senha</a>
+   
             </div>
         </form>
     );

@@ -2,7 +2,7 @@
     --yealow: #ffc107;
     --color-default: #02d8d8;
     --color-stars-active: #fbd600;
-    --color-gris-defaut: #dadada;
+    --color-gris-defaut: #b1b1b1;
     --color-black: black;
 }
 
@@ -12,6 +12,7 @@
 .color-default{color: var(--color-default);}
 .color-stars-active{color: var(--color-stars-active);}
 .color-black{color: var(--color-black)}
+.color-gris-default{color: var(--color-gris-defaut)}
 
 /*Estilos de textos, h1, h2, h3, h4, h5, p*/
 .text_h3{
@@ -85,8 +86,11 @@
     padding-left: 30px;}
 .padding_left_4{
     padding-left: 40px;}
-/*Final dos estilos de pedding*/
+/*Final dos estilos de padding*/
 
+.margin-1{
+    margin-top: 5%;
+}
 /*Estilos de posicionamento de elementos*/
 .left-1{
     left: 10%;}
@@ -126,12 +130,10 @@ posiiton_image_slide{
 /*FIM*/
 
 .border-none{
-    text-decoration: none;
-}
+    text-decoration: none;}
 
 a{
-    text-decoration: none;
-}
+    text-decoration: none;}
 
 /* responsividade do slide */
 @media only screen and (max-width: 768px){

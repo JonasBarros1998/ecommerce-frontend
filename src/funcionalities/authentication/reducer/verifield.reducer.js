@@ -1,4 +1,4 @@
-    import {VERIFIELD_EMAIL} from '../constants/index.constants'
+import {VERIFIELD_EMAIL} from '../constants/index.constants'
 
 const state = {
     statusEmail: false

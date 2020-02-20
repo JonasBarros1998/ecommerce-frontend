@@ -131,22 +131,6 @@ html,
 body {
   height: 100%; }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Poppins", sans-serif;
-  color: #222222;
-  font-weight: 500;
-  line-height: 1.2 !important; }
-
 .list {
   list-style: none;
   margin: 0px;
@@ -173,33 +157,6 @@ button:focus {
 .text-heading {
   margin-bottom: 30px;
   font-size: 24px; }
-
-b, sup, sub, u, del {
-  color: #ffba00; }
-
-h1 {
-  font-size: 36px; }
-
-h2 {
-  font-size: 30px; }
-
-h3 {
-  font-size: 24px; }
-
-h4 {
-  font-size: 18px; }
-
-h5 {
-  font-size: 16px; }
-
-h6 {
-  font-size: 14px; }
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.5em; }
-
-.typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
-  color: #777777; }
 
 .button-area {
   background: #fff; }
@@ -461,26 +418,6 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     border-radius: 50%; }
 
-.ordered-list {
-  margin-left: 30px; }
-  .ordered-list li {
-    list-style-type: decimal-leading-zero;
-    color: #ffba00;
-    font-weight: 500;
-    line-height: 1.82em !important; }
-    .ordered-list li span {
-      font-weight: 300;
-      color: #777777; }
-
-.ordered-list-alpha li {
-  margin-left: 30px;
-  list-style-type: lower-alpha;
-  color: #ffba00;
-  font-weight: 500;
-  line-height: 1.82em !important; }
-  .ordered-list-alpha li span {
-    font-weight: 300;
-    color: #777777; }
 
 .ordered-list-roman li {
   margin-left: 30px;
@@ -3257,30 +3194,6 @@ label {
     padding: 30px; }
     .single-organic-product-list:hover:after {
       transform: scaleY(1); }
-    .single-organic-product-list:hover .product-details span {
-      color: #fff; }
-    .single-organic-product-list:hover .product-details p {
-      color: #fff; }
-    .single-organic-product-list:hover .product-details h4 {
-      color: #fff; }
-    .single-organic-product-list:hover .product-details .rattings {
-      margin-bottom: 20px; }
-      .single-organic-product-list:hover .product-details .rattings span {
-        color: #fff; }
-    .single-organic-product-list:hover .product-details .collect-info li {
-      color: #fff; }
-      .single-organic-product-list:hover .product-details .collect-info li i {
-        color: #fff; }
-    .single-organic-product-list:hover .price-wrap .avalability {
-      color: #fff; }
-      .single-organic-product-list:hover .price-wrap .avalability span {
-        color: #fff; }
-    .single-organic-product-list:hover .price-wrap .price {
-      color: #fff; }
-    .single-organic-product-list:hover .price-wrap .compare p {
-      color: #fff; }
-      .single-organic-product-list:hover .price-wrap .compare p i {
-        color: #fff; }
 
 .sidebar-categories .head {
   line-height: 60px;
@@ -4739,7 +4652,6 @@ label {
 .login_form_inner {
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.07);
   height: 100%;
-  text-align: center;
   padding-top: 115px; }
   .login_form_inner h3 {
     color: #222222;

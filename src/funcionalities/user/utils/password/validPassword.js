@@ -1,11 +1,11 @@
 /**
- * Modulo existem duas função, Uma para verificar se a
- *  senha não contém caracteres muito faceis de decifrar. 
+ `validPassword` Função para verificar se a senha não contém
+*    caracteres faceis de decifrar. 
  * 
- * E a segunda função serve para verificar se o usuario digitou 
- * a quantidade correta de caracteres  
+ * `countPassword` serve para verificar se o usuario digitou a quantidade 
+ *    de caracters que o sistema permite
  */
-import {listInvalidPassword} from './index'
+import { listInvalidPassword } from './index'
 import {INVALID_PASSWORD, PASSWORD_VALID} from '../../constants/constants.user'
 
 export const validPassword = password =>{
