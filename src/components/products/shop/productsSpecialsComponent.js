@@ -1,3 +1,7 @@
+/**
+ * Esse componente tem como responsabilidade renderizar os produtos especiais vendidos no ecommerce. 
+ * Isso é renderizado na pagina inicial do ecommerce.
+ */
 import React from 'react'
 import { connect } from 'react-redux'
 import Slider from 'react-slick'
@@ -56,8 +60,8 @@ const ProductsSpecials = props => {
                                                     </Link>
 
                                                     <div className="add-bag d-flex align-items-center justify-content-center">
-                                                        <a className="add-btn" href = {"http://localhost"}
-                                                        onClick={() => addProduct(item)}>
+                                                        <a className="add-btn" href={"http://localhost"}
+                                                            onClick={() => addProduct(item)}>
                                                             <span className="ti-bag"></span></a>
                                                         <span className="add-text text-uppercase">
                                                             Adicionar

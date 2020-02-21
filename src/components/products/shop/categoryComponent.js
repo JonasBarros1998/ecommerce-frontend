@@ -1,3 +1,6 @@
+/**
+ * Esse componente tem como resposabilidade de renderizar todas as categorias vendidas no ecommerce
+ */
 import React from 'react'
 import { connect } from 'react-redux'
 

@@ -3043,9 +3043,6 @@ label {
     bottom: 0;
     right: 0; }
 
-.filter-bar {
-  padding: 0px 20px 10px 20px;
-  background: #828bb3; }
   .filter-bar a, .filter-bar i {
     color: #000; }
 
@@ -3197,7 +3194,6 @@ label {
 
 .sidebar-categories .head {
   line-height: 60px;
-  background: #828bb3;
   padding: 0 30px;
   font-size: 16px;
   font-weight: 400;
@@ -3211,9 +3207,10 @@ label {
   display: block;
   line-height: 50px;
   padding-left: 10px;
+  text-decoration: none;
   border-bottom: 1px solid #eee; }
   .sidebar-categories .main-nav-list a:hover {
-    color: #ffba00; }
+    color: black; }
   .sidebar-categories .main-nav-list a .number {
     color: #cccccc;
     margin-left: 10px; }
@@ -3227,7 +3224,6 @@ label {
   margin-top: 50px; }
   .sidebar-filter .top-filter-head {
     line-height: 60px;
-    background: #828bb3;
     padding: 0 30px;
     font-size: 16px;
     font-weight: 400;

@@ -14,6 +14,9 @@
 .color-black{color: var(--color-black)}
 .color-gris-default{color: var(--color-gris-defaut)}
 
+.colorb-default{background-color: var(--color-default);}
+
+
 /*Estilos de textos, h1, h2, h3, h4, h5, p*/
 .text_h3{
     font-size: 18px;
@@ -110,6 +113,12 @@
     list-style: none;
     margin: 0px;
     padding: 0px; }
+
+.list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
 
 /*Especifico para o slide*/
 .size_image_slide{
