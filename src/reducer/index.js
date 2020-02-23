@@ -10,6 +10,7 @@ import { listingComment } from '../funcionalities/comments/reducer/listComment.r
 import { categories } from '../funcionalities/products/shop/categories/reducers/categories.reducers'
 import { mainProducts } from '../funcionalities/products/shop/mainProducts/reducer/mainProduct.reducer'
 import { productsSpecials } from '../funcionalities/products/shop/productsSpecials/reducer/productsSpecials.reducer'
+import { products } from '../funcionalities/products/shop/productsShop/reducer/filter/products.reducer'
 
 export const Reducers = combineReducers({
    authentication: authenticationUser,
@@ -20,6 +21,7 @@ export const Reducers = combineReducers({
    mainSlide: mainSlides,
    listingComment: listingComment,
    productDetails: productDetails,
+   products: products,
    categorie: categories,
    mainProduct: mainProducts,
    productsSpecials: productsSpecials
