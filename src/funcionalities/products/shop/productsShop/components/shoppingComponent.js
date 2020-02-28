@@ -6,6 +6,7 @@
 import React from 'react'
 import ProductsContainer from '../container/shopping/shopping.container'
 import { connect } from 'react-redux'
+import AddCartContainer from '../container/icons/addCart'
 
 const ShoppingComponent = props => {
     return (
@@ -19,7 +20,7 @@ const ShoppingComponent = props => {
                                 item.media.media[0]
                             } alt="" />
                             <div className="product-details">
-                                <h6>{item.title}</h6>
+                                <h6>{item.name}</h6>
                                 <div className="price">
                                     <h6>{item.price.toLocaleString('pt-BR', {
                                         style: 'currency',
@@ -29,11 +30,7 @@ const ShoppingComponent = props => {
                                     <h6 className="l-through">{item.promotion}</h6>
                                 </div>
                                 <div className="prd-bottom">
-
-                                    <div className="social-info">
-                                        <span className="ti-bag"></span>
-                                        <p className="hover-text">carrinho</p>
-                                    </div>
+                                <AddCartContainer itens = { item } /> 
                                     <div className="social-info">
                                         <span className="lnr lnr-heart"></span>
                                         <p className="hover-text">Favoritos</p>

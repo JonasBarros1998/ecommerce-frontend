@@ -22,6 +22,7 @@ export const products = (initState = state, action) => {
                 make: [...action.listingMake]
             })
         case SHOPPING: 
+        console.log(action)
             return Object.assign({}, initState, {
                 shopping: [...action.shopping]
             })

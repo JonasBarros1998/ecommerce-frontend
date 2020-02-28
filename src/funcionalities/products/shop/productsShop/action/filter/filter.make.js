@@ -2,16 +2,26 @@
  * Actions responsavel por filtrar todas as categorias dos produtos 
  * cadastrados no banco de dados
  */
-
 import { verb } from '../../../../../../utils/http/verbs'
 import { routes } from '../../routes/shop.routes'
 import { HttpHeaders as header } from '../../../../../../utils/header/headers'
-import { FILTER_MAKE } from '../../constants/index.constants'
+import { formattingObjectShopping } from '../../utils/shoppingFormattingObjects'
+import { 
+    FILTER_MAKE, 
+    SHOPPING 
+} from '../../constants/index.constants'
 
 const receiverMake = (listingMake) => {
     return {
         type: FILTER_MAKE,
         listingMake
+    }
+}
+
+const receiverSelectMake = (shopping) =>{
+    return {
+        type: SHOPPING,
+        shopping
     }
 }
 
@@ -26,3 +36,20 @@ export const make = () => {
             .catch(err => new Error(err))
     }
 }
+
+/** Função para fazer a chamada na api, quando o usuario selecionou 
+ * qual a marca que deseja estar escolhendo
+ */
+export const selectMake = (make) => {
+    const uri = routes.selectFilter.selectMake(make)
+    return dispatch => {
+
+        return verb.get(
+            uri, 
+            header.defaultHeaders())
+            .then(response => {
+                formattingObjectShopping(response)
+                dispatch(receiverSelectMake(response))
+            }).catch(err => new Error(err))
+    }
+} 

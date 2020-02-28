@@ -9,16 +9,22 @@ export const addProduct = (itemProduct) => {
     const searchItemProduct = searchItem()
 
     switch (searchItemProduct) {
+        /**
+         * Só vai ser null quando não existir nenhum item no localstorage
+         */
         case null:
             listProduct.push(itemProduct)
             const convertForStringItemProduct = JSON.stringify(listProduct)
             saveItem(convertForStringItemProduct)
             break;
-
+        
+        /**
+         * Vai executar quando já tiver algo no localstorage
+         */
         default:
             const itensCart = []
             const convertStringForObject = JSON.parse(searchItemProduct)
-            for (const {_id} of convertStringForObject){
+            for (const { _id } of convertStringForObject){
                 itensCart.push(_id)
             }
             const productExist = itensCart.indexOf(itemProduct._id)
