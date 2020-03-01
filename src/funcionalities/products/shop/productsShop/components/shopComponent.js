@@ -16,16 +16,16 @@ const ShopComponent = () => {
                         <CategorieContainer />
 
                         <div className="sidebar-filter mt-50">
-                            <div className="colorb-default top-filter-head">Filtros</div>
+                            
                             <MakeComponent />
                         </div>
                     </div>
 
-
                     <div className="col-xl-9 col-lg-8 col-md-7">
-                        <div className="colorb-default d-flex flex-wrap align-items-center pt-1 pb-2 pl-2">
+                        <div className="colorb-default pt-1 pb-2 pl-2 d-flex justify-content-end">
 
-                            <div className="input-group pt-2 pb-1  col-3">
+                            <div className="input-group pt-2 pb-1 col-3 ">
+                                {/**Filtro para definir como vai ser a listagem de produtos */}
                                 <select className="custom-select" id="inputGroupSelect01">
                                     <option defaultValue>Selecione...</option>
                                     <option value="1">Menor preço</option>
@@ -41,10 +41,9 @@ const ShopComponent = () => {
                             </div>
                         </section>
                     </div>
-
-
                 </div>
             </div>
+
         </>
     );
 }

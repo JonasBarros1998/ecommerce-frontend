@@ -1,7 +1,6 @@
 /**
  * Componente com a funcionalidade de renderizar
- * todos os produtos vendidos no ecommerce. 
- * Ela também renderiza os filtros, já que de produtos 
+ * um unico produto vendido no ecommerce
  */
 import React from 'react'
 import ProductsContainer from '../container/shopping/shopping.container'
@@ -18,7 +17,7 @@ const ShoppingComponent = props => {
                         <div className="single-product">
                             <img className="img-fluid" src={
                                 item.media.media[0]
-                            } alt="" />
+                            } />
                             <div className="product-details">
                                 <h6>{item.name}</h6>
                                 <div className="price">
@@ -30,7 +29,7 @@ const ShoppingComponent = props => {
                                     <h6 className="l-through">{item.promotion}</h6>
                                 </div>
                                 <div className="prd-bottom">
-                                <AddCartContainer itens = { item } /> 
+                                    <AddCartContainer itens={item} />
                                     <div className="social-info">
                                         <span className="lnr lnr-heart"></span>
                                         <p className="hover-text">Favoritos</p>
@@ -44,9 +43,5 @@ const ShoppingComponent = props => {
         </>
     )
 }
-const mapStateToProps = store => {
-    return {
-        products: store.products.shopping
-    }
-}
+const mapStateToProps = store => ({ products: store.products.shopping })
 export default connect(mapStateToProps)(ShoppingComponent)

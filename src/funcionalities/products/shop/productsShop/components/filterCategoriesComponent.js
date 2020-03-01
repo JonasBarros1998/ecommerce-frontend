@@ -4,18 +4,22 @@ import { bindActionCreators } from 'redux'
 import { selectCategorie } from '../action/filter/filter.categorie'
 
 const FilterCategoriesComponent = props => {
-    return (<div className="sidebar-categories">
-        <div className="head colorb-default">Categorias</div>
-        <ul className="main-categories list">
+
+    return (<div className="sidebar-categories ">
+        <div className="head colorb-default"
+            data-toggle="collapse"
+            href="#multiCollapseExample1"
+            role="button"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample1">Categorias</div>
+        <ul className="main-categories list collapse multi-collapse"
+            id="multiCollapseExample1">
             {
                 props.categories.map((item, index) => {
                     return (<li className="main-nav-list"
                         key={index}
-                        onClick={() => props.selectCategorie(item.categories) }>
-                        <a data-toggle="collapse" href={"http://localhost:3000"} aria-expanded="false"
-                            aria-controls="fruitsVegetable" >
-                            {item.categorie}
-                        </a>
+                        onClick={() => props.selectCategorie(item.categorie)}>
+                        <a href={"http://localhost:3000"}>{item.categorie}</a>
                     </li>
                     )
                 })

@@ -8,7 +8,7 @@ export const routes = {
         selectMake: "",
     },
     shopping: {
-        products: "http://localhost:8000/jm-ecommerce/products"
+        products: (itens, page) =>("http://localhost:8000/jm-ecommerce/products/?itens=2&page=1")
     },
 
     selectFilter: {

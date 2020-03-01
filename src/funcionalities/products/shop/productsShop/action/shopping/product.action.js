@@ -16,7 +16,7 @@ const receiverProducts = (shopping) => {
     }
 }
 
-const uriProduct = routes.shopping.products
+const uriProduct = routes.shopping.products()
 export const products = () => {
     return dispatch => {
         return verb.get(uriProduct,

@@ -158,3 +158,9 @@ a{
        margin-top: 2rem;
    } 
 }
+
+@media (max-width: 576px){
+    .text_center_rs{
+        text-align: center;
+    }
+}

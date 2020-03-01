@@ -16,4 +16,17 @@ export const formattingObjectShopping = (datas) => {
     })
 }
 
+/**
+ * Função para formatar o objeto, para ficar em conformidade
+ * com o objeto que o carrinho solicita.
+ * @param  datas Objeoto contendo informaçoes do produto 
+ */
+export const FormattingObjectAddCart = (datas) => {
+    return {
+        ...datas,
+        '_id': datas.id,
+        'link': datas.media.media[0]
+    }
+}
+
 
