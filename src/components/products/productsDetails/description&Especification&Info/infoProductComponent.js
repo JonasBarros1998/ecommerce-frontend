@@ -18,7 +18,7 @@ const InfoProductComponent = props => {
                     <ul className="list">
                         <li>
                             <small>Categoria</small>: <small className="color-default">
-                                {itemProduct.products.categories}
+                                {itemProduct.products.categorie}
                             </small>
                         </li>
 

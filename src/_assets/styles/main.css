@@ -57,7 +57,7 @@
 
 /* Start Gradient colors orange and yellow Area css, substituir 
 ============================================================================================ */
-.gradient-bg, .primary-btn, .add-bag .add-btn, .single-product .product-details .prd-bottom .social-info span:after, .grid-btn:hover, .list-btn:hover, .grid-btn.active, .list-btn.active, .pagination a.active, .pagination a:hover, .s_Product_carousel .owl-dots div.active, .s_product_text .card_area .icon_btn:after, .product_description_area .nav.nav-tabs li a.active, .blog-pagination .page-item.active .page-link, .single-footer-widget .click-btn {
+.gradient-bg, .primary-btn, .add-bag .add-btn, .single-product .product-details .prd-bottom .social-info span:after, .grid-btn:hover, .list-btn:hover, .grid-btn.active, .list-btn.active, .s_Product_carousel .owl-dots div.active, .s_product_text .card_area .icon_btn:after, .product_description_area .nav.nav-tabs li a.active, .blog-pagination .page-item.active .page-link, .single-footer-widget .click-btn {
   background: -webkit-linear-gradient(90deg, #02d8d8 0%, #a6f5f5  100%);
   background: -moz-linear-gradient(90deg, #02d8d8 0%, #a6f5f5 100%);
   background: -o-linear-gradient(90deg, #02d8d8 0%, #a6f5f5 100%);
@@ -3043,9 +3043,6 @@ label {
     bottom: 0;
     right: 0; }
 
-.filter-bar {
-  padding: 0px 20px 10px 20px;
-  background: #828bb3; }
   .filter-bar a, .filter-bar i {
     color: #000; }
 
@@ -3078,20 +3075,6 @@ label {
     .sorting .nice-select .list {
       border-radius: 0px; }
 
-.pagination {
-  margin-top: 10px;
-  border-left: 1px solid #eee;
-  border-radius: 0px; }
-  .pagination a {
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    display: inline-block;
-    background: #fff; }
-    .pagination a.active {
-      color: #fff; }
-    .pagination a:hover {
-      color: #fff; }
   .pagination .dot-dot {
     width: auto;
     background: transparent;
@@ -3197,7 +3180,6 @@ label {
 
 .sidebar-categories .head {
   line-height: 60px;
-  background: #828bb3;
   padding: 0 30px;
   font-size: 16px;
   font-weight: 400;
@@ -3211,9 +3193,10 @@ label {
   display: block;
   line-height: 50px;
   padding-left: 10px;
+  text-decoration: none;
   border-bottom: 1px solid #eee; }
   .sidebar-categories .main-nav-list a:hover {
-    color: #ffba00; }
+    color: black; }
   .sidebar-categories .main-nav-list a .number {
     color: #cccccc;
     margin-left: 10px; }
@@ -3227,7 +3210,6 @@ label {
   margin-top: 50px; }
   .sidebar-filter .top-filter-head {
     line-height: 60px;
-    background: #828bb3;
     padding: 0 30px;
     font-size: 16px;
     font-weight: 400;
@@ -5231,35 +5213,12 @@ label {
     border-radius: 0; }
   .blog-pagination .page-item {
     border: none; }
-
+/*
 .page-link {
   background: transparent;
   font-weight: 400; }
+*/
 
-.blog-pagination .page-item.active .page-link {
-  color: #fff; }
-
-.blog-pagination .page-link {
-  position: relative;
-  display: block;
-  padding: 0.5rem 0.75rem;
-  margin-left: -1px;
-  line-height: 1.25;
-  color: #8a8a8a;
-  border: none; }
-
-.blog-pagination .page-link .lnr {
-  font-weight: 600; }
-
-.blog-pagination .page-item:last-child .page-link,
-.blog-pagination .page-item:first-child .page-link {
-  border-radius: 0; }
-
-.blog-pagination .page-link:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #c5322d;
-  border-color: #eee; }
 
 /*============ Start Blog Single Styles  =============*/
 .single-post-area .social-links {

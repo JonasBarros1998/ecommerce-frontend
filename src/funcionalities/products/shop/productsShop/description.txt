@@ -1,0 +1,5 @@
+Esse modulo tem como objetivo fazer a listagem de todos os produtos vendidos no ecommerce
+
+21/02/20- Primeira fase de refatoração, com os componentes dentro de cada
+modulo, portanto esse modulo vai servir como testes. 
+Posteriormente todos os modulos do sistema irá ter a mesma arquitetura desse modulo. 

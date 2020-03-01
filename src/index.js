@@ -20,6 +20,7 @@ import NewUser from './views/authentication/registerNewUser/newUser'
 import CartComponent from './components/cart/cartComponent.js'
 import SubmitUrlComponent from './components/authentication/forgot/submitUrlComponent'
 import AlterPasswordComponent from './components/authentication/forgot/alterPasswordComponent'
+import ShopComponent from './funcionalities/products/shop/productsShop/components/shopComponent'
 
 /*** IMPORTS STYLES CSS ***/
 import './_assets/styles/main.css'
@@ -52,6 +53,7 @@ ReactDOM.render(
                 <Route path="/cart" exact component={CartComponent} />
                 <Route path="/recuperacao-de-senha" exact component={SubmitUrlComponent} />
                 <Route path="/authentication/alterar-senha/hash/:hash" exact component={AlterPasswordComponent} />
+                <Route path="/shop" exact component={ ShopComponent }/>
             </Switch>
         </Router>
     </Provider>,

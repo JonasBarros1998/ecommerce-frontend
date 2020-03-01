@@ -1,5 +1,5 @@
 /**
- * Componente para listagem dos principais  ou o mais novos produtos 
+ * Componente para listagem dos principais  ou os novos produtos 
  * vendidos no ecommerce. Esse componente é renderizado na pagina inicial do ecommerce
  */
 import React from 'react'
