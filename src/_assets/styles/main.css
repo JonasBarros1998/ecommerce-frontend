@@ -3305,13 +3305,13 @@ label {
   z-index: 1; }
 
 .pixel-radio:checked {
-  border: 7px solid #ffba00; }
+  border: 7px solid #02d8d8; }
 
 .pixel-radio:checked::after {
   -webkit-animation: click-wave 0.65s;
   -moz-animation: click-wave 0.65s;
   animation: click-wave 0.65s;
-  background: #ffba00;
+  background: #02d8d8;
   content: '';
   display: block;
   width: 20px;
