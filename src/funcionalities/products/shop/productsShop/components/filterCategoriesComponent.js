@@ -19,7 +19,7 @@ const FilterCategoriesComponent = props => {
                     return (<li className="main-nav-list"
                         key={index}
                         onClick={() => props.selectCategorie(item.categorie)}>
-                        <a href={"http://localhost:3000"}>{item.categorie}</a>
+                        <a href={"javascript:void(0)"}>{item.categorie}</a>
                     </li>
                     )
                 })
