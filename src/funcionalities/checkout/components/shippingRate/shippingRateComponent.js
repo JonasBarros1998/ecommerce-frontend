@@ -1,3 +1,6 @@
+/**
+ * Comopnete para renderização dos produtos compradados, para que o cliente escolha o frete que desejar.
+ */
 import React from 'react'
 import p1 from '../../../../_assets/img/product/p1.jpg'
 
@@ -21,7 +24,6 @@ const ShippingRateComponent = () => {
                                         <img className="image" src={p1} alt="ImageProduct" />
                                     </div>
                                 </div>
-
                                 <div className="col-8 col-sm-9 col-md-9 col-lg-8 col-xl-8 pl-2">
                                     <p className="text-grey-p ml-1">
                                         Tenis adidas 2019 edição especial<br />
@@ -30,7 +32,6 @@ const ShippingRateComponent = () => {
                                 </div>
                             </div>
                         </div>
-
                         <div className="col-12 col-md-5 col-lg-12 mtr-2 col-xl-6">
                             <table>
                                 <tbody>
@@ -50,7 +51,6 @@ const ShippingRateComponent = () => {
                                             <small className="color-grimmys-grey">Grátis</small>
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td className="pr-4">
                                             <div className="custom-control custom-radio ">
@@ -68,7 +68,6 @@ const ShippingRateComponent = () => {
                                         </td>
                                     </tr>
                                 </tbody>
-
                             </table>
                         </div>
                     </div>

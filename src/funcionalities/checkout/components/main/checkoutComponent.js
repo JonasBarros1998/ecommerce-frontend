@@ -1,7 +1,12 @@
+/**
+ * Esse componente vai renderizar o banner(BannerCrumbComponent), 
+ * endereço de entrega(DeliveryAddressComponent), e escolha do frete(ShippingRateComponent)
+ */
 import React from 'react'
 import ShippingRateComponent from '../shippingRate/shippingRateComponent'
 import BannerCrumbComponent from '../../../../components/banner/bannerCrumbComponent'
 import DeliveryAddressComponent from '../deliveryAddress/deliveryAddressComponent'
+import PaymentComponent from '../payment/paymentComponent'
 
 const CheckoutComponent = () => {
     return (
@@ -20,7 +25,13 @@ const CheckoutComponent = () => {
                 <div className="col-12 col-sm-12 col-lg-4">
                     <DeliveryAddressComponent />
                 </div>
+
+                <div className="col-12 col-sm-12 col-xl-8">
+                    <PaymentComponent />
+                </div>
             </div>
+
+
         </>
     )
 }
