@@ -21,6 +21,7 @@ import CartComponent from './components/cart/cartComponent.js'
 import SubmitUrlComponent from './components/authentication/forgot/submitUrlComponent'
 import AlterPasswordComponent from './components/authentication/forgot/alterPasswordComponent'
 import ShopComponent from './funcionalities/products/shop/productsShop/components/shopComponent'
+import CheckoutComponent from './funcionalities/checkout/components/main/checkoutComponent'
 
 /*** IMPORTS STYLES CSS ***/
 import './_assets/styles/main.css'
@@ -54,6 +55,7 @@ ReactDOM.render(
                 <Route path="/recuperacao-de-senha" exact component={SubmitUrlComponent} />
                 <Route path="/authentication/alterar-senha/hash/:hash" exact component={AlterPasswordComponent} />
                 <Route path="/shop" exact component={ ShopComponent }/>
+                <Route path="/pagamento" exact component={ CheckoutComponent } />
             </Switch>
         </Router>
     </Provider>,
