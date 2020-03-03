@@ -23,6 +23,7 @@
   --grimmys-grey-transparent: rgba(0, 0, 0, .03);
   --cyan-default: #4cd3e3;
   --white-default: #fff;
+  --torea-bay: #2d3277;
 }
 
 .color-grimmys-grey {
@@ -33,6 +34,10 @@
   color: var(--white-default)
 }
 
+.color-torea-bay{
+  color: var(--torea-bay);
+}
+
 /*fs = font-size*/
 
 .fs {
@@ -41,6 +46,10 @@
 
 .bc {
   background-color: var(--grimmys-grey-transparent);
+}
+
+.bc-torea-bay{
+  background-color: var(--torea-bay);
 }
 
 .bc-cyan {
@@ -8057,18 +8066,33 @@ label {
   .mtr-2 {
     margin-top: 2em;
   }
+  .pd-0{
+    padding: 0;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
   .mtr-2 {
     margin-top: 2em;
   }
+
+  .pd-0{
+    padding: 0;
+  }
 }
 
-@media(min-width: 992px) and (max-width: 1200px){
+@media(min-width: 992px) and (max-width: 1060px){
+  .pd-0{
+    padding: 0!important;
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1200px) {
   .mrr-1{
     margin-left: 1em;
   }
 }
+
+
 
 /*# sourceMappingURL=main.css.map */

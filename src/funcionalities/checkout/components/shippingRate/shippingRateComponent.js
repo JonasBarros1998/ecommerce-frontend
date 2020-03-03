@@ -38,8 +38,8 @@ const ShippingRateComponent = () => {
                                     <tr>
                                         <td className="pr-4">
                                             <div className="custom-control custom-radio ">
-                                                <input type="radio" id="customRadio1" name="customRadio" className="custom-control-input" />
-                                                <label className="custom-control-label" htmlFor="customRadio1">
+                                                <input type="radio" id="customRadio2" name="customRadio" className="custom-control-input" />
+                                                <label className="custom-control-label" htmlFor="customRadio2">
                                                     <small className="color-grimmys-grey">Correios</small>
                                                 </label>
                                             </div>
@@ -47,7 +47,7 @@ const ShippingRateComponent = () => {
                                         <td className="pr-4 color-grimmys-grey">
                                             <small>R$ 7, 40</small>
                                         </td>
-                                        <td scope="col color-grimmys-grey">
+                                        <td>
                                             <small className="color-grimmys-grey">Grátis</small>
                                         </td>
                                     </tr>
@@ -63,7 +63,7 @@ const ShippingRateComponent = () => {
                                         <td className="pr-4 color-grimmys-grey">
                                             <small>R$ 7, 40</small>
                                         </td>
-                                        <td scope="col color-grimmys-grey">
+                                        <td>
                                             <small className="color-grimmys-grey">Grátis</small>
                                         </td>
                                     </tr>
