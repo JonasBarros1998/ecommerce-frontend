@@ -72,12 +72,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-                    <p className="footer-text m-0">
-                        Copyright &copy;
-					All rights reserved | This template is
-					made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com">Colorlib
-                    </a>
-                    </p>
+                   
                 </div>
             </div>
         </footer>
