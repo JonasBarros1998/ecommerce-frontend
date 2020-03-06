@@ -1,7 +1,9 @@
 /**
- * Componente para especificar o endereço de entrega do cliente
+ * Componente para especificar o endereço de entrega do cliente ,e os 
+ * itens que ele comprou
  */
 import React from 'react'
+import OrderItensComponent  from './orderItensComponent'
 
 const DeliveryAddressComponent = props => {
     return (
@@ -24,6 +26,10 @@ const DeliveryAddressComponent = props => {
                     <button type="button" className="genric-btn success text-uppercase">Alterar endereço</button>
                 </div>
             </div>
+
+            {/** Componente para renderizar os produtos comprados 
+             * pelo cliente**/}
+            <OrderItensComponent />
         </>
     )
 }

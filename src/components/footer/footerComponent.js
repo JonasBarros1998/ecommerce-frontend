@@ -72,7 +72,6 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-                   
                 </div>
             </div>
         </footer>

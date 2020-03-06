@@ -8,7 +8,6 @@ import ShippingRateComponent from '../shippingRate/shippingRateComponent'
 import BannerCrumbComponent from '../../../../components/banner/bannerCrumbComponent'
 import DeliveryAddressComponent from '../deliveryAddress/deliveryAddressComponent'
 import PaymentComponent from '../payment/paymentComponent'
-import OrderItensComponent from '../orderItens/orderItensComponent'
 
 const CheckoutComponent = () => {
     return (
@@ -31,10 +30,6 @@ const CheckoutComponent = () => {
                 {/** Componente de pagamento com o mercado pago **/}
                 <div className="col-12 col-sm-12 col-lg-8 col-xl-8">
                     <PaymentComponent />
-                </div>
-
-                <div className="col-12 col-sm-12 col-lg-4">
-                    <OrderItensComponent />
                 </div>
 
             </div>

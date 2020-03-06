@@ -27,8 +27,8 @@ export const addProduct = (itemProduct) => {
             for (const { _id } of convertStringForObject){
                 itensCart.push(_id)
             }
-            const productExist = itensCart.indexOf(itemProduct._id)
-            if(productExist === -1){
+            const productExist = itensCart.includes(itemProduct._id)
+            if(productExist){
                 product(itemProduct)
             }
             break;

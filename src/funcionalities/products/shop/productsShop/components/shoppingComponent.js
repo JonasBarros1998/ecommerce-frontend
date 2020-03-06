@@ -16,8 +16,7 @@ const ShoppingComponent = props => {
                     < div className="col-lg-4 col-md-6" key={index}>
                         <div className="single-product">
                             <img className="img-fluid" src={
-                                item.media.media[0]
-                            } />
+                                item.media.media[0]} alt="img"/>
                             <div className="product-details">
                                 <h6>{item.name}</h6>
                                 <div className="price">

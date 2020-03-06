@@ -13,9 +13,9 @@ export const validPassword = password =>{
     const listPassword = listInvalidPassword()
 
     //Verifica se a senha contem na lista de senhas invalidas 
-   const indicePasswords =  listPassword.passwordsInvalid.indexOf(password)
+   const indicePasswords =  listPassword.passwordsInvalid.includes(password)
 
-    if(indicePasswords !== -1){
+    if(indicePasswords){
         return {result: INVALID_PASSWORD}
     }else{
         return {result: PASSWORD_VALID}

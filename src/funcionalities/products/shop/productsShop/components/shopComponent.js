@@ -16,7 +16,6 @@ const ShopComponent = () => {
                         <CategorieContainer />
 
                         <div className="sidebar-filter mt-50">
-                            
                             <MakeComponent />
                         </div>
                     </div>
