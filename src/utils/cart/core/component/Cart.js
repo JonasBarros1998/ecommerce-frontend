@@ -15,7 +15,7 @@ const itensCart = () => {
     return calculate
 }
 
-const Cart = () => {
+const Cart = props => {
     const [item, setItem] = useState(searchLocalStorage)
     const [valueCart, setValueCart] = useState(0)
 
@@ -166,7 +166,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-end col-8">
-                                    <button type="submit" className="btn genric-btn success radius mr-3">Fechar carrinho</button>
+                                <Link to={props.link} className="btn genric-btn success radius mr-3"> Fechar Carrinho</Link>
                                     <button type="submit" className="btn genric-btn info radius">Continuar comprando</button>
                             </div>
                         </div>

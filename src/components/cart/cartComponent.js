@@ -12,7 +12,7 @@ const CartComponent = props => {
         <>
             <BannerCrumbComponent />
             <div className="padding_top_6">
-                <Cart />
+                <Cart link={"/pagamento"} />
             </div>
         </>
     );

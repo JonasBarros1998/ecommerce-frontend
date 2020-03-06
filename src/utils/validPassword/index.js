@@ -39,9 +39,9 @@ const easyPassword = password => {
     const listPassword = listInvalidPassword()
 
     //Faz a verificação se a senha contem na lista de senhas invalidas 
-    const indicePasswords = listPassword.passwordsInvalid.indexOf(password)
+    const indicePasswords = listPassword.passwordsInvalid.includes(password)
 
-    if (indicePasswords !== -1) {
+    if (indicePasswords) {
         return EASY_PASSWORD
     } else {
         return PASSWORD_VALID
