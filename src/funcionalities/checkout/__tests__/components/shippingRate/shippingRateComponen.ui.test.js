@@ -44,11 +44,3 @@ describe('Componente de entrega de produtos', () => {
             .toBe('Vendido e entregue por J&M ecommerce')
     })
 })
-
-
-
-/**
- *  it('should match the snapshot', () => {
-        expect(shippingRateComponent.html()).toMatchSnapshot();
-    });
- */
