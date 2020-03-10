@@ -1,10 +1,10 @@
 /**
- * Modulo responsavel por salvar informações 
+ * função responsavel por salvar informações 
  * dentro do localStorage do navegador
  * 
  * Parametros a serem passados: 
- * value: O conteudo da informação que deseja salvar
- * name: nome relacionado ao conteudo que foi salvo
+ * @param name Key(chave) identificando o objeto a ser salvo
+ * @param  value Os valores a serem salvos pode ser dos seguintes tipos: ( String, int, boejct)
  */
 export const saveLocalStorage = (name, value) =>{
     return localStorage.setItem(name, value)
@@ -18,6 +18,10 @@ export const deleteLocalStorage = (name) =>{
     return localStorage.removeItem(name)
 }   
 
+/**
+ * @param  name Tipo String com o nome da chave(key), 
+ * que identifica algum item no localstorage
+ */
 export const searchLocalStorage = (name) =>{
-    return localStorage.getItem(name) 
+    return localStorage.getItem(name)
 }

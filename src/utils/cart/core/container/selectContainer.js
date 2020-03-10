@@ -3,7 +3,7 @@ const SelectContainer = props => {
 
     return (
         <div className="product_count">
-            <input type="text" name="qty" id="sst" maxlength="12" 
+            <input type="text" name="qty" id="sst" maxlength="12"
                 title="Quantity:" className="count-quantity"
                 value={
                     props.quantity === undefined ? 1
@@ -17,7 +17,7 @@ const SelectContainer = props => {
 
             <button
                 className="reduced items-count" type="button"
-                onClick = {() => props.subQuantity(props.productId, props.valueCart)}>
+                onClick={() => props.subQuantity(props.productId, props.valueCart)}>
                 <i className="lnr lnr-chevron-down"></i>
             </button>
         </div>

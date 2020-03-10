@@ -3,7 +3,7 @@
  * Test component UI and props
  */
 import React from 'react'
-import Enzyme, { shallow, mount } from 'enzyme'
+import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import ShippingRateComponent from '../../../components/shippingRate/shippingRateComponent'
 
@@ -44,11 +44,3 @@ describe('Componente de entrega de produtos', () => {
             .toBe('Vendido e entregue por J&M ecommerce')
     })
 })
-
-
-
-/**
- *  it('should match the snapshot', () => {
-        expect(shippingRateComponent.html()).toMatchSnapshot();
-    });
- */

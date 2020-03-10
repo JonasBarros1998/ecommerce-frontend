@@ -24,6 +24,7 @@
   --cyan-default: #4cd3e3;
   --white-default: #fff;
   --torea-bay: #2d3277;
+  --cie-lab: #6c757d;
 }
 
 .color-grimmys-grey {
@@ -37,6 +38,11 @@
 .color-torea-bay{
   color: var(--torea-bay);
 }
+.select-delivery{
+  color: var(--cie-lab)!important;
+  font-size: 14px!important;
+}
+
 
 /*fs = font-size*/
 
