@@ -10,11 +10,11 @@ import SelectAddressComponent from '../../../../components/select/selectAddressC
 import SelectComponent from '../../../../components/select/selectComponent'
 import { deliveryAddres } from '../../actions/deliveryAddress/delivaryAddres.action'
 
-const DeliveryAddressContainer = props => {
+export const DeliveryAddressContainer = props => {
 
     const { nameFields } = props
-    
-    const [changeAddress ] = useState(...nameFields)
+
+    const [changeAddress] = useState(...nameFields)
 
     const [form, setForm] = useState({
         email: changeAddress.email,
@@ -31,7 +31,7 @@ const DeliveryAddressContainer = props => {
         reference: changeAddress.reference,
         phone: changeAddress.phone,
     })
-    
+
     //Atualizar o state do select
     const updateSelect = (event) => {
         const valueSelect = event.target.value
@@ -81,7 +81,7 @@ const DeliveryAddressContainer = props => {
                     <div className="col-md-12 form-group">
                         <label> <small>Nome do endereço</small></label>
                         <input type='text' className='form-control'
-                            id='nameAddress' name='address'
+                            id='nameAddress' name='nameAddress'
                             placeholder="Ex: Minha casa, Meu trabalho"
                             value={address}
                             onChange={e => upadateInput(e)} />
@@ -89,16 +89,16 @@ const DeliveryAddressContainer = props => {
 
                     <div className="col-md-12 form-group">
                         <label><small>Nome do destinatário</small></label>
-                        <input className='form-control' id="nameRecipiente"
-                            name="toReceiver"
+                        <input type="text" className='form-control' id="nameRecipient"
+                            name="nameRecipient" placeholder='Nome de quem vai receber a encomenda'
                             value={toReceiver}
                             onChange={e => upadateInput(e)} />
                     </div>
 
                     <div className="col-md-3 form-group">
                         <label><small>Cep</small></label>
-                        <InputMask className="form-control" id="cep" name="cep"
-                            placeholder="00.000-000" mask="99.999-999"
+                        <InputMask type="text" className="form-control" id="cep"
+                            name="cep" placeholder="00.000-000" mask="99.999-999"
                             value={cep}
                             onChange={e => upadateInput(e)}
                             required />
@@ -108,38 +108,39 @@ const DeliveryAddressContainer = props => {
                         <label>
                             <small>Tipo de endereço</small>
                         </label>
-                        <SelectAddressComponent select={e => updateSelect(e)} />
+                        <SelectAddressComponent id={"typeAddress"}
+                            class={"custom-select mr-sm-2 form-control select-delivery"}
+                            select={e => updateSelect(e)} />
                     </div>
 
                     <div className="col-md-6 form-group">
                         <label> <small>Nome da rua</small></label>
-                        <input type='text' className='form-control ' id='nameStreet'
-                            name='street'
-                            placeholder="Nome da rua"
+                        <input type='text' className='form-control' id='nameStreet'
+                            name='nameStreet' placeholder="Nome da rua"
                             value={street}
                             onChange={e => upadateInput(e)} required />
                     </div>
 
                     <div className="col-md-2 form-group">
                         <label><small>Número</small></label>
-                        <input className="form-control" id="number" placeholder="Número"
-                            name="number"
+                        <input type="text" className="form-control" id="number"
+                            name="number" placeholder="Número da residência"
                             value={number}
                             onChange={e => upadateInput(e)} required />
                     </div>
 
                     <div className="col-md-6 form-group">
                         <label><small>Complemento</small></label>
-                        <input className="form-control" id="complement" placeholder="*Ex: Apartamento 51 5 andar, bloco B"
-                            name="complement"
+                        <input type="text" className="form-control" id="complement"
+                            name="complement" placeholder="*Ex: Apartamento 51 5 andar, bloco B"
                             value={complement}
                             onChange={e => upadateInput(e)} />
                     </div>
 
                     <div className="col-md-4 form-group">
                         <label><small>Bairro</small></label>
-                        <input className="form-control" id="burgh" name="burgh"
-                            value={burgh}
+                        <input type="text" className="form-control" id="burgh" name="burgh"
+                            value={burgh} placeholder="Nome do bairro de entrega"
                             onChange={e => upadateInput(e)}
                             required />
                     </div>
@@ -148,7 +149,8 @@ const DeliveryAddressContainer = props => {
                         <label>
                             <small>Estado</small>
                         </label>
-                        <SelectComponent
+                        <SelectComponent id={"states"}
+                            class={"custom-select mr-sm-2 form-control select-delivery"}
                             select={e => updateSelect(e)} />
                     </div>
 
@@ -161,20 +163,23 @@ const DeliveryAddressContainer = props => {
 
                     <div className="col-md-4 form-group">
                         <label><small>Ponto de referência</small></label>
-                        <input className="form-control" id="referencePoint"
-                            name="reference"
+                        <input type="text" className="form-control" id="referencePoint"
+                            name="referencePoint"
                             value={reference}
                             onChange={e => upadateInput(e)}
+                            required
                         />
                     </div>
 
                     <div className="col-md-12 form-group">
                         <label><small>Telefone</small></label>
-                        <InputMask className="form-control" id="residentialPhone"
-                            mask="(99) 9999-99999" name="phone"
+                        <InputMask type="text" className="form-control" id="residentialPhone"
+                            mask="(99) 9999-99999" name="residentialPhone"
                             placeholder="(00) 0000-00000"
                             value={phone}
-                            onChange={e => upadateInput(e)} />
+                            onChange={e => upadateInput(e)}
+                            required
+                        />
                     </div>
 
                     <div className="col-md-12">

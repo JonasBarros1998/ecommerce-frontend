@@ -7,7 +7,7 @@ import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import ShippingRateComponent from '../../../components/shippingRate/shippingRateComponent'
 
-Enzyme.configure({adapter: new Adapter() })
+Enzyme.configure({ adapter: new Adapter() })
 
 const setup = () => {
     const props = {
@@ -16,18 +16,18 @@ const setup = () => {
 
     const shippingRateComponent = shallow(<ShippingRateComponent />);
     return {
-        props, 
+        props,
         shippingRateComponent
     }
 }
 describe('Componente de entrega de produtos', () => {
-    const {shippingRateComponent} = setup()
+    const { shippingRateComponent } = setup()
 
     //Titulo: Pagamento
     it('must have delivery type', () => {
         expect(shippingRateComponent
-        .find('#payment').text())
-        .toBe('Pagamento');
+            .find('#payment').text())
+            .toBe('Pagamento');
     });
 
     //Escolher a empresa que irá entregar a mercadoria
@@ -39,7 +39,7 @@ describe('Componente de entrega de produtos', () => {
 
     //Nome da empresa que vendeu o produto para voce 
     it('especificar quem entrega a mercadoria', () => {
-        expect(shippingRateComponent 
+        expect(shippingRateComponent
             .find('#delivery').children().text())
             .toBe('Vendido e entregue por J&M ecommerce')
     })
