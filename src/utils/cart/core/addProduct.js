@@ -28,7 +28,7 @@ export const addProduct = (itemProduct) => {
                 itensCart.push(_id)
             }
             const productExist = itensCart.includes(itemProduct._id)
-            if(productExist){
+            if(!productExist){
                 product(itemProduct)
             }
             break;
