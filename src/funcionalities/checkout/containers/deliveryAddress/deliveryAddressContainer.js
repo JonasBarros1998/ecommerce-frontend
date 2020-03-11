@@ -1,6 +1,6 @@
 /**
  * Componente que tem como funcionalidade renderizar 
- * o formulario para cadastro do endereço do cliente. 
+ * o formulario para cadastro e edição do endereço do cliente. 
  */
 import React, { useState } from 'react'
 import { bindActionCreators } from 'redux'
@@ -12,50 +12,60 @@ import { deliveryAddres } from '../../actions/deliveryAddress/delivaryAddres.act
 
 const DeliveryAddressContainer = props => {
 
-    const [form, setForm] = useState({
-        email: "",
-        address: "",
-        toReceiver: "",
-        cep: "",
-        street: "",
-        number: "",
-        complement: "",
-        burgh: "",
-        city: "",
-        reference: "",
-        phone: ""
-    })
+    const { nameFields } = props
+    
+    const [changeAddress ] = useState(...nameFields)
 
+    const [form, setForm] = useState({
+        email: changeAddress.email,
+        address: changeAddress.address,
+        toReceiver: changeAddress.toReceiver,
+        cep: changeAddress.cep,
+        typeAddress: changeAddress.typeAddress,
+        street: changeAddress.street,
+        number: changeAddress.number,
+        complement: changeAddress.complement,
+        burgh: changeAddress.burgh,
+        states: changeAddress.states,
+        city: changeAddress.city,
+        reference: changeAddress.reference,
+        phone: changeAddress.phone,
+    })
+    
+    //Atualizar o state do select
     const updateSelect = (event) => {
         const valueSelect = event.target.value
         const selectId = event.target.id
         const textLabel = document.querySelectorAll(`#${selectId}`)[0].options[valueSelect].label
-        
-        /*
-        setForm({
-            [ states ]: "Zé"
-        })
-        console.log(form)*/
-    }
 
+        return setForm({
+            ...form,
+            [selectId]: textLabel
+        })
+    }
+    //Atualizar o state dos inputs
     const upadateInput = (event) => {
         return setForm({
             ...form,
-            [ event.target.name ]: event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
     const { email, address, toReceiver,
-        cep, street, number,
-        complement, burgh,
+        cep, typeAddress, street, number,
+        complement, burgh, states,
         city, reference, phone } = form
+
     return (
         <>
             <form className="row contact_form" method="post"
                 onSubmit={(e) => {
                     e.preventDefault();
                     props.deliveryAddres({
-                        address: email.value
+                        email: email, address: address, toReceiver: toReceiver,
+                        cep: cep, typeAddress: typeAddress, street: street, number: number,
+                        complement: complement, burgh: burgh, states: states, city: city,
+                        reference: reference, phone: phone
                     })
                 }}>
 
@@ -98,7 +108,7 @@ const DeliveryAddressContainer = props => {
                         <label>
                             <small>Tipo de endereço</small>
                         </label>
-                        <SelectAddressComponent />
+                        <SelectAddressComponent select={e => updateSelect(e)} />
                     </div>
 
                     <div className="col-md-6 form-group">
@@ -178,5 +188,6 @@ const DeliveryAddressContainer = props => {
     )
 }
 
+const mapStateToProps = (store) => ({ loadingAddress: store.checkout.loadingAddress })
 const mapDispatchToProps = (dispatch) => bindActionCreators({ deliveryAddres }, dispatch)
-export default connect(null, mapDispatchToProps)(DeliveryAddressContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(DeliveryAddressContainer)

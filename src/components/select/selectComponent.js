@@ -2,10 +2,10 @@ import React from 'react'
 
 const SelectComponent = props => {
     return (
-        <select class="custom-select mr-sm-2 form-control select-delivery" 
+        <select className="custom-select mr-sm-2 form-control select-delivery" 
         id="states"
         onChange = {e=> props.select(e)}>
-            <option selected>Selecione...</option>
+            <option defaultValue>Selecione...</option>
             <option value="1">Acre</option>
             <option value="2">Alagoas</option>
             <option value="3">Amapá</option>

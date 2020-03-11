@@ -1,9 +1,11 @@
 import React from 'react'
 
-const SelectAddressComponent = () => {
+const SelectAddressComponent = props => {
     return (
-        <select class="custom-select mr-sm-2 form-control select-delivery" id="type_address">
-            <option selected>Selecione...</option>
+        <select className="custom-select mr-sm-2 form-control select-delivery"
+            id="typeAddress"
+            onChange={e => props.select(e)}>
+            <option defaultValue>Selecione...</option>
             <option value="1">Avenida</option>
             <option value="2">Rua</option>
             <option value="3">Praça</option>
