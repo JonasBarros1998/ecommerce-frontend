@@ -23,7 +23,11 @@ const DeliveryAddressComponent = props => {
                 <div className="card-header">Endereço de entrega</div>
                 <div className="card-body bc">
                     {
-                        props.existAddress === false ?
+                        /**Se o array de  loadingAddress.length for igual a 0, 
+                         * quer dizer que não existe nenhum enderço salvo no 
+                         * localStorage. 
+                         */
+                        loadingAddress.length === 0 ?
                             <div className="d-flex justify-content-center">
                                 <button type="button"
                                     className="genric-btn success text-uppercase"
@@ -31,7 +35,9 @@ const DeliveryAddressComponent = props => {
                                     data-target="#modal_center">Adicionar endereço</button>
                             </div>
 
-                            : props.addressDelivery.map((item, index) => (
+                            /** Renderizamos o endereço se o array de loadingAddress
+                             * não estiver vazio, ou seja, já um endereço salvo no localStorage*/
+                            : props.loadingAddress.map((item, index) => (
                                 <p className="color-grimmys-grey" key={index}>
                                     {item.street}<br />
                                     {item.burgh}, {item.number}<br />
@@ -61,10 +67,8 @@ const DeliveryAddressComponent = props => {
             <OrderItensComponent />
 
             {
-                /**Se o loadingAddres foi um array vazio, não iremos renderizar a modal. 
-                 * Porém se esse array estiver preenchido, quer dizer que o 
-                 * endereço do cliente está salvo no localstorage,  e com isso o 
-                 * modal será renderizado  */
+                /**Só renderizamos o ModalComponent se o endereço do cliente já estiver
+                 * salvo no localStorage*/
                 loadingAddress.length !== 0 ?
                     <ModalComponent
                         id={"modal_center"}
@@ -84,7 +88,7 @@ const mapStateToProps = store => {
     return {
         loadingAddress: store.checkout.loadingAddress,
         existAddress: store.checkout.existAddress,
-        addressDelivery: store.checkout.addressDelivery
+        //addressDelivery: store.checkout.addressDelivery
     }
 }
 
