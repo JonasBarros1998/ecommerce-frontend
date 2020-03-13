@@ -29,3 +29,5 @@ yarn-error.log*
 src/env.js
 teste.js
 .env
+package-lock.json
+
