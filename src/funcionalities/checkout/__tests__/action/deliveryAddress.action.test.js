@@ -9,7 +9,6 @@ import {
 
 import {
     CHANGE_ADDRESS,
-    DELIVERY_ADDRESS,
     NOT_EXIST_ADDRESS,
     LOADING_ADDRESS
 } from '../../constants/checkout.constants'
