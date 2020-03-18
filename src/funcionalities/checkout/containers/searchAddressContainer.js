@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 const SearchAddressContainer = props => {
     useEffect(() => {
-        console.log("renderizou o container")
         props.verifieldLocalStorage()
     })
     return (

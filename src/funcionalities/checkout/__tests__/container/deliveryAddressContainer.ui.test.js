@@ -14,12 +14,11 @@ const address = [{
     address: "Minha casa",
     toReceiver: "Jonas Florencio de Barros",
     cep: "04851410",
-    typeAddress: "Avenida",
     street: "Rua andorinhas brasileiras",
     number: "61",
     complement: "Casa",
     burgh: "Lago azul",
-    states: "São Paulo",
+    states: "5",
     city: "Sp",
     reference: "Frente a igreja católica",
     phone: "11984308992"
@@ -53,8 +52,8 @@ describe('Component de cadastro de endereço de entrega de produtos', () => {
     })
 
     it("campo de nome do endereço", () => {
-        expect(deliveryAddressContainer.find('input[name="nameAddress"]').props()).toEqual({
-            className: 'form-control', id: "nameAddress", name: "nameAddress", type: "text",
+        expect(deliveryAddressContainer.find('input[name="address"]').props()).toEqual({
+            className: 'form-control', id: "nameAddress", name: "address", type: "text",
             onChange: expect.any(Function),
             placeholder: "Ex: Minha casa, Meu trabalho",
             value: "Minha casa",
@@ -62,15 +61,15 @@ describe('Component de cadastro de endereço de entrega de produtos', () => {
     })
 
     it("campo de nome do destinatario", () => {
-        expect(deliveryAddressContainer.find('input[name="nameRecipient"]').props()).toEqual({
-            className: "form-control", id: "nameRecipient", name: "nameRecipient", type: "text",
+        expect(deliveryAddressContainer.find('input[name="toReceiver"]').props()).toEqual({
+            className: "form-control", id: "nameRecipient", name: "toReceiver", type: "text",
             onChange: expect.any(Function),
             placeholder: "Nome de quem vai receber a encomenda",
             value: "Jonas Florencio de Barros"
         })
     })
 
-    it("campo de nome do destinatario", () => {
+    it("campo de cep", () => {
         expect(deliveryAddressContainer.find('#cep').props()).toEqual({
             className: "form-control", id: "cep", name: "cep", type: "text",
             required: true,
@@ -81,17 +80,9 @@ describe('Component de cadastro de endereço de entrega de produtos', () => {
         })
     })
 
-    it("campo de tipo de endereco", () => {
-        expect(deliveryAddressContainer.find('#typeAddress').props()).toEqual({
-            class: "custom-select mr-sm-2 form-control select-delivery",
-            id: "typeAddress",
-            select: expect.any(Function)
-        })
-    })
-
-    it("campo de cep", () => {
-        expect(deliveryAddressContainer.find('input[name="nameStreet"]').props()).toEqual({
-            className: "form-control", id: "nameStreet", name: "nameStreet", type: "text",
+    it("campo da rua de entrega", () => {
+        expect(deliveryAddressContainer.find('input[name="street"]').props()).toEqual({
+            className: "form-control", id: "nameStreet", name: "street", type: "text",
             required: true,
             onChange: expect.any(Function),
             placeholder: "Nome da rua",
@@ -118,7 +109,7 @@ describe('Component de cadastro de endereço de entrega de produtos', () => {
         })
     })
 
-    it("campo de complemento", () => {
+    it("campo de bairro", () => {
         expect(deliveryAddressContainer.find('input[name="burgh"]').props()).toEqual({
             className: "form-control", id: "burgh", name: "burgh", type: "text",
             required: true,
@@ -132,13 +123,14 @@ describe('Component de cadastro de endereço de entrega de produtos', () => {
         expect(deliveryAddressContainer.find('#states').props()).toEqual({
             class: "custom-select mr-sm-2 form-control select-delivery",
             id: "states",
-            select: expect.any(Function)
+            select: expect.any(Function),
+            value: "5"
         })
     })
 
     it("campo de ponto de referencia", () => {
-        expect(deliveryAddressContainer.find('input[name="referencePoint"]').props()).toEqual({
-            className: "form-control", id: "referencePoint", name: "referencePoint", type: "text",
+        expect(deliveryAddressContainer.find('input[name="reference"]').props()).toEqual({
+            className: "form-control", id: "referencePoint", name: "reference", type: "text",
             required: true,
             onChange: expect.any(Function),
             value: "Frente a igreja católica"
@@ -147,7 +139,7 @@ describe('Component de cadastro de endereço de entrega de produtos', () => {
 
     it("campo de telefone", () => {
         expect(deliveryAddressContainer.find('#residentialPhone').props()).toEqual({
-            className: "form-control", id: "residentialPhone", name: "residentialPhone", type: "text",
+            className: "form-control", id: "residentialPhone", name: "phone", type: "text",
             mask: "(99) 9999-99999",
             required: true,
             onChange: expect.any(Function),

@@ -12,7 +12,6 @@ import { connect } from 'react-redux'
 
 const DeliveryAddressComponent = props => {
     const { loadingAddress } = props
-
     return (
         <>
             <SearchAddressContainer />
@@ -32,11 +31,11 @@ const DeliveryAddressComponent = props => {
                                 <button type="button"
                                     className="genric-btn success text-uppercase"
                                     data-toggle="modal"
-                                    data-target="#modal_center">Adicionar endereço</button>
+                                    data-target="#modal_address">Adicionar endereço</button>
                             </div>
 
                             /** Renderizamos o endereço se o array de loadingAddress
-                             * não estiver vazio, ou seja, já um endereço salvo no localStorage*/
+                             * não estiver vazio, ou seja, já ha um endereço salvo no localStorage*/
                             : props.loadingAddress.map((item, index) => (
                                 <p className="color-grimmys-grey" key={index}>
                                     {item.street}<br />
@@ -67,18 +66,53 @@ const DeliveryAddressComponent = props => {
             <OrderItensComponent />
 
             {
-                /**Só renderizamos o ModalComponent se o endereço do cliente já estiver
+                /** Modal para alteração de endereço
+                 * Só renderizamos o ModalComponent se o endereço do cliente já estiver
                  * salvo no localStorage*/
+
+                //Se loadingAddress.length for diferente de 0, renderizamos a modal
                 loadingAddress.length !== 0 ?
                     <ModalComponent
                         id={"modal_center"}
                         ariaLabelledby={"myLargeModalLabel"}
                         classModal={"modal-dialog modal-lg"}
                         title={<DeliveryAddressContainer
+                            id={"modal_center"}
                             nameFields={loadingAddress} />}
-                        body={"Adicionar o conteudo do modal"}
                         footer={false} />
+                    //Se for igual a zero, renderizamos uma div vazia
                     : <div></div>
+            }
+
+            {
+                /** Modal para criação de um novo endereço
+                 * Só renderizamos esse modal se não existir algum endereço cadastrado pelo cliente
+                 */
+
+                <ModalComponent
+                    id={"modal_address"}
+                    ariaLabelledby={"myLargeModalLabel"}
+                    classModal={"modal-dialog modal-lg"}
+                    title={<DeliveryAddressContainer
+                        id="modal_address"
+                        nameFields={[{
+                            email: "",
+                            address: "",
+                            toReceiver: "",
+                            cep: "",
+                            typeAddress: "",
+                            street: "",
+                            number: "",
+                            complement: "",
+                            burgh: "",
+                            states: "",
+                            city: "",
+                            reference: "",
+                            phone: ""
+                        }]}
+                    />}
+                    body={"Cadastre seu endereço"}
+                    footer={false} />
             }
         </>
     )
@@ -88,7 +122,6 @@ const mapStateToProps = store => {
     return {
         loadingAddress: store.checkout.loadingAddress,
         existAddress: store.checkout.existAddress,
-        //addressDelivery: store.checkout.addressDelivery
     }
 }
 
