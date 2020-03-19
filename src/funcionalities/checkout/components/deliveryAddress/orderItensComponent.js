@@ -1,4 +1,9 @@
+/**Componente para rendereizar o itens que o cliente comprou
+ * Nome, quantidade e preço, e o valor total do para pagamento
+ */
+
 import React from 'react'
+import TotalPriceComponent from '../price/totalPriceComponent'
 
 const OrderItensComponent = () => {
     return (
@@ -36,13 +41,10 @@ const OrderItensComponent = () => {
                 </div>
 
             </div>
+
+            <TotalPriceComponent />
         </>
 
     )
 }
 export default OrderItensComponent
-
-
-/**
- *
- */

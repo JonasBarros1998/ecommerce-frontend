@@ -70,6 +70,7 @@ const DeliveryAddressComponent = props => {
                  * Só renderizamos o ModalComponent se o endereço do cliente já estiver
                  * salvo no localStorage*/
 
+
                 //Se loadingAddress.length for diferente de 0, renderizamos a modal
                 loadingAddress.length !== 0 ?
                     <ModalComponent

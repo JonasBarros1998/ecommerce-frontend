@@ -1,5 +1,8 @@
 export const verb = {
-
+    /**
+ * @param url Url no qual que servir para fazer a requisição,
+ * @param headers Um objeto javaScript, com todos os headers que deseja ser enviados. 
+ */
     get: (url, header) => {
         return new Promise((resolve, reject) => {
             fetch(url, {

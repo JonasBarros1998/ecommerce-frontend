@@ -1,10 +1,12 @@
 import {
   NOT_EXIST_ADDRESS,
   CHANGE_ADDRESS,
-  LOADING_ADDRESS
+  LOADING_ADDRESS,
+  LISTING_ALL_PRODUCTS
 } from '../constants/checkout.constants'
 
 const state = {
+  listingAllProduct: [],
   notExisitAddress: null,
   existAddress: null,
   addressDelivery: [],
@@ -28,6 +30,13 @@ export const checkout = (initState = state, action) => {
       return Object.assign({}, initState, {
         loadingAddress: action.address
       })
+
+      //Adicioanr ao states a lista de todos os produtos do carrinho
+      case LISTING_ALL_PRODUCTS:
+        return Object.assign({}, initState, {
+          listingAllProduct: [...action.products]
+        })
+
     default:
       return state
   }

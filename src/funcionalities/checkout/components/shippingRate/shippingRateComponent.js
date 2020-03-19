@@ -2,7 +2,7 @@
  * Comoponete para renderização dos produtos comprados, para que o cliente escolha o frete que desejar.
  */
 import React, { useEffect, useState, Fragment } from 'react'
-
+import ListingProductsContainer from '../../containers/listingProducts/listingProducts.container'
 const ShippingRateComponent = () => {
 
     const [itensCart, setItensCart] = useState([])
@@ -13,6 +13,7 @@ const ShippingRateComponent = () => {
     }, [])
     return (
         <>
+        <ListingProductsContainer/>
             <div className="cyan-default mb-1">
                 <h5 className="color-white-default bc-cyan pt-2 pb-2 pl-3"
                 id="payment">Pagamento</h5>

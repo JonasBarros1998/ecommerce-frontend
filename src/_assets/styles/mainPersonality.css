@@ -4,6 +4,7 @@
     --color-stars-active: #fbd600;
     --color-gris-defaut: #b1b1b1;
     --color-black: black;
+    --color-gray97: #f7f7f7;
 }
 
 /*Colors*/
@@ -15,6 +16,8 @@
 .color-gris-default{color: var(--color-gris-defaut)}
 
 .colorb-default{background-color: var(--color-default);}
+
+.colorb-gray97{background-color: var(--color-gray97);}
 
 
 /*Estilos de textos, h1, h2, h3, h4, h5, p*/
