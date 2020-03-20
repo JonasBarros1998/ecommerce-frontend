@@ -4,8 +4,8 @@ import React from 'react'
 const PaymentComponent = () => {
     return (
         <>
-            <h5>Pague com Mercado Pago</h5>
-            <div className="row">
+            <h5 className="mt-3">Pague com Mercado Pago</h5>
+            <div className="row mb-3">
                 <hr />
                 <div className="col-xl-12">
                     <small className="color-grimmys-grey">Ao clicar no botão abaixo, você será redirecionado ao

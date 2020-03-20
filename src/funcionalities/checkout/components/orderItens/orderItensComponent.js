@@ -37,6 +37,23 @@ const OrderItensComponent = () => {
                         <div className="col-4 p-0">
                             <p className="text-grey-p">R$ 540,00</p>
                         </div>
+                    
+                    </div>
+
+                    <div className="row">
+                        <div className="col-5 p-0">
+                            <p className="text-grey-p">
+                                Tenis adidas 2019 edição especial
+                            </p>
+                        </div>
+                        <div className="col-3">
+                            <p className="text-grey-p">3</p>
+                        </div>
+
+                        <div className="col-4 p-0">
+                            <p className="text-grey-p">R$ 540,00</p>
+                        </div>
+                    
                     </div>
                 </div>
 

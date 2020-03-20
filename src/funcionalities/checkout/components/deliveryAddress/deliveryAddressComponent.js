@@ -3,12 +3,11 @@
  * itens que ele comprou
  */
 import React from 'react'
-import OrderItensComponent from './orderItensComponent'
+import { connect } from 'react-redux'
 import DeliveryAddressContainer from '../../containers/deliveryAddress/deliveryAddressContainer'
 import ModalComponent from '../../../../components/modal/modalComponent'
 import ChangeAddressContainer from '../../containers/deliveryAddress/changeAddressContainer'
 import SearchAddressContainer from '../../containers/searchAddressContainer'
-import { connect } from 'react-redux'
 
 const DeliveryAddressComponent = props => {
     const { loadingAddress } = props
@@ -24,8 +23,7 @@ const DeliveryAddressComponent = props => {
                     {
                         /**Se o array de  loadingAddress.length for igual a 0, 
                          * quer dizer que não existe nenhum enderço salvo no 
-                         * localStorage. 
-                         */
+                         * localStorage. */
                         loadingAddress.length === 0 ?
                             <div className="d-flex justify-content-center">
                                 <button type="button"
@@ -62,14 +60,14 @@ const DeliveryAddressComponent = props => {
             </div>
 
             {/** Componente para renderizar os produtos 
-             * comprados pelo cliente**/}
+             * comprados pelo cliente
             <OrderItensComponent />
+            **/}
 
             {
                 /** Modal para alteração de endereço
                  * Só renderizamos o ModalComponent se o endereço do cliente já estiver
                  * salvo no localStorage*/
-
                 //Se loadingAddress.length for diferente de 0, renderizamos a modal
                 loadingAddress.length !== 0 ?
                     <ModalComponent
@@ -88,7 +86,6 @@ const DeliveryAddressComponent = props => {
                 /** Modal para criação de um novo endereço
                  * Só renderizamos esse modal se não existir algum endereço cadastrado pelo cliente
                  */
-
                 <ModalComponent
                     id={"modal_address"}
                     ariaLabelledby={"myLargeModalLabel"}
