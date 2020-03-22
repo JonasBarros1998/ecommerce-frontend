@@ -1,6 +1,5 @@
 /**
- * Componente para rendereizar o endereço de entrega do cliente, e os 
- * itens que ele comprou
+ * Componente para rendereizar o endereço de entrega do cliente.
  */
 import React from 'react'
 import { connect } from 'react-redux'
@@ -59,11 +58,6 @@ const DeliveryAddressComponent = props => {
                 </div>
             </div>
 
-            {/** Componente para renderizar os produtos 
-             * comprados pelo cliente
-            <OrderItensComponent />
-            **/}
-
             {
                 /** Modal para alteração de endereço
                  * Só renderizamos o ModalComponent se o endereço do cliente já estiver
@@ -84,7 +78,7 @@ const DeliveryAddressComponent = props => {
 
             {
                 /** Modal para criação de um novo endereço
-                 * Só renderizamos esse modal se não existir algum endereço cadastrado pelo cliente
+                 * Só renderizamos esse modal se não existir um endereço cadastrado pelo cliente
                  */
                 <ModalComponent
                     id={"modal_address"}
@@ -115,11 +109,9 @@ const DeliveryAddressComponent = props => {
     )
 }
 
-const mapStateToProps = store => {
-    return {
-        loadingAddress: store.checkout.loadingAddress,
-        existAddress: store.checkout.existAddress,
-    }
-}
+const mapStateToProps = store => ({
+    loadingAddress: store.checkout.loadingAddress,
+    existAddress: store.checkout.existAddress
+})
 
 export default connect(mapStateToProps)(DeliveryAddressComponent) 

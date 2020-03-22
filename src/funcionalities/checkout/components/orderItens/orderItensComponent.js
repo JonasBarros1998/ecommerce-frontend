@@ -1,5 +1,5 @@
 /**Componente para rendereizar o itens que o cliente comprou
- * Nome, quantidade e preço, e o valor total do para pagamento
+ * Nome, quantidade, preço, e o valor total do para pagamento
  */
 
 import React from 'react'
