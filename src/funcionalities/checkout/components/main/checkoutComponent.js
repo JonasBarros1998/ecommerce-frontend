@@ -21,22 +21,16 @@ const CheckoutComponent = () => {
                 <div className="col-12 col-sm-12 col-lg-8">
                     {/** Componente para escolha do frete **/}
                     <ShippingRateComponent />
-                    
+
                     {/**Componente para pagamento com o mercado pago */}
                     <PaymentComponent />
                 </div>
 
-                {/** Componente de endereço de entrega **/}
+                {/** Componente de endereço de entrega, listagem de itens **/}
                 <div className="col-12 col-sm-12 col-lg-4">
                     <DeliveryAddressComponent />
                     <OrderItensComponent />
                 </div>
-
-                {/** Componente de pagamento com o mercado pago 
-                <div className="col-12 col-sm-12 col-lg-8">
-                    <PaymentComponent />
-                </div>
-                **/}
 
             </div>
         </>
