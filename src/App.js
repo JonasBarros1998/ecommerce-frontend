@@ -1,5 +1,5 @@
 /*** IMPORTS DEFAULT REACT ***/
-import React from 'react'
+import React, { useEffect } from 'react'
 
 /*** IMPORTS APLICATION ***/
 import Slide from './components/slide/slideComponent.js'
@@ -9,10 +9,15 @@ import Category from './components/products/shop/categoryComponent'
 import Products from './components/products/shop/productsComponent.js'
 import Beneficies from './components/shopBeneficies/ecommerceBeneficiesComponent.js'
 import ProdcutsSpecials from './components/products/shop/productsSpecialsComponent.js'
+import Initializer  from './funcionalities/initializer/components/initializer'
 
-const App = () =>  {
+const App = () => {
+  useEffect(() => {
+
+  })
+
   return (
-    <span>
+    <>
       <Menu />
 
       <Slide />
@@ -26,7 +31,7 @@ const App = () =>  {
       <ProdcutsSpecials />
 
       <Footer />
-    </span>
+    </>
   )
 }
 

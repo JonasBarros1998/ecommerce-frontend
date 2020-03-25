@@ -22,6 +22,8 @@ import SubmitUrlComponent from './components/authentication/forgot/submitUrlComp
 import AlterPasswordComponent from './components/authentication/forgot/alterPasswordComponent'
 import ShopComponent from './funcionalities/products/shop/productsShop/components/shopComponent'
 import CheckoutComponent from './funcionalities/checkout/components/main/checkoutComponent'
+import { main } from './funcionalities/initializer/main/main.js'
+
 
 /*** IMPORTS STYLES CSS ***/
 import './_assets/styles/main.css'
@@ -42,8 +44,11 @@ import './_assets/Js/jquery.nice-select.min.js'
 
 const store = createStore(Reducers, applyMiddleware(thunk))
 
-ReactDOM.render(
+//Função para inicializar as configurações de cada cliente que entra no sistema
+main()
 
+
+ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch history={useHistory}>
@@ -54,8 +59,8 @@ ReactDOM.render(
                 <Route path="/cart" exact component={CartComponent} />
                 <Route path="/recuperacao-de-senha" exact component={SubmitUrlComponent} />
                 <Route path="/authentication/alterar-senha/hash/:hash" exact component={AlterPasswordComponent} />
-                <Route path="/shop" exact component={ ShopComponent }/>
-                <Route path="/pagamento" exact component={ CheckoutComponent } />
+                <Route path="/shop" exact component={ShopComponent} />
+                <Route path="/pagamento" exact component={CheckoutComponent} />
             </Switch>
         </Router>
     </Provider>,
