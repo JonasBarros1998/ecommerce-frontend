@@ -1,0 +1,6 @@
+Modulo que vai funcionar quando o usuario, iniciar o sistema. 
+
+Em qualquer tela em que ele entrar, ele modulo vai entrar em funcionamento, 
+para realizar algumas configurações pontuias no usuario que estiver visualizando a 
+pagina. 
+ 

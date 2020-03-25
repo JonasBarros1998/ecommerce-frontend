@@ -7,6 +7,10 @@ import { checkoutRoute } from '../../routes/checkout.route'
 import { redirectUser } from '../../helpers/redirect'
 import { formattingObjectMercadoPago } from '../../services/formattingObjectMercadopago'
 
+/*Dentro dessa função vai vir uma requisição com o mongo db, para pegar
+os dados do cliente, para que seja possivel realizar o pagamento. 
+semelhante ao purchaseOrder*/
+
 const purchaseItems = {
     items: [
         {
@@ -42,11 +46,6 @@ const purchaseItems = {
         "state": "Sp"
     }
 }
-
-
-/*Dentro dessa função vai vir uma requisição com o mongo db, para pegar
-os dados do cliente, para que seja possivel realizar o pagamento. 
-semelhante ao purchaseOrder*/
 const newObjectMercadopago = formattingObjectMercadoPago(purchaseItems)
 
 export const mercadopago = () => {

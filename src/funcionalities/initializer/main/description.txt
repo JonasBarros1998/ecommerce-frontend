@@ -1,0 +1,2 @@
+Dentro desta pasta, terá uma função reponsavel por 
+chamar as demais funções para criação de todas as configurações necessárias dos clientes
