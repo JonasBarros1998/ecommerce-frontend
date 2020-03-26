@@ -19,8 +19,7 @@ export const configClient = () => {
 const saveClientId = () => localStorage.setItem('client_id', numberAleators)
 
 //função para verifica se existe um id no localstorage
-/*
-const verifieldClientId = () => {
+/*const verifieldClientId = () => {
     const clientId = localStorage.setItem('client_id')
     if(clientId == undefined){
         saveClientId()

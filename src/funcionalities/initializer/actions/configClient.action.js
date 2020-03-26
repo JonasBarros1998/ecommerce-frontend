@@ -3,15 +3,13 @@ import { HttpHeaders as header } from '../../../utils/header/headers'
 import { configClient } from '../service/configClient'
 import { route } from '../routes/initialize.route'
 
-
-
 const clientId = localStorage.getItem('client_id')
-const createCliente = route.client['create']
+const clientCreate = route.client['create']
+const initializeObj = configClient()
+
 export const configCient = () => {
     if (clientId == undefined) {
-        const initializeObj = configClient()
-        console.log(initializeObj)
-        verb.post("createCliente",
+        verb.post("clientCreate",
             header.defaultHeaders(),
             initializeObj)
             .then(response => {
@@ -19,5 +17,4 @@ export const configCient = () => {
             })
             .catch(error => new Error(error))
     }
-
 }
