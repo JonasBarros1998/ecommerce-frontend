@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { sumQuantity, total } from '../services/total'
+import { decrement, total } from '../services/total'
 import ValueTotal from '../container/valueTotal'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -8,7 +8,6 @@ const SelectContainer = props => {
 
     const [quantity, setQuantity] = useState(1)
     const item = props.itemCart
-
 
     //Adicionar a quantidade de um produto 
     const add = () => {
@@ -43,16 +42,18 @@ const SelectContainer = props => {
                 <i className="lnr lnr-chevron-up"></i>
             </button>
 
-
             <button
                 className="reduced items-count"
                 value={quantity}
-                onClick={() => decrement()}>
+                onClick={() => {
+                    decrement(quantity)
+                    props.decrement(props.itemCart.price, quantity)
+                }}>
                 <i className="lnr lnr-chevron-down"></i>
             </button>
         </div>
     )
 }
 
-const mapDisptachToProps = dispatch => bindActionCreators({ total }, dispatch)
+const mapDisptachToProps = dispatch => bindActionCreators({ total, decrement }, dispatch)
 export default connect(null, mapDisptachToProps)(SelectContainer) 

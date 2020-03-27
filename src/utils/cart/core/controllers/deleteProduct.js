@@ -3,20 +3,17 @@ import {
     deleteObjectStore
 } from '../database/transactions'
 
-const connect = {
+const database = {
     name: "ecommerce-cart",
+    type: "readwrite",
     version: 1
 }
 
-const database = {
-    name: "ecommerce-cart",
-    type: "readwrite"
-}
-
-export const deleteProduct = (data) => {
-    indexedDatabase(connect)
+export const deleteProduct = async (data) => {
+    indexedDatabase(database)
     .then(connection => {
-        deleteObjectStore(connection, database, "5e3c663e03ca1a75379338ec")
+        deleteObjectStore(connection, database, data)
     })
+   await window.location.reload()
     .catch(error => new Error(error))
 }

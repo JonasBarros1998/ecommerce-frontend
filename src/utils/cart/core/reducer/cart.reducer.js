@@ -4,8 +4,8 @@ const store = {
 export const cart = (initState = store, action) => {
     switch(action.type){
         case "UPDATE": 
-        console.log(action)
-            Object.assign({}, initState, {
+        console.log(action.newValue)
+            return Object.assign({}, initState, {
                 value: action.newValue
             })
         default: 

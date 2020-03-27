@@ -11,6 +11,7 @@ import { indexedDatabase } from '../database/indexedDatabase'
 import { listingObjectStore } from '../database/transactions'
 import ValueTotal from '../container/valueTotal'
 import SelectContainer from '../container/selectContainer'
+import  DeleteContainer from '../container/deleteContainer'
 
 const connect = {
     name: 'ecommerce-cart',
@@ -31,7 +32,6 @@ const ListingAllProductContainer = () => {
     }, [])
 
     return (
-        console.log(cart),
         <tbody>
             {
                 cart.map(item => {
@@ -50,13 +50,9 @@ const ListingAllProductContainer = () => {
                                             </Link>
                                         }
                                         <br />
-                                        {/** 
-                                    <DeleteContainer
-                                        deleteItem={deleteItem}
-                                        productId={itens._id} />
-                                        
-                                        <DeleteContainer />
-                                        **/}
+                                        {/** * **/}
+                                        <DeleteContainer
+                                            deleteItem={item} />
                                     </p>
                                 </div>
                             </div>
