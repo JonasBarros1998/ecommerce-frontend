@@ -51,11 +51,11 @@ export const listingObjectStore = (connection, database) => {
  * @param data uma string ou um int com o valor para ser deletado
  */
 export const deleteObjectStore = (connection, database, data) => {
-
+    console.log(data)
     return new Promise((resolve, reject) => {
         const request = connection.transaction([database.name], database.type)
             .objectStore(database.name)
-            .delete(data.delete);
+            .delete(data.id);
 
         request.onsuccess = (e) => {
             resolve(e.target)

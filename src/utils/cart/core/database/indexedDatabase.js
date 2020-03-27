@@ -21,7 +21,7 @@ export const indexedDatabase = (connection) => {
             if (result.objectStoreNames.contains(connection.name)) {
                 result.deleteObjectStore(connection.name)
             }
-            result.createObjectStore(connection.name, { autoIncrement: true })
+            result.createObjectStore(connection.name, { keyPath: '_id' })
         }
 
         //Faz a conexão com o banco de dados
