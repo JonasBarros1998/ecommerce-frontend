@@ -1,81 +1,25 @@
 import React, { useState, useCallback, useLayoutEffect } from 'react'
 import DeleteContainer from '../container/deleteContainer'
-import '../../css/main.css'
 import SelectContainer from '../container/selectContainer'
+import ListingAllProductContainer from '../container/listingAllProductContainer'
+import '../../css/main.css'
 import { Link } from 'react-router-dom'
 
+
+
 const searchLocalStorage = () => (JSON.parse(localStorage.getItem('cart')))
-const saveLocalStorage = (itensCart) => (localStorage.setItem('cart', itensCart))
-    
-const itensCart = () => {
+
+//Calcular o preço total do carrinho
+/*
+const totalPrice = () => {
     let calculate = 0
     for (let { price: priceProduct } of searchLocalStorage()) {
         calculate += priceProduct
     }
     return calculate
-}
+}*/
 
 const Cart = props => {
-    const [item, setItem] = useState(searchLocalStorage)
-    const [valueCart, setValueCart] = useState(0)
-
-    useLayoutEffect(() => {
-        setValueCart(itensCart())
-    }, [])
-
-    const sumQuantity = useCallback((productId, valueCartTotal) => {
-        const product = item.find(id => id.productId === productId)
-        if (product.quantity === undefined) {
-            Object.defineProperty(product, 'quantity', {
-                enumerable: true,
-                value: + 2,
-                writable: true
-            })
-
-        } else {
-            Object.defineProperty(product, 'quantity', {
-                enumerable: true,
-                value: product.quantity += 1,
-                writable: true
-            })
-        }
-        setValueCart(valueCartTotal + product.price)
-        setItem([...item])
-    }, [item]);
-
-    const subQuantity = useCallback((productId, valueCartTotal) => {
-        const product = item.find(id => id.productId === productId)
-        if (product.quantity <= 1 || product.quantity === undefined) {
-            Object.defineProperty(product, 'quantity', {
-                enumerable: true,
-                value: product.quantity = 1,
-                writable: true
-            })
-        } else {
-            Object.defineProperty(product, 'quantity', {
-                enumerable: true,
-                value: product.quantity -= 1,
-                writable: true
-            })
-            setValueCart(valueCartTotal - product.price)
-        }
-
-        setItem([...item])
-    }, [item])
-
-    //Excluir um item no carrinho
-    const deleteItem = (productId) => {
-        const newCart = []
-
-        item.map(item => productId !== item._id ? 
-            newCart.push(item) : 
-            console.warn("Não existe produto para ser deletado"))
-
-        const ItensCartForStringfy = JSON.stringify(newCart)
-        saveLocalStorage(ItensCartForStringfy)
-        setItem(newCart)
-        setValueCart(itensCart())
-    }
 
     return (
         <>
@@ -90,62 +34,8 @@ const Cart = props => {
                                     <th scope="col" className="text">Preço</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                {
-                                    item.map((itens, index) => {
-                                        return (<tr key={index}>
-                                            <td colSpan="4">
-                                                <div className="media">
-                                                    <div className="block-image">
-                                                        <img className="image" src={itens.link} alt="ImageProduct" />
-                                                    </div>
-                                                    <div className="media-body">
-                                                        <p className="text-grey-p">
-                                                            <Link to={`/produto/item/${itens.categorie}/${itens.name}/${itens.productId}`} className="text-grey-p link">
-                                                                {itens.name}
-                                                            </Link>
-                                                            <br />
-                                                            <DeleteContainer
-                                                                deleteItem={deleteItem}
-                                                                productId={itens._id} />
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <SelectContainer
-                                                    sumQuantity={sumQuantity}
-                                                    subQuantity={subQuantity}
-                                                    quantity={itens.quantity}
-                                                    productId={itens.productId}
-                                                    valueCart={valueCart} />
-                                            </td>
-                                            <td>
-                                                <p className="text bold">{
-                                                    itens.price.toLocaleString('pt-BR', {
-                                                        style: 'currency',
-                                                        currency: 'BRL'
-                                                    })
-                                                }</p>
-                                            </td>
-                                        </tr>)
-                                    })
-                                }
-                                <tr>
-                                    <td colSpan="4"></td>
-                                    <td>
-                                        <p className="text bold">Valor total</p>
-                                    </td>
-                                    <td>
-                                        <p className="text bold">{
-                                            valueCart.toLocaleString('pt-BR', {
-                                                style: 'currency',
-                                                currency: 'BRL'
-                                            })
-                                        }</p>
-                                    </td>
-                                </tr>
-                            </tbody>
+                           {/***adicionar a tbody */}
+                            <ListingAllProductContainer /> 
                         </table>
                     </div>
 
@@ -167,7 +57,7 @@ const Cart = props => {
                             </div>
                             <div className="d-flex justify-content-end col-8">
                                 <Link to={props.link} className="btn genric-btn success radius mr-3"> Fechar Carrinho</Link>
-                                    <button type="submit" className="btn genric-btn info radius">Continuar comprando</button>
+                                <button type="submit" className="btn genric-btn info radius">Continuar comprando</button>
                             </div>
                         </div>
                     </div>
@@ -177,3 +67,70 @@ const Cart = props => {
     )
 }
 export default Cart
+
+
+
+  //const [item, setItem] = useState(searchLocalStorage)
+    //const [valueCart, setValueCart] = useState(0)
+
+    //useLayoutEffect(() => {
+   //     setValueCart(totalPrice())
+   // }, [])
+/*
+    const sumQuantity = useCallback((productId, valueCartTotal) => {
+        const product = item.find(id => id.productId === productId)
+        if (product.quantity === undefined) {
+            Object.defineProperty(product, 'quantity', {
+                enumerable: true,
+                value: + 2,
+                writable: true
+            })
+
+        } else {
+            Object.defineProperty(product, 'quantity', {
+                enumerable: true,
+                value: product.quantity += 1,
+                writable: true
+            })
+        }
+        setValueCart(valueCartTotal + product.price)
+        setItem([...item])
+    }, [item]);*/
+/*
+    const subQuantity = useCallback((productId, valueCartTotal) => {
+        const product = item.find(id => id.productId === productId)
+        if (product.quantity <= 1 || product.quantity === undefined) {
+            Object.defineProperty(product, 'quantity', {
+                enumerable: true,
+                value: product.quantity = 1,
+                writable: true
+            })
+        } else {
+            Object.defineProperty(product, 'quantity', {
+                enumerable: true,
+                value: product.quantity -= 1,
+                writable: true
+            })
+            setValueCart(valueCartTotal - product.price)
+        }
+
+        setItem([...item])
+    }, [item])*/
+
+
+
+
+    /*
+    //Excluir um item no carrinho
+    const deleteItem = () => {
+        const newCart = []
+
+
+        //item.map(item => productId !== item._id ? 
+        //    newCart.push(item) : 
+        //    console.warn("Não existe produto para ser deletado"))
+        //const ItensCartForStringfy = JSON.stringify(newCart)
+        //saveLocalStorage(ItensCartForStringfy)
+        //setItem(newCart)
+        //setValueCart(totalPrice())
+    }*/

@@ -5,6 +5,10 @@
  */
 
 let connect;
+/**
+ * 
+ * @param  connection Um objecto javaScript com o nome e a versão do banco
+ */
 export const indexedDatabase = (connection) => {
 
     const openRequest = window.indexedDB.open(connection.name, connection.version)
