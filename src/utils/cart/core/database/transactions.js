@@ -43,3 +43,29 @@ export const listingObjectStore = (connection, database) => {
         }
     })
 }
+
+/**
+ * Função para listagem de todos os dados no indexedDb
+ * @param connection Um objeto com a connection de IndeedDb
+ * @param database Informações da sua databae que deseja fazer a listagem de dados
+ * @param data uma string ou um int com o valor para ser deletado
+ */
+export const deleteObjectStore = (connection, database, data) => {
+
+    return new Promise((resolve, reject) => {
+        const request = connection.transaction([database.name], database.type)
+            .objectStore(database.name)
+            .delete(data.delete);
+
+        request.onsuccess = (e) => {
+            resolve(e.target)
+            console.log(e.target)
+        }
+
+        request.onerror = (e) => {
+            reject(e.target.name)
+            console.log(e.target.name)
+        }
+    })
+
+}

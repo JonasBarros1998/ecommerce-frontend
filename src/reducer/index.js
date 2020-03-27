@@ -12,6 +12,7 @@ import { mainProducts } from '../funcionalities/products/shop/mainProducts/reduc
 import { productsSpecials } from '../funcionalities/products/shop/productsSpecials/reducer/productsSpecials.reducer'
 import { products } from '../funcionalities/products/shop/productsShop/reducer/filter/products.reducer'
 import { checkout } from '../funcionalities/checkout/reducer/checkout.reducer'
+import { cart } from '../utils/cart/core/reducer/cart.reducer'
 
 export const Reducers = combineReducers({
    authentication: authenticationUser,
@@ -26,5 +27,7 @@ export const Reducers = combineReducers({
    categorie: categories,
    mainProduct: mainProducts,
    productsSpecials: productsSpecials,
-   checkout: checkout
+   checkout: checkout,
+
+   cart: cart //Reducer do carrinho, isto irá ficar provisorioamente
 })

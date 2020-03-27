@@ -1,5 +1,5 @@
 import React from 'react'
-import {addProduct} from '../../../../../utils/cart/core/addProduct'
+import {addProduct} from '../../../../../utils/cart/core/controllers/addProduct'
 
 const ActionsProductsContainer = props => {
     return (

@@ -6,7 +6,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
-import { addProduct } from '../../../utils/cart/core/addProduct'
+import { addProduct } from '../../../utils/cart/core/controllers/addProduct'
 import ProductsSpecialsContainer from '../../../funcionalities/products/shop/productsSpecials/container/productsSpecials.container'
 const ProductsSpecials = props => {
 
