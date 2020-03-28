@@ -1,35 +1,30 @@
 /**
- * Comoponete para renderização dos produtos comprados, para que o cliente escolha o frete que desejar.
+ * Componente para renderização dos produtos comprados, para que o cliente escolha o tipo de frete .
  */
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
+import { connect } from 'react-redux'
 import ListingProductsContainer from '../../containers/listingProducts/listingProducts.container'
-const ShippingRateComponent = () => {
 
-    const [itensCart, setItensCart] = useState([])
-
-    useEffect(() => {
-        const cart = JSON.parse(localStorage.getItem('cart'))
-        setItensCart(cart)
-    }, [])
+const ShippingRateComponent = props => {
     return (
-        <>
-        <ListingProductsContainer/>
+        <div>
+            <ListingProductsContainer />
             <div className="cyan-default mb-1">
                 <h5 className="color-white-default bc-cyan pt-2 pb-2 pl-3"
-                id="payment">Pagamento</h5>
+                    id="payment">Pagamento</h5>
             </div>
             <h5 className="pt-2" id="escolher_entrega">Qual tipo de entrega você deseja?</h5>
             <hr />
             <div className="card">
-                <p className="mt-2 ml-2 fs" id="delivery"> 
-                <b>Vendido e entregue por J&M ecommerce</b></p>
+                <p className="mt-2 ml-2 fs" id="delivery">
+                    <b>Vendido e entregue por J&M ecommerce</b></p>
                 <div className="card-body">
                     <div className="row">
                         <div className="col-12 col-sm-10 col-md-7 col-lg-8 col-xl-6">
 
                             <div className="row">
                                 {
-                                    itensCart.map((itens, index) => {
+                                    props.products.map((itens, index) => {
                                         return (
                                             <Fragment key={index}>
                                                 <div className="ml-3 mb-2">
@@ -42,7 +37,7 @@ const ShippingRateComponent = () => {
                                                         {itens.categorie}
                                                     </p>
                                                 </div>
-                                            </Fragment>
+                                            </ Fragment>
                                         )
                                     })
                                 }
@@ -90,8 +85,9 @@ const ShippingRateComponent = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
-export default ShippingRateComponent
+const mapStoreToProps = store =>  ({products: store.checkout.listingAllProduct})
+export default connect(mapStoreToProps)(ShippingRateComponent)

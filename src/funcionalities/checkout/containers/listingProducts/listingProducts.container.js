@@ -16,5 +16,5 @@ const ListingProductsContainer = props => {
     )
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ listingProducts }, dispatch)
+const mapDispatchToProps = dispatch => (bindActionCreators({ listingProducts }, dispatch))
 export default connect(null, mapDispatchToProps)(ListingProductsContainer)

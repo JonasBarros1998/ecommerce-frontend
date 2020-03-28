@@ -1,6 +1,6 @@
 /**
- * Arquivo para formatação do objeto quem vem do mongo 
- * para o envia-lo no mercado pago
+ * Este arquivo serve para fazer a formatação do objeto, para envia-lo para o 
+ * mongo-db
  */
 
 let objMercadopago = {
