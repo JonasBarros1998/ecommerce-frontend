@@ -6,6 +6,7 @@ import { addProduct } from '../../../../../utils/cart/core/controllers/addProduc
 import { FormattingObjectAddCart } from '../utils/shoppingFormattingObjects'
 
 export const addCart = (product) => {
+    console.log(product)
     // formatar o objeto
     const formattingObject = FormattingObjectAddCart(product)
     //adicinar o produto no carrinho

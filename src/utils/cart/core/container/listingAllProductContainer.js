@@ -11,7 +11,7 @@ import { indexedDatabase } from '../database/indexedDatabase'
 import { listingObjectStore } from '../database/transactions'
 import ValueTotal from '../container/valueTotal'
 import SelectContainer from '../container/selectContainer'
-import  DeleteContainer from '../container/deleteContainer'
+import DeleteContainer from '../container/deleteContainer'
 
 const connect = {
     name: 'ecommerce-cart',
@@ -32,12 +32,12 @@ const ListingAllProductContainer = () => {
     }, [])
 
     return (
-        <tbody>
+        <>
             {
-                cart.map(item => {
+                cart.map((item, index) => {
 
-                    return (<tr>
-                        <td colSpan="4">
+                    return (<tr key={index}>
+                        <td colSpan="4" >
                             <div className="media">
                                 <div className="block-image">
                                     <img className="image" src={item.link} alt="ImageProduct" />
@@ -50,22 +50,18 @@ const ListingAllProductContainer = () => {
                                             </Link>
                                         }
                                         <br />
-                                        {/** * **/}
-                                        <DeleteContainer
-                                            deleteItem={item} />
+                                        <DeleteContainer deleteItem={item} />
                                     </p>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            {
-                                <SelectContainer itemCart={item} />
-                            }
+                            {/** Select Container*/}
+                            <SelectContainer itemCart={item} />
                         </td>
                         <td>
                             {
-                                <p className="text bold"
-                                    itemCart={item}>{
+                                <p className="text bold">{
                                         item.price.toLocaleString('pt-BR', {
                                             style: 'currency',
                                             currency: 'BRL'
@@ -85,7 +81,7 @@ const ListingAllProductContainer = () => {
                 <td>
 
                     {/**Componente para renderizar o valor total do carrinho**/
-                        cart.length == 0
+                        cart.length === 0
                             ?
                             <div></div>
                             :
@@ -94,7 +90,7 @@ const ListingAllProductContainer = () => {
 
                 </td>
             </tr>
-        </tbody >
+            </>
     )
 }
 

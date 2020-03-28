@@ -3,7 +3,6 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { mercadopago } from '../../actions/mercadopago/mercadopago'
-import { Link } from 'react-router-dom'
 
 const PaymentComponent = props => {
 

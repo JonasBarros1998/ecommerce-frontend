@@ -65,7 +65,7 @@ const Menu = () => {
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
                                 <li className="nav-item">
-                                    <Link to={"/cart"} className="cart">
+                                    <Link to={"/carrinho"} className="cart">
                                         <span className="ti-bag"></span>
                                     </Link>
                                 </li>

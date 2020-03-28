@@ -7,15 +7,16 @@ const ValueTotal = props => {
     const [valueTotal, setValueTotal] = useState([])
 
     useEffect(() => {
+        console.log(props.value)
         if (props.value.length !== 0) {
             const sumTotal = total(props.value)
             setValueTotal(sumTotal)
         }
-    }, [])
+    }, [props.value])
 
     return (
         <p className="text bold">{
-            props.cart == 0 ?
+            props.cart === 0 ?
             valueTotal.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
@@ -29,10 +30,5 @@ const ValueTotal = props => {
     )
 }
 
-const mapStateToProps = store => {
-    return {
-        cart: store.cart.value
-    }
-}
-
+const mapStateToProps = store => ({ cart: store.cart.value })
 export default connect(mapStateToProps)(ValueTotal)

@@ -61,7 +61,7 @@ const ProductsSpecials = props => {
 
                                                     <div className="add-bag d-flex align-items-center justify-content-center">
                                                         <a className="add-btn" href={"http://localhost"}
-                                                            onClick={() => addProduct(item)}>
+                                                            onClick={() =>addProduct(item)}>
                                                             <span className="ti-bag"></span></a>
                                                         <span className="add-text text-uppercase">
                                                             Adicionar

@@ -24,7 +24,6 @@ import ShopComponent from './funcionalities/products/shop/productsShop/component
 import CheckoutComponent from './funcionalities/checkout/components/main/checkoutComponent'
 import { main } from './funcionalities/initializer/main/main.js'
 
-
 /*** IMPORTS STYLES CSS ***/
 import './_assets/styles/main.css'
 import './_assets/styles/bootstrap.css'
@@ -56,7 +55,7 @@ ReactDOM.render(
                 <Route path="/login" component={Login} />
                 <Route path="/item/:categorie_product/:name_product/:id_product" exact component={ProductDetail} />
                 <Route path="/register" exact component={NewUser} />
-                <Route path="/cart" exact component={CartComponent} />
+                <Route path="/carrinho" exact component={CartComponent} />
                 <Route path="/recuperacao-de-senha" exact component={SubmitUrlComponent} />
                 <Route path="/authentication/alterar-senha/hash/:hash" exact component={AlterPasswordComponent} />
                 <Route path="/shop" exact component={ShopComponent} />

@@ -2,8 +2,8 @@
  * que estão armazendos no carrinho de compras
  */
 
-import {verb} from '../../../../utils/http/verbs' 
-import {HttpHeaders as header} from '../../../../utils/header/headers' 
+//import {verb} from '../../../../utils/http/verbs' 
+//import {HttpHeaders as header} from '../../../../utils/header/headers' 
 import { sumValue } from '../../services/CalculatePrice'
 import {
     LISTING_ALL_PRODUCTS

@@ -24,7 +24,7 @@ let objMercadopago = {
  */
 export const formattingObjectMercadoPago = (mercadopago) => {
     mercadopago.items.map((item) => {
-        objMercadopago.items.push({
+       return objMercadopago.items.push({
             "id": item['_id'],
             "title": item['title'],
             "description": item['description'],
