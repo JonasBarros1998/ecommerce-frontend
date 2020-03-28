@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { deleteProduct } from '../controllers/deleteProduct'
 
 const DeleteContainer = (props) => {
@@ -8,7 +6,7 @@ const DeleteContainer = (props) => {
         <>
             <small>
                 <a
-                    className = "link" href={"#"}
+                    className = "link" href={"/carrinho"}
                     onClick={() => deleteProduct({id: props.deleteItem._id})}>
                     Excluir</a>
             </small>
@@ -16,5 +14,4 @@ const DeleteContainer = (props) => {
     )
 }
 
-//const mapDispatchToProps = (dispatch) => bindActionCreators({}, dispatch)
 export default DeleteContainer

@@ -7,7 +7,6 @@ export const repeatItems = (itemCurrent, itens) => {
 
     //Veriavel de controle
     let AddItemCart = true;
-
     /* Se não tiver nada no carrinho, já podemos adicionar um 
         produto nele sem realizar uma verificação*/
     if (itens.length === 0) {

@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { decrement, total } from '../services/total'
-import ValueTotal from '../container/valueTotal'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 const SelectContainer = props => {
 
     const [quantity, setQuantity] = useState(1)
-    const item = props.itemCart
 
     //Adicionar a quantidade de um produto 
     const add = () => {
@@ -27,7 +25,7 @@ const SelectContainer = props => {
 
     return (
         <div className="product_count">
-            <input type="text" name="qty" id="sst" maxLength="3"
+            <input type="text" name="qty" id={`sst-${props.itemCart._id}`} maxLength="3"
                 title="Quantity:" className="count-quantity"
                 value={quantity}
                 onChange={() => { }} />
@@ -41,6 +39,7 @@ const SelectContainer = props => {
                     }}>
                 <i className="lnr lnr-chevron-up"></i>
             </button>
+
 
             <button
                 className="reduced items-count"
