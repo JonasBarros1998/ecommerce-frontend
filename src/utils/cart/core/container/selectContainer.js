@@ -1,40 +1,57 @@
-import React, { useState } from 'react'
-import { decrement, total } from '../services/total'
+import React, { useState, useEffect } from 'react'
+import { decrement, total, update } from '../services/total'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { updateProduct } from '../controllers/updateProduct'
 
 const SelectContainer = props => {
 
     const [quantity, setQuantity] = useState(1)
 
+    useEffect(() =>{
+        if(props.itemCart.quantity === undefined){
+            setQuantity(1)
+        }else{
+            setQuantity(props.itemCart.quantity)
+        }
+    })
+
     //Adicionar a quantidade de um produto 
-    const add = () => {
+    const add = (itemCart) => {
         let valueCurrent = quantity + 1
         setQuantity(valueCurrent)
+        updateProduct(itemCart, valueCurrent)
     }
 
     //Subtrair a quantidade de um produto
-    const decrement = () => {
+    const decrement = (itemCart) => {
         let decrementValue = quantity - 1
         if (decrementValue < 1) {
             setQuantity(1)
+            updateProduct(itemCart, 1)
         } else {
             setQuantity(decrementValue)
+            updateProduct(itemCart, decrementValue)
+
         }
+    }
+
+    const sendQuantity = (id, quantity) => {
+
     }
 
     return (
         <div className="product_count">
             <input type="text" name="qty" id={`sst-${props.itemCart._id}`} maxLength="3"
                 title="Quantity:" className="count-quantity"
-                value={quantity}
+                value={ quantity }
                 onChange={() => { }} />
 
             <button
                 className="increase items-count"
                 onClick={
                     () => {
-                        add(quantity)
+                        add(props.itemCart)
                         props.total([], props.itemCart.price)
                     }}>
                 <i className="lnr lnr-chevron-up"></i>
@@ -45,7 +62,7 @@ const SelectContainer = props => {
                 className="reduced items-count"
                 value={quantity}
                 onClick={() => {
-                    decrement(quantity)
+                    decrement(props.itemCart)
                     props.decrement(props.itemCart.price, quantity)
                 }}>
                 <i className="lnr lnr-chevron-down"></i>

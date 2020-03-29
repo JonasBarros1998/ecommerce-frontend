@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ListingAllProductContainer from '../container/listingAllProductContainer'
 import '../../css/main.css'
-import { Link } from 'react-router-dom'
+import CloseCart from '../container/closeCart.js'
+import { indexedDatabase, listingObjectStore } from '../../../indexed-db/core/database'
 
-const Cart = props => {
+const Cart = () => {
+
+    const [cart, setCart] = useState([])
+
+    useEffect(() => {
+        const connect = {
+            name: 'ecommerce-cart',
+            version: 1,
+            type: 'readwrite'
+        }
+
+        indexedDatabase(connect).then(connection => {
+            listingObjectStore(connection, connect)
+                .then(response => {
+                    setCart(response)
+                })
+        })
+    }, [])
 
     return (
         <div>
@@ -21,8 +39,7 @@ const Cart = props => {
                                 </thead>
                                 <tbody>
                                     {/*adicionar a tbody */}
-                                    <ListingAllProductContainer />
-
+                                    <ListingAllProductContainer cart={cart} />
                                 </tbody>
                             </table>
                         </div>
@@ -44,7 +61,7 @@ const Cart = props => {
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-end col-8">
-                                    <Link to={'/pagamento' } className="btn genric-btn success radius mr-3"> Fechar Carrinho</Link>
+                                    <CloseCart />
                                     <button type="submit" className="btn genric-btn info radius">Continuar comprando</button>
                                 </div>
                             </div>

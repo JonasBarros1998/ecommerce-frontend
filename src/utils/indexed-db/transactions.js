@@ -1,3 +1,5 @@
+import { updateProduct } from "../cart/core/controllers/updateProduct"
+
 /**
  * @param connection Uma conexão com o banco de dados
  * @param database Informações do indexedDb
@@ -68,4 +70,30 @@ export const deleteObjectStore = (connection, database, data) => {
         }
     })
 
+}
+
+/**
+ * @param connection A conexão com o indexdDb
+ * @param database A informações do banco de dados
+ * @param data O Id do objeto para ser consultado 
+ * @param update Qual dado deve ser atualizado
+ */
+export const updateObjectStore = (connection, database, data, dataUpdate) => {
+    return new Promise((resolve, reject) => {
+        const update = connection.transaction([database.name], database.type)
+            .objectStore(database.name)
+        const request = update.get(data.id)
+
+        request.onerror = (e) => (console.log(e.target.name))
+
+        request.onsuccess = (e) => {
+            const requestUpdate = update.put(dataUpdate)
+            requestUpdate.onsuccess = () => {
+                resolve("Dados atualizado com sucesso")
+                console.log("Dados atualizado com sucesso")
+            }
+            requestUpdate.onerror = (e) => (reject(e.target.name))
+        }
+
+    })
 }

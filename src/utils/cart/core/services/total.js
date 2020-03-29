@@ -11,8 +11,8 @@ let calculate = 0
  */
 export const total = (cart = [], addValue = 0) => {
     if (addValue === 0) {
-        for (let { price } of cart) {
-            value += price
+        for (let { price, quantity } of cart) {
+            value = value + (quantity * price)
         }
         calculate += value
         return calculate

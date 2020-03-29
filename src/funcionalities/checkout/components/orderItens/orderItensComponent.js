@@ -1,11 +1,13 @@
 /**Componente para rendereizar o itens que o cliente comprou
- * Nome, quantidade, preço, e o valor total do para pagamento
+ * Nome, quantidade, preço, e o valor total  para o pagamento
  */
 
 import React from 'react'
 import TotalPriceComponent from '../price/totalPriceComponent'
+import { connect } from 'react-redux'
 
-const OrderItensComponent = () => {
+const OrderItensComponent = props => {
+    console.log(props.products)
     return (
         <>
             <div className="card billing_details mt-3">
@@ -24,44 +26,46 @@ const OrderItensComponent = () => {
                 </div>
 
                 <div className="card-body">
-                    <div className="row">
-                        <div className="col-5 p-0">
-                            <p className="text-grey-p">
-                                Tenis adidas 2019 edição especial
-                            </p>
-                        </div>
-                        <div className="col-3">
-                            <p className="text-grey-p">3</p>
-                        </div>
+                    {
+                        props.products.map((item, index) => (
 
-                        <div className="col-4 p-0">
-                            <p className="text-grey-p">R$ 540,00</p>
-                        </div>
-                    
-                    </div>
+                            <div className="row" key={index}>
+                                <div className="col-5 p-0">
+                                    <p className="text-grey-p">
+                                        {item.name}
+                                    </p>
+                                </div>
+                                <div className="col-3">
+                                    <p className="text-grey-p">{item.quantity}</p>
+                                </div>
 
-                    <div className="row">
-                        <div className="col-5 p-0">
-                            <p className="text-grey-p">
-                                Tenis adidas 2019 edição especial
-                            </p>
-                        </div>
-                        <div className="col-3">
-                            <p className="text-grey-p">3</p>
-                        </div>
+                                <div className="col-4 p-0">
+                                    <p className="text-grey-p">{
+                                        item.price.toLocaleString('pt-BR', {
+                                            style: 'currency',
+                                            currency: 'BRL',
+                                        })
+                                    }</p>
+                                </div>
+                                {/**
+                                 * itemProduct.products.price.toLocaleString('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                        })
+                                 */}
+                            </div>
+                        ))
 
-                        <div className="col-4 p-0">
-                            <p className="text-grey-p">R$ 540,00</p>
-                        </div>
-                    
-                    </div>
+                    }
                 </div>
-
             </div>
 
             <TotalPriceComponent />
+           
         </>
 
     )
 }
-export default OrderItensComponent
+
+const mapStoreToProps = store => ({ products: store.checkout.listingAllProduct })
+export default connect(mapStoreToProps)(OrderItensComponent)
