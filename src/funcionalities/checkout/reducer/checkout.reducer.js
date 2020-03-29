@@ -2,7 +2,8 @@ import {
   NOT_EXIST_ADDRESS,
   CHANGE_ADDRESS,
   LOADING_ADDRESS,
-  LISTING_ALL_PRODUCTS
+  LISTING_ALL_PRODUCTS, 
+  DELIVERY_VALUE
 } from '../constants/checkout.constants'
 
 const state = {
@@ -10,7 +11,8 @@ const state = {
   notExisitAddress: null,
   existAddress: null,
   addressDelivery: [],
-  loadingAddress: []
+  loadingAddress: [],
+  valueDelivery: 0
 }
 
 export const checkout = (initState = state, action) => {
@@ -35,6 +37,12 @@ export const checkout = (initState = state, action) => {
       case LISTING_ALL_PRODUCTS:
         return Object.assign({}, initState, {
           listingAllProduct: [...action.products]
+        })
+
+        //valor do frete
+        case DELIVERY_VALUE: 
+        return Object.assign({}, initState, {
+          valueDelivery: action.value
         })
 
     default:

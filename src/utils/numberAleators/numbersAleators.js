@@ -7,7 +7,6 @@ export const generateNumber = () => {
 
     //Retira o ponto flutuante do numero
     const client_id = convertString.replace('.', '')
-    console.log(client_id)
     return client_id
 }
 

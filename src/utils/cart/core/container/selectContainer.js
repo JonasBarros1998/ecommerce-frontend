@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { decrement, total, update } from '../services/total'
+import { decrement, total } from '../services/total'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateProduct } from '../controllers/updateProduct'
@@ -14,7 +14,7 @@ const SelectContainer = props => {
         }else{
             setQuantity(props.itemCart.quantity)
         }
-    })
+    }, [props.itemCart.quantity])
 
     //Adicionar a quantidade de um produto 
     const add = (itemCart) => {
@@ -34,10 +34,6 @@ const SelectContainer = props => {
             updateProduct(itemCart, decrementValue)
 
         }
-    }
-
-    const sendQuantity = (id, quantity) => {
-
     }
 
     return (

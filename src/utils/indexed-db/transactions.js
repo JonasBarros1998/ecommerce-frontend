@@ -1,11 +1,8 @@
-import { updateProduct } from "../cart/core/controllers/updateProduct"
-
 /**
  * @param connection Uma conexão com o banco de dados
  * @param database Informações do indexedDb
  * @param datas Dados que serão adicionados no indexed
  */
-
 export const addObjectStore = (connection, database, datas) => {
 
     const transaction = connection.transaction([database.name], database.type)
@@ -18,7 +15,7 @@ export const addObjectStore = (connection, database, datas) => {
         //console.log("Dados do carrinho incluido com sucesso")
     }
 
-    //Caso houver algum erro na função onerror
+    //Caso houver algum erro na função, irá ser avisado
     requestdb.onerror = (e) => {
         console.error(e.target.error)
     }

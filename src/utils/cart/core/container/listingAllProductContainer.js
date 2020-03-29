@@ -5,19 +5,13 @@
  * Renderizar o preço total do carrinho.
  * Excluir um item do carrinho do cliente.  
  */
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { indexedDatabase } from '../database/indexedDatabase'
-import { listingObjectStore } from '../database/transactions'
+
 import ValueTotal from '../container/valueTotal'
 import SelectContainer from '../container/selectContainer'
 import DeleteContainer from '../container/deleteContainer'
 
-const connect = {
-    name: 'ecommerce-cart',
-    version: 1,
-    type: 'readwrite'
-}
 const ListingAllProductContainer = props => {
     
     return (
