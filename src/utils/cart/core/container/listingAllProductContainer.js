@@ -18,23 +18,12 @@ const connect = {
     version: 1,
     type: 'readwrite'
 }
-const ListingAllProductContainer = () => {
-    const [cart, setCart] = useState([])
-
-    useEffect(() => {
-        indexedDatabase(connect).then(connection => {
-            listingObjectStore(connection, connect)
-                .then(response => {
-                    setCart(response)
-                })
-        })
-
-    }, [])
-
+const ListingAllProductContainer = props => {
+    
     return (
         <>
             {
-                cart.map((item, index) => {
+                props.cart.map((item, index) => {
 
                     return (<tr key={index}>
                         <td colSpan="4" >
@@ -81,11 +70,11 @@ const ListingAllProductContainer = () => {
                 <td>
 
                     {/**Componente para renderizar o valor total do carrinho**/
-                        cart.length === 0
+                        props.cart.length === 0
                             ?
                             <div></div>
                             :
-                            <ValueTotal value={cart} />
+                            <ValueTotal value={props.cart} />
                     }
 
                 </td>
