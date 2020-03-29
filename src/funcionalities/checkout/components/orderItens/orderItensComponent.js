@@ -1,13 +1,16 @@
-/**Componente para rendereizar o itens que o cliente comprou
- * Nome, quantidade, preço, e o valor total  para o pagamento
+/**
+ * Esse componente vai renderizar os seguintes items:
+ * Itens que cliente comprou(nome, quantitade preço, foto e categoria).
+ * Preço do frete.
+ * Valor total a pagar.
  */
-
 import React from 'react'
 import TotalPriceComponent from '../price/totalPriceComponent'
+import  ValueShippingRateComponent from '../shippingRate/valueShippingRateComponent'
 import { connect } from 'react-redux'
 
 const OrderItensComponent = props => {
-    console.log(props.products)
+
     return (
         <>
             <div className="card billing_details mt-3">
@@ -36,7 +39,7 @@ const OrderItensComponent = props => {
                                     </p>
                                 </div>
                                 <div className="col-3">
-                                    <p className="text-grey-p">{item.quantity}</p>
+                                    <p className="text-grey-p">x{item.quantity}</p>
                                 </div>
 
                                 <div className="col-4 p-0">
@@ -47,12 +50,6 @@ const OrderItensComponent = props => {
                                         })
                                     }</p>
                                 </div>
-                                {/**
-                                 * itemProduct.products.price.toLocaleString('pt-BR', {
-                            style: 'currency',
-                            currency: 'BRL',
-                        })
-                                 */}
                             </div>
                         ))
 
@@ -60,10 +57,13 @@ const OrderItensComponent = props => {
                 </div>
             </div>
 
-            <TotalPriceComponent />
-           
-        </>
+            {/**Componente para calcular o valor do frete */}
+            <ValueShippingRateComponent />
 
+            {/**Componente para calcular o valor total da compra do cliente */}
+            <TotalPriceComponent />
+
+        </>
     )
 }
 
