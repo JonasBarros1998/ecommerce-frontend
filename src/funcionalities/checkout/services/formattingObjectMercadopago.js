@@ -36,28 +36,42 @@ let objMercadopago = {
 }
 
 /**
- * @param mercadopago objeto completo, como os itens do carrinho, e o endereço de entrega.
+ * @param cart O carrinho do cliente
+ * @param address o endereço e algumas informações adicionais do cliente
+ * @param valueDelivery O valor do frete que ele escolheu
  */
-export const formattingObjectMercadoPago = (cart, address) => {
+export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
 
+    //Adicionar o carrinho do cliente
     cart.map((item) => {
         return objMercadopago.items.push({
             "id": item['_id'],
-            "title": item['title'],
-            "description": item['description'],
+            "title": item['name'],
             "quantity": item['quantity'],
             "currency_id": 'BRL',
             "unit_price": item['price']
         })
     })
 
+    //adicionar dentro de item, o frete que o cliente escolheu
+    objMercadopago.items.push({
+        "id": "id_frete",
+        "title": "Frete",
+        "quantity": 1,
+        "currency_id": "BRL",
+        "unit_price": valueDelivery
+    })
+
+    //Formatar objeto para adicionar informações gerais do cliente
     objMercadopago.payer['name'] = address.toReceiver
     objMercadopago.payer['email'] = address.email
+    //convertNumber() é uma função para fazer a conversão do telefone para o formato float
     objMercadopago.payer.phone['number'] = convertNumber(address.phone)
     objMercadopago.payer.identification['number'] = address.cpf
     objMercadopago.payer.address['street_name'] = address.street
     objMercadopago.payer.address['street_number'] = parseFloat(address.number)
     objMercadopago.payer.address['zip_code'] = address.cep
+
     return objMercadopago
 } 
 

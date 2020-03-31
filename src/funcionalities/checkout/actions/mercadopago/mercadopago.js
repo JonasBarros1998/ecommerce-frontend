@@ -14,6 +14,7 @@ const database = {
     type: 'readwrite'
 }
 
+//Recuperar o endereço e algums informaçoes do cliente
 const address = () => (JSON.parse(window.localStorage.getItem('address')))
 
 //Fazer a listagem do carrinho no indexedDb
@@ -28,17 +29,17 @@ const searchCart = () => {
             }).catch(error => (reject(error)))
     })
 }
-export const mercadopago = () => {
+
+export const mercadopago = (valueDelivery) => {
     const payment = checkoutRoute.mercadoPago['payment']
     searchCart()
-        .then(async response => {
+        .then(response => {
             const [searchAddress] = address()
-            let newObjectMercadopago = formattingObjectMercadoPago(response, searchAddress)
-            await verb.post(payment, header.defaultHeaders(), newObjectMercadopago)
+            let newObjectMercadopago = formattingObjectMercadoPago(response, searchAddress, valueDelivery)
+            verb.post(payment, header.defaultHeaders(), newObjectMercadopago)
                 .then(response => {
                     //Redirecionar o usuario para a pagina do mercado pago
                     redirectUser(response.redirect)
                 }).catch(err => (new Error(err)))
-        }).catch(error => new Error(error))
+        }).catch(err => new Error(err))
 }
-
