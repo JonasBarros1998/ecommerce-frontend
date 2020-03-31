@@ -24,7 +24,7 @@ export const addObjectStore = (connection, database, datas) => {
 /**
  * Função para listagem de todos os dados no indexedDb
  * @param connection Um objeto com a connection de IndeedDb
- * @param {*} database Informações da sua databae que deseja fazer a listagem de dados
+ * @param database Informações da sua databae que deseja fazer a listagem de dados
  */
 export const listingObjectStore = (connection, database) => {
 
@@ -66,14 +66,13 @@ export const deleteObjectStore = (connection, database, data) => {
             console.log(e.target.name)
         }
     })
-
 }
 
 /**
  * @param connection A conexão com o indexdDb
  * @param database A informações do banco de dados
  * @param data O Id do objeto para ser consultado 
- * @param update Qual dado deve ser atualizado
+ * @param update O objeto para ser atualizado
  */
 export const updateObjectStore = (connection, database, data, dataUpdate) => {
     return new Promise((resolve, reject) => {

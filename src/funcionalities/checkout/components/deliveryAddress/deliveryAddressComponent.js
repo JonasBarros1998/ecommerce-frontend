@@ -90,6 +90,7 @@ const DeliveryAddressComponent = props => {
                             email: "",
                             address: "",
                             toReceiver: "",
+                            cpf: "",
                             cep: "",
                             typeAddress: "",
                             street: "",
