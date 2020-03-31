@@ -4,7 +4,7 @@ import { generateNumber } from '../../../utils/numberAleators/numbersAleators.js
 const Initializer = () => {
     
     useEffect(() => {
-        //Gerar numeros aleatorios
+        //gerar um id para o cliente que acessa o sistema
         generateNumber()
     })
 

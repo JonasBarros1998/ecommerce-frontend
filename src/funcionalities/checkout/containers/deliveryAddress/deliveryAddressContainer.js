@@ -20,6 +20,7 @@ export const DeliveryAddressContainer = props => {
         email: changeAddress.email,
         address: changeAddress.address,
         toReceiver: changeAddress.toReceiver,
+        cpf: changeAddress.cpf,
         cep: changeAddress.cep,
         typeAddress: changeAddress.typeAddress,
         street: changeAddress.street,
@@ -36,7 +37,7 @@ export const DeliveryAddressContainer = props => {
     const updateSelect = (event) => {
         const valueSelect = event.target.value
         const selectId = event.target.id
-
+        
         return setForm({
             ...form,
             [selectId]: valueSelect
@@ -51,7 +52,7 @@ export const DeliveryAddressContainer = props => {
     }
 
     const { email, address, toReceiver,
-        cep, typeAddress, street, number,
+        cpf, cep, typeAddress, street, number,
         complement, burgh, states,
         city, reference, phone } = form
 
@@ -61,7 +62,7 @@ export const DeliveryAddressContainer = props => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     props.deliveryAddres({
-                        email: email, address: address, toReceiver: toReceiver,
+                        email: email, address: address, toReceiver: toReceiver, cpf: cpf,
                         cep: cep, typeAddress: typeAddress, street: street, number: number,
                         complement: complement, burgh: burgh, states: states, city: city,
                         reference: reference, phone: phone
@@ -86,12 +87,21 @@ export const DeliveryAddressContainer = props => {
                             onChange={e => upadateInput(e)} />
                     </div>
 
-                    <div className="col-md-12 form-group">
+                    <div className="col-md-9 form-group">
                         <label><small>Nome do destinatário</small></label>
                         <input type="text" className='form-control' id="nameRecipient"
                             name="toReceiver" placeholder='Nome de quem vai receber a encomenda'
                             value={toReceiver}
                             onChange={e => upadateInput(e)} />
+                    </div>
+
+                    <div className="col-md-3 form-group">
+                        <label><small>Cpf</small></label>
+                        <InputMask type="text" className="form-control" id="cpf"
+                            name="cpf" placeholder="000.000.000.00" mask="999.999.999-99"
+                            value={cpf}
+                            onChange={e => upadateInput(e)}
+                            required />
                     </div>
 
                     <div className="col-md-3 form-group">

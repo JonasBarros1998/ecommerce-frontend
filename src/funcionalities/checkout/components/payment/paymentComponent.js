@@ -17,7 +17,7 @@ const PaymentComponent = props => {
                 </div>
                 <div className="col-12 d-flex justify-content-end">
                     <a className="genric-btn bc-cyan text-uppercase"
-                        onClick={() => props.mercadopago()}>
+                        onClick={() => mercadopago()}>
                         <small className="color-white-default">Pague com</small>
                         <span className="fs">
                             <span className="color-torea-bay"><b> mercado</b>
@@ -30,5 +30,5 @@ const PaymentComponent = props => {
     )
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ mercadopago }, dispatch)
-export default connect(null, mapDispatchToProps)(PaymentComponent)
+//const mapDispatchToProps = dispatch => bindActionCreators({ mercadopago }, dispatch)
+export default connect(null)(PaymentComponent)

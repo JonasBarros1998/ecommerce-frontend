@@ -1,4 +1,5 @@
 import React from 'react'
+
 const ModalComponent = props => {
     return (
         <div className="modal fade bd-example-modal-lg" id={ props.id } tabIndex="-1" 
