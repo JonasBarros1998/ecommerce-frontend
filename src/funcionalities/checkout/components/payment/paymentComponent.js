@@ -6,6 +6,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mercadopago } from '../../actions/mercadopago/mercadopago'
+import Badges from '../../../../components/alerts&Mensages/badges'
 
 const PaymentComponent = props => {
     return (
@@ -23,7 +24,7 @@ const PaymentComponent = props => {
                          *  @param props.valueDelivery Preço do frete que o cliente escolheu
                          * */
                     }
-                    <a className="genric-btn bc-cyan text-uppercase"
+                    <a className="btn bc-cyan text-uppercase btn-mercadopago"
                         onClick={() => mercadopago(props.valueDelivery)}>
                         <small className="color-white-default">Pague com</small>
                         <span className="fs">
@@ -32,10 +33,13 @@ const PaymentComponent = props => {
                         </span>
                     </a>
                 </div>
+                <div className="col-12 d-flex justify-content-center mt-3">
+                    <div class="alert alert-success alert-text fade" role="alert"></div>
+                </div>
             </div>
         </>
     )
 }
 
-const mapStateToProps = store => ({valueDelivery: store.checkout.valueDelivery})
+const mapStateToProps = store => ({ valueDelivery: store.checkout.valueDelivery })
 export default connect(mapStateToProps)(PaymentComponent)
