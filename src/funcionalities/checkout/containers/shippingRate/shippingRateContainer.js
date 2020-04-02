@@ -1,3 +1,8 @@
+/**
+ * Container para fazer a listagem dos produtos, para que possam ser listados
+ * no componente de escolha de frete
+ * 
+ */
 import React, { useEffect } from "react"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'

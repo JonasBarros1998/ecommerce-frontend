@@ -9,7 +9,6 @@ import BannerCrumbComponent from '../../../../components/banner/bannerCrumbCompo
 import DeliveryAddressComponent from '../deliveryAddress/deliveryAddressComponent'
 import PaymentComponent from '../payment/paymentComponent'
 import OrderItensComponent from '../orderItens/orderItensComponent'
-import imagem from '../../../../_assets/img/loading.svg'
 
 const CheckoutComponent = () => {
     return (
@@ -17,22 +16,19 @@ const CheckoutComponent = () => {
             <div className="mb-5">
                 <BannerCrumbComponent />
             </div>
-            {/**
-            <img src={imagem}/>
-             */}
 
             <div className="row ml-3 mr-3">
                 <div className="col-12 col-sm-12 col-lg-8">
                     {/** Componente para escolha do frete **/}
                     <ShippingRateComponent />
-
                     {/**Componente para pagamento com o mercado pago */}
                     <PaymentComponent />
                 </div>
 
-                {/** Componente de endereço de entrega, listagem de itens **/}
                 <div className="col-12 col-sm-12 col-lg-4">
+                    {/** Componente de endereço de entrega**/}
                     <DeliveryAddressComponent />
+                    {/** Componente para listagem dos produtos */}
                     <OrderItensComponent />
                 </div>
 

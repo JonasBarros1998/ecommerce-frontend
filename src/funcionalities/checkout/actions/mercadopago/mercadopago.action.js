@@ -7,6 +7,7 @@ import { checkoutRoute } from '../../routes/checkout.route'
 import { redirectUser } from '../../helpers/redirect'
 import { formattingObjectMercadoPago } from '../../services/formattingObjectMercadopago'
 import { indexedDatabase, listingObjectStore } from '../../../../utils/indexed-db/core/database.js'
+import { formattingObjmongodb } from '../../helpers/formattingObjMongodb'
 
 const database = {
     name: "ecommerce-cart",
@@ -36,26 +37,42 @@ const searchCart = () => {
  * 
  * @param valueDelivery Preço do frete
  */
-export const mercadopago = async (valueDelivery) => {
+
+//fazer a busca da url
+const payment = checkoutRoute.mercadoPago['payment']
+
+export const mercadopago = async (objMercadopago) => {
 
     //Desabilitar o botão de mercado pago
     document.querySelector('.btn-mercadopago').classList.add('disabled')
     document.querySelector('.alert-success').classList.remove('fade')
     document.querySelector('.alert-text').innerHTML = "Aguarde em instantes você será redirecionado para mercado pago"
-    //Avisa ao cliente que ele será redirecionado ao mercado pago
-    //window.alert("Aguarde em instantes você será redirecionado para mercado pago")
-    searchCart()
+    const urlPayment = checkoutRoute.mercadoPago['payment']
+
+    verb.post(payment, header.defaultHeaders(), objMercadopago)
         .then(response => {
-            //capturar o endereço do cliente
-            const [searchAddress] = address()
-            //Formatar o objeto para enviar ao mercado pago
-            let newObjectMercadopago = formattingObjectMercadoPago(response, searchAddress, valueDelivery)
-            //Url de pagamento
-            const payment = checkoutRoute.mercadoPago['payment']
-            verb.post(payment, header.defaultHeaders(), newObjectMercadopago)
-                .then(response => {
-                    //Redirecionar o usuario para a pagina do mercado pago
-                    redirectUser(response.redirect)
-                }).catch(err => (new Error(err)))
-        }).catch(err => new Error(err))
+            //Redirecionar o usuario para a pagina do mercado pago
+            redirectUser(response.redirect)
+        }).catch(err => (new Error(err)))
+}
+
+const client_id = window.localStorage.getItem('client_id')
+const purchaseRoute = checkoutRoute.client['purchase']
+const headers = header.defaultHeaders()
+const [searchAddress] = address()
+export const savePurchase = (valueDelivery) => {
+    return (dispatch) => {
+        searchCart()
+            .then(response => {
+                let newObjectMercadopago = formattingObjectMercadoPago(response, searchAddress, valueDelivery)
+                newObjectMercadopago['frete'] = valueDelivery
+                const newObjMongodb = formattingObjmongodb(newObjectMercadopago, client_id)
+                console.log(newObjMongodb)
+                verb.post(purchaseRoute, headers, newObjMongodb)
+                    .then((response) => {
+                        console.log(response)
+                        mercadopago(newObjectMercadopago)
+                    }).catch(error => new Error(error))
+            })
+    }
 }

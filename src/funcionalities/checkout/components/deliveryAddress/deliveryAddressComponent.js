@@ -37,7 +37,7 @@ const DeliveryAddressComponent = props => {
                                 <p className="color-grimmys-grey" key={index}>
                                     {item.street}<br />
                                     {item.burgh}, {item.number}<br />
-                                    São Paulo- Sp<br />
+                                    {item.city}, {item.states.nameState}<br />
                                     {item.cep}</p>
                             ))
                     }

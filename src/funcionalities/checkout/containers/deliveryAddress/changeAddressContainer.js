@@ -1,5 +1,5 @@
 /**
- * container especifico para renderizar o botão de atuallizar o endereço de entrega do cliente
+ * container especifico para renderizar o botão de atualizar o endereço de entrega do cliente
  */
 import React from 'react'
 import { connect } from 'react-redux'
