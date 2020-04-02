@@ -2,9 +2,11 @@
  * ao clicar nesse botão vai chamar a função mercadopago(), com isso 
  * o cliente será redirecionado para fazer o pagamento dentro do sistema do mercado pago.  
  */
+
 import React from 'react'
 import { connect } from 'react-redux'
-import  MercadoPagoContainer  from '../../containers/payment/mercadoPagoContainer'
+import { mercadopago } from '../../actions/mercadopago/mercadopago'
+import Badges from '../../../../components/alerts&Mensages/badges'
 
 const PaymentComponent = props => {
     return (
@@ -22,13 +24,17 @@ const PaymentComponent = props => {
                          *  @param props.valueDelivery Preço do frete que o cliente escolheu
                          * */
                     }
-
-                    {/*botão de mercado pago*/}
-                    <MercadoPagoContainer valueDelivery = {props.valueDelivery}/>
-
+                    <a className="btn bc-cyan text-uppercase btn-mercadopago"
+                        onClick={() => mercadopago(props.valueDelivery)}>
+                        <small className="color-white-default">Pague com</small>
+                        <span className="fs">
+                            <span className="color-torea-bay"><b> mercado</b>
+                            </span><b className="color-white-default"> pago</b>
+                        </span>
+                    </a>
                 </div>
                 <div className="col-12 d-flex justify-content-center mt-3">
-                    <div className="alert alert-success alert-text fade" role="alert"></div>
+                    <div class="alert alert-success alert-text fade" role="alert"></div>
                 </div>
             </div>
         </>

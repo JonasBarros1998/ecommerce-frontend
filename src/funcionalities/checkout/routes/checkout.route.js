@@ -4,6 +4,6 @@ export const checkoutRoute = {
     },
 
     client: {
-        "purchase": "http://localhost:8000/jm-ecommerce/client/save-purchase"
+        "purchase": "http://localhost:8000/client/save-purchase"
     }
 }
