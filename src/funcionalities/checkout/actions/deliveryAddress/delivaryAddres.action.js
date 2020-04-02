@@ -1,3 +1,6 @@
+/**
+ * Action para fazer a listagem 
+ */
 import {
   NOT_EXIST_ADDRESS,
   CHANGE_ADDRESS,
@@ -29,7 +32,7 @@ export const updatingAddress = (address) => {
 /**Função para verificar se existe algum endereço no localstorage. 
  * Se existir carregamos o endereço do usuario.
  * Caso não existir, renderizamos um botão de adicionar endereço. **/
-export const verifieldLocalStorage = () => {
+export const address = () => {
   const address = searchLocalStorage('address')
   return (dispatch) => {
     if (address == null) {
@@ -51,7 +54,7 @@ export const deliveryAddres = (address) => {
 }
 
 /** Função usada para atualizar o endereço do cliente. 
- * ela vai recuperar o endereço, carregar seus dados nos campo de endereço  **/
+ * ela vai recuperar o endereço, e carregar seus dados nos campo de endereço  **/
 export const changeAddress = () => {
   const addresLocalStorage = searchLocalStorage('address')
   const convertAddress = JSON.parse(addresLocalStorage)

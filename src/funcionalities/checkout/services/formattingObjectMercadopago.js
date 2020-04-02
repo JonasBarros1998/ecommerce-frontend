@@ -26,13 +26,13 @@ let objMercadopago = {
     auto_return: "all",
     external_reference: '1',
     back_urls: {
-        success: "http://localhost:3000/",
-        pending: "http://localhost:3000/",
-        failure: "http://localhost:3000/",
+        success: "",
+        pending: "",
+        failure: "",
     },
     expires: true,
-    expiration_date_from: "2020-01-04T12:00:00.000-04:00",
-    expiration_date_to: "2020-07-12T12:00:00.000-04:00"
+    expiration_date_from: "",
+    expiration_date_to: ""
 }
 
 /**
@@ -41,7 +41,6 @@ let objMercadopago = {
  * @param valueDelivery O valor do frete que ele escolheu
  */
 export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
-
     //Adicionar o carrinho do cliente
     cart.map((item) => {
         return objMercadopago.items.push({
@@ -71,9 +70,10 @@ export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
     objMercadopago.payer.address['street_name'] = address.street
     objMercadopago.payer.address['street_number'] = parseFloat(address.number)
     objMercadopago.payer.address['zip_code'] = address.cep
-
+    objMercadopago['expiration_date_from'] = convertDate()
+    objMercadopago['expiration_date_to'] = convertDate(1)
     return objMercadopago
-} 
+}
 
 //Função para substituir alguns caracteres especiais do telefone, e converter para um tipo float
 const convertNumber = (phone) => {
@@ -85,4 +85,33 @@ const convertNumber = (phone) => {
     //resultado = 1159333427
     const finaConversion = secondParentheses.replace('-', "")
     return parseFloat(finaConversion)
+}
+
+//Formatar a data da maneira que o mercado pago deseja
+const convertDate = (expire = 0) => {
+    const date = new Date()
+    let month = (date.getMonth() + 1)
+    let day = (date.getDate() + expire) 
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+    
+    let seconds = date.getSeconds()
+    let milliseconds = date.getMilliseconds()
+
+    if (month <= 9) {
+        month = `0${month}`
+    }if (day <= 9) {
+        day = `0${day}`
+    }if (hours <= 9) {
+        hours = `0${hours}`
+    }if(minutes <= 9){
+        minutes = `0${minutes}`
+        console.log(minutes)
+    }if(seconds <= 9){
+        seconds = `0${seconds}`
+    }if(milliseconds <= 9){
+        milliseconds = `0${milliseconds}`
+    }
+    const dateExpire = `${date.getFullYear()}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}-03:00`
+    return dateExpire
 }
