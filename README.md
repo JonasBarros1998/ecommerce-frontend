@@ -9,11 +9,6 @@ A aplicação está separada em módulos, e está estruturada da seguinte maneir
 Cada módulo tem seus respectivos diretórios, para explicá-los, usaremos o módulo products. 
 O módulo products, como todos os módulos têm a seguinte estrutura de pastas:  actions, constants, container, reducers, routes, utils e helpers.
 
-###### Diferença entre os diretórios container e componentes
-O diretório container tem como responsabilidade chamar as funções criadas nas actions, por padrão ele não deve chamar os estados de outros módulos. 
-
-Quem tem responsabilidade de chamar os estados através das props é o componente, com isso o componente não poderá chamar as actions, porque isso ficará a cargo dos containers.
-
 ## O que já está pronto para o uso?
 - Cadastro de novos usuários
 - Login  
