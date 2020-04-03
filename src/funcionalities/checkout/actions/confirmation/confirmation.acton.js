@@ -2,34 +2,32 @@
  * Listar o endereco do cliente localizado no localStorage.
  * Carregar o carrinho do cliente localizado no indexedDb 
  */
-import { indexedDatabase, listingObjectStore } from "../../../../utils/indexed-db/core/database"
+import { verb } from '../../../../utils/http/verbs'
+import { HttpHeaders as header } from '../../../../utils/header/headers'
+import { checkoutRoute } from '../../routes/checkout.route'
+import { pathname } from '../../helpers/pathname'
 import {
     CONFIRMATION
 } from '../../constants/checkout.constants'
 
-const infoClient = (datas) => { type: CONFIRMATION, datas }
+const infoClient = (datas) => ({ type: CONFIRMATION, datas })
 
-const database = {
-    name: "ecommerce-cart",
-    version: 1,
-    type: "read"
-}
+//Apartir da url acessada pelo usuario, fazer a busca pelo id do cliente
+const client_id = pathname() 
 
-//Fazer a busca do carrinho do cliente
-const listingCart = () => {
-    return new Promise((resolve, reject) => {
-        indexedDatabase(database)
-            .then(connection => {
-                listingObjectStore(connection, database)
-                    .then(response => resolve(response))
-            }).catch(error => reject(error))
-    })
-}
+const headers = header.defaultHeaders()
 
-export const confirmationClient = () => {
+//Fazer a da compra do cliente no banco de dados
+const clientPurchase = []
+export const purchase = () => {
     return (dispatch) => {
-        listingCart()
-            .then(response => dispatch(infoClient(response))
-            ).catch(error => new Error(error))
+        const searchRoute = checkoutRoute.client.aproved(client_id)
+        verb.get(searchRoute, headers)
+            .then(client => {
+                clientPurchase.push(client.response)
+                dispatch(infoClient(clientPurchase))
+                console.log(clientPurchase)
+            })
+            .catch(error => new Error(error))
     }
 }

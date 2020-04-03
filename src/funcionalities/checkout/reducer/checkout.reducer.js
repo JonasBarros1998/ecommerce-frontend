@@ -4,6 +4,7 @@ import {
   LOADING_ADDRESS,
   LISTING_ALL_PRODUCTS,
   DELIVERY_VALUE,
+  CONFIRMATION,
 } from '../constants/checkout.constants'
 
 const state = {
@@ -12,7 +13,8 @@ const state = {
   existAddress: null,
   addressDelivery: [],
   loadingAddress: [],
-  valueDelivery: 0
+  valueDelivery: 0,
+  client: []
 }
 
 export const checkout = (initState = state, action) => {
@@ -33,7 +35,6 @@ export const checkout = (initState = state, action) => {
 
     //Fazer a mudança do endereço
     case CHANGE_ADDRESS:
-      console.log(action.address)
       return Object.assign({}, initState, {
         loadingAddress: action.address
       })
@@ -48,6 +49,11 @@ export const checkout = (initState = state, action) => {
     case DELIVERY_VALUE:
       return Object.assign({}, initState, {
         valueDelivery: action.value
+      })
+    
+    case CONFIRMATION:
+      return Object.assign({}, initState, {
+        client: action.datas
       })
     default:
       return state

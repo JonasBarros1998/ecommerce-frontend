@@ -1,13 +1,16 @@
 import { verb } from '../../../../utils/http/verbs'
-import {
-    HttpHeaders as header
-} from '../../../../utils/header/headers'
-
+import { HttpHeaders as header } from '../../../../utils/header/headers'
 import { checkoutRoute } from '../../routes/checkout.route'
 import { redirectUser } from '../../helpers/redirect'
 import { formattingObjectMercadoPago } from '../../services/formattingObjectMercadopago'
 import { indexedDatabase, listingObjectStore } from '../../../../utils/indexed-db/core/database.js'
 import { formattingObjmongodb } from '../../helpers/formattingObjMongodb'
+import { message } from '../../helpers/message'
+import {
+    PAYMENT_APPROVED
+} from '../../constants/checkout.constants'
+
+//const info_client = (datas) => ({ type: PAYMENT_APPROVED, datas })
 
 const database = {
     name: "ecommerce-cart",
@@ -17,6 +20,9 @@ const database = {
 
 //Recuperar o endereço e algums informaçoes do cliente
 const address = () => (JSON.parse(window.localStorage.getItem('address')))
+
+//Capturar o id do cliente
+const client_id = window.localStorage.getItem('client_id')
 
 //Fazer a listagem do carrinho no indexedDb
 const searchCart = () => {
@@ -31,35 +37,37 @@ const searchCart = () => {
     })
 }
 
-/**
- * Quando o cliente clicar o botão de mercado pago, essa função vai ser chamada, 
- * para enviar o objeto ao mercado pago, e logo em seguida redirecionar o usuario. 
- * 
- * @param valueDelivery Preço do frete
- */
 
 //fazer a busca da url
 const payment = checkoutRoute.mercadoPago['payment']
-
+/**
+ * A função vai envair o carrinho e informaçoes pessoais do cliente ao mercado pago
+ * e logo em seguida redireciona-lo ao sistema do mercado pago
+ * @param objMercadopago é o objeto a ser enviado ao mercadopago
+ */
 export const mercadopago = async (objMercadopago) => {
-
-    //Desabilitar o botão de mercado pago
-    document.querySelector('.btn-mercadopago').classList.add('disabled')
-    document.querySelector('.alert-success').classList.remove('fade')
-    document.querySelector('.alert-text').innerHTML = "Aguarde em instantes você será redirecionado para mercado pago"
-    const urlPayment = checkoutRoute.mercadoPago['payment']
+    message()
 
     verb.post(payment, header.defaultHeaders(), objMercadopago)
         .then(response => {
             //Redirecionar o usuario para a pagina do mercado pago
-            redirectUser(response.redirect)
-        }).catch(err => (new Error(err)))
+            //redirectUser(response.redirect)
+        }).catch(err => new Error(err))
 }
 
-const client_id = window.localStorage.getItem('client_id')
+//fazer a busca da url
 const purchaseRoute = checkoutRoute.client['purchase']
+//headers
 const headers = header.defaultHeaders()
+//capturar o endereço
 const [searchAddress] = address()
+/**
+ * Quando o cliente clicar o botão de mercado pago, primeiro iremos
+ * salvar a compra no mongodb e logo em seguida, chamaremos a
+ * função mercadopago, para redirecionamos ao sistema de pagamento
+ * 
+ * @param valueDelivery Preço do frete
+ */
 export const savePurchase = (valueDelivery) => {
     return (dispatch) => {
         searchCart()
@@ -67,12 +75,11 @@ export const savePurchase = (valueDelivery) => {
                 let newObjectMercadopago = formattingObjectMercadoPago(response, searchAddress, valueDelivery)
                 newObjectMercadopago['frete'] = valueDelivery
                 const newObjMongodb = formattingObjmongodb(newObjectMercadopago, client_id)
-                console.log(newObjMongodb)
                 verb.post(purchaseRoute, headers, newObjMongodb)
-                    .then((response) => {
-                        console.log(response)
+                    .then(response => {
                         mercadopago(newObjectMercadopago)
-                    }).catch(error => new Error(error))
+                    }
+                    ).catch(error => new Error(error))
             })
     }
 }

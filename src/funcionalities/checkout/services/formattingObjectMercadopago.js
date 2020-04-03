@@ -71,7 +71,7 @@ export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
     objMercadopago.payer.address['street_number'] = parseFloat(address.number)
     objMercadopago.payer.address['zip_code'] = address.cep
     objMercadopago['expiration_date_from'] = convertDate()
-    objMercadopago['expiration_date_to'] = convertDate(1)
+    objMercadopago['expiration_date_to'] = convertDate(15)
     return objMercadopago
 }
 
@@ -91,9 +91,9 @@ const convertNumber = (phone) => {
 const convertDate = (expire = 0) => {
     const date = new Date()
     let month = (date.getMonth() + 1)
-    let day = (date.getDate() + expire) 
+    let day = date.getDate() 
     let hours = date.getHours()
-    let minutes = date.getMinutes()
+    let minutes = (date.getMinutes() + expire)
     
     let seconds = date.getSeconds()
     let milliseconds = date.getMilliseconds()

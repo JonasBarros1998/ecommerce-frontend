@@ -1,18 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BannerCrumbComponent from '../../../../components/banner/bannerCrumbComponent'
 import MenuComponent from '../../../../components/menu/MenuComponent'
 import { connect } from 'react-redux'
 import ConfirmationContainer from '../../containers/confirmation/confirmationContainer'
+import DatePurchase from './datePurchase'
+import ValuePurchase from './valuePurchase'
+import ListingProducts from './listingProducts'
+import AddressComponent from './addressComponent'
 
 const ConfirmationComponent = props => {
+    const { client } = props
+    const [datas] = client
 
-    const { loadingcart, loadingAddress } = props
+    const [shipping, setShipping] = useState(0)
+
+    useEffect(() => {
+        if (datas !== undefined) {
+
+            //Frete
+            setShipping(datas.frete)
+        }
+
+
+    })
+
 
     return (
         <div>
+            <ConfirmationContainer />
+
             <BannerCrumbComponent />
             <MenuComponent />
-            <ConfirmationContainer />
             <section className="order_details section_gap">
                 <div className="container">
                     <h3 className="title_confirmation">Obrigado, seu pagamento foi confirmado e seu pedido foi recebido!</h3>
@@ -21,8 +39,16 @@ const ConfirmationComponent = props => {
                             <div className="details_item mt-2">
                                 <h4>Informações do pedido</h4>
                                 <ul className="list">
-                                    <li><a href="#"><span>Data</span> : 27/01/2020</a></li>
-                                    <li><a href="#"><span>Total</span> : R$ 2.933,47</a></li>
+                                    <li>
+                                        <DatePurchase date = {datas} />
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <span>Total</span>
+                                            :<ValuePurchase value={datas} />
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -30,15 +56,7 @@ const ConfirmationComponent = props => {
                             <div className="details_item mt-2">
                                 <h4>Endereço de entrega</h4>
                                 {
-                                    loadingAddress.map((item, index) => (
-                                        <ul className="list" key={index}>
-                                            <li><a href="#"><span>Rua</span> : {item.street}</a></li>
-                                            <li><a href="#"><span>Cidade</span> : {item.city}</a></li>
-                                            <li><a href="#"><span>Estado</span> : {item.states.nameState}</a></li>
-                                            <li><a href="#"><span>Cep </span> : {item.cep}</a></li>
-                                        </ul>
-                                    ))
-
+                                    <AddressComponent address = { props.client }/>
                                 }
                             </div>
                         </div>
@@ -56,23 +74,7 @@ const ConfirmationComponent = props => {
                                 </thead>
                                 <tbody>
                                     {
-                                        loadingcart.map((item, index) => (
-                                            <tr key={index}>
-                                                <td>
-                                                    <p>{item.name}</p>
-                                                </td>
-                                                <td>
-                                                    <h5>x {item.quantity}</h5>
-                                                </td>
-                                                <td>
-                                                    <p>{item.price.toLocaleString('pt-br', {
-                                                        style: 'currency',
-                                                        currency: 'BRL'
-                                                    })}</p>
-                                                </td>
-                                            </tr>
-                                        ))
-
+                                        <ListingProducts datas={datas} />
                                     }
                                     <tr>
                                         <td>
@@ -82,7 +84,10 @@ const ConfirmationComponent = props => {
                                             <h5></h5>
                                         </td>
                                         <td>
-                                            <p>R$ 50,00</p>
+                                            <p>{shipping.toLocaleString('pt-br', {
+                                                style: 'currency',
+                                                currency: "BRL"
+                                            })}</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -93,7 +98,7 @@ const ConfirmationComponent = props => {
                                             <h5></h5>
                                         </td>
                                         <td>
-                                            <p>R$ 2.210,00</p>
+                                            <p><ValuePurchase  value={datas} /></p>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -106,8 +111,9 @@ const ConfirmationComponent = props => {
     )
 }
 
-const mapStateToProps = store => ({
-    loadingcart: store.checkout.listingAllProduct,
-    loadingAddress: store.checkout.loadingAddress
-})
+const mapStateToProps = store => {
+    return {
+        client: store.checkout.client
+    }
+}
 export default connect(mapStateToProps)(ConfirmationComponent)
