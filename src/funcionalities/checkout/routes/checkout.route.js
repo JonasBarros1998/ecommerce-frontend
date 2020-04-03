@@ -4,6 +4,10 @@ export const checkoutRoute = {
     },
 
     client: {
-        "purchase": "http://localhost:8000/client/save-purchase"
-    }
+        "purchase": "http://localhost:8000/jm-ecommerce/client/save-purchase",
+        aproved: (id_client) => (
+            `http://localhost:8000/jm-ecommerce/client/listing-one/?to_find=id_client-${id_client}`
+        )
+    },
+    
 }

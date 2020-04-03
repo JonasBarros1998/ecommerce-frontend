@@ -60,6 +60,7 @@ ReactDOM.render(
                 <Route path="/authentication/alterar-senha/hash/:hash" exact component={AlterPasswordComponent} />
                 <Route path="/shop" exact component={ShopComponent} />
                 <Route path="/pagamento" exact component={CheckoutComponent} />
+                <Route path="/confirmacao-do-pedido/:id_client" exact component={ConfirmationComponent} />
             </Switch>
         </Router>
     </Provider>,

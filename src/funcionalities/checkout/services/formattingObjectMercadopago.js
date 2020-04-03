@@ -71,7 +71,8 @@ export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
     objMercadopago.payer.address['street_name'] = address.street
     objMercadopago.payer.address['street_number'] = parseFloat(address.number)
     objMercadopago.payer.address['zip_code'] = address.cep
-
+    objMercadopago['expiration_date_from'] = convertDate()
+    objMercadopago['expiration_date_to'] = convertDate(15)
     return objMercadopago
 } 
 
@@ -85,4 +86,33 @@ const convertNumber = (phone) => {
     //resultado = 1159333427
     const finaConversion = secondParentheses.replace('-', "")
     return parseFloat(finaConversion)
+}
+
+//Formatar a data da maneira que o mercado pago deseja
+const convertDate = (expire = 0) => {
+    const date = new Date()
+    let month = (date.getMonth() + 1)
+    let day = date.getDate() 
+    let hours = date.getHours()
+    let minutes = (date.getMinutes() + expire)
+    
+    let seconds = date.getSeconds()
+    let milliseconds = date.getMilliseconds()
+
+    if (month <= 9) {
+        month = `0${month}`
+    }if (day <= 9) {
+        day = `0${day}`
+    }if (hours <= 9) {
+        hours = `0${hours}`
+    }if(minutes <= 9){
+        minutes = `0${minutes}`
+        console.log(minutes)
+    }if(seconds <= 9){
+        seconds = `0${seconds}`
+    }if(milliseconds <= 9){
+        milliseconds = `0${milliseconds}`
+    }
+    const dateExpire = `${date.getFullYear()}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}-03:00`
+    return dateExpire
 }
