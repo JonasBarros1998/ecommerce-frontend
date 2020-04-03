@@ -15,7 +15,6 @@ export const DeliveryAddressContainer = props => {
     const { nameFields } = props
 
     const [changeAddress] = useState(...nameFields)
-    const [textContentSelect, setTextContentSelect] = useState("")
 
     const [form, setForm] = useState({
         email: changeAddress.email,
@@ -38,9 +37,7 @@ export const DeliveryAddressContainer = props => {
     const updateSelect = (event) => {
         const valueSelect = event.target.value
         const selectId = event.target.id
-        const select = document.querySelector(`#${selectId}`)
-        const selectTextContent = select[event.target.value].textContent
-        setTextContentSelect(selectTextContent)
+        
         return setForm({
             ...form,
             [selectId]: valueSelect
@@ -67,8 +64,7 @@ export const DeliveryAddressContainer = props => {
                     props.deliveryAddres({
                         email: email, address: address, toReceiver: toReceiver, cpf: cpf,
                         cep: cep, typeAddress: typeAddress, street: street, number: number,
-                        complement: complement, burgh: burgh, 
-                        states: {stateValue: states, nameState: textContentSelect}, city: city,
+                        complement: complement, burgh: burgh, states: states, city: city,
                         reference: reference, phone: phone
                     })
                 }}>
@@ -150,20 +146,20 @@ export const DeliveryAddressContainer = props => {
                     </div>
 
                     <div className="col-md-4 form-group">
-                        <label><small>Cidade</small></label>
-                        <input className="form-control" id="city" name="city"
-                            value={city}
-                            onChange={e => upadateInput(e)} />
-                    </div>
-
-                    <div className="col-md-4 form-group">
                         <label>
                             <small>Estado</small>
                         </label>
                         <SelectComponent id={"states"}
                             class={"custom-select mr-sm-2 form-control select-delivery"}
                             select={e => updateSelect(e)}
-                            value={states.stateValue} />
+                            value={states} />
+                    </div>
+
+                    <div className="col-md-4 form-group">
+                        <label><small>Cidade</small></label>
+                        <input className="form-control" id="city" name="city"
+                            value={city}
+                            onChange={e => upadateInput(e)} />
                     </div>
 
                     <div className="col-md-4 form-group">

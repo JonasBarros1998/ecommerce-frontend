@@ -26,13 +26,13 @@ let objMercadopago = {
     auto_return: "all",
     external_reference: '1',
     back_urls: {
-        success: "",
-        pending: "",
-        failure: "",
+        success: "http://localhost:3000/",
+        pending: "http://localhost:3000/",
+        failure: "http://localhost:3000/",
     },
     expires: true,
-    expiration_date_from: "",
-    expiration_date_to: ""
+    expiration_date_from: "2020-01-04T12:00:00.000-04:00",
+    expiration_date_to: "2020-07-12T12:00:00.000-04:00"
 }
 
 /**
@@ -41,6 +41,7 @@ let objMercadopago = {
  * @param valueDelivery O valor do frete que ele escolheu
  */
 export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
+
     //Adicionar o carrinho do cliente
     cart.map((item) => {
         return objMercadopago.items.push({
@@ -73,7 +74,7 @@ export const formattingObjectMercadoPago = (cart, address, valueDelivery) => {
     objMercadopago['expiration_date_from'] = convertDate()
     objMercadopago['expiration_date_to'] = convertDate(15)
     return objMercadopago
-}
+} 
 
 //Função para substituir alguns caracteres especiais do telefone, e converter para um tipo float
 const convertNumber = (phone) => {

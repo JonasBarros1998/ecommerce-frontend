@@ -19,31 +19,32 @@ const state = {
 
 export const checkout = (initState = state, action) => {
   switch (action.type) {
-
-    //Se existir um endereço, já fazemos a listagem
     case LOADING_ADDRESS:
       return Object.assign({}, initState, {
         existAddress: true,
         loadingAddress: [action.response]
       })
-
-    //Caso não existir endereço, já cadastrado
     case NOT_EXIST_ADDRESS:
       return Object.assign({}, initState, {
         existAddress: false
       })
 
-    //Fazer a mudança do endereço
     case CHANGE_ADDRESS:
       return Object.assign({}, initState, {
         loadingAddress: action.address
       })
 
-    //Adicionar para store a lista de todos os produtos do carrinho
-    case LISTING_ALL_PRODUCTS:
-      return Object.assign({}, initState, {
-        listingAllProduct: [...action.products]
-      })
+      //Adicionar para store a lista de todos os produtos do carrinho
+      case LISTING_ALL_PRODUCTS:
+        return Object.assign({}, initState, {
+          listingAllProduct: [...action.products]
+        })
+
+        //valor do frete
+        case DELIVERY_VALUE: 
+        return Object.assign({}, initState, {
+          valueDelivery: action.value
+        })
 
     //valor do frete
     case DELIVERY_VALUE:
