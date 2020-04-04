@@ -1,12 +1,11 @@
 /**Componente serve para renderizar o botão do mercadoPago, 
- * ao clicar nesse botão vai chamar a função mercadopago(), com isso 
+ * ao clicar nesse botão vai chamar a função savePurchase(), com isso 
  * o cliente será redirecionado para fazer o pagamento dentro do sistema do mercado pago.  
  */
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { mercadopago } from '../../actions/mercadopago/mercadopago'
-import Badges from '../../../../components/alerts&Mensages/badges'
+import MercadoPagoContainer from '../../containers/payment/mercadoPagoContainer'
 
 const PaymentComponent = props => {
     return (
@@ -20,21 +19,11 @@ const PaymentComponent = props => {
                 </div>
                 <div className="col-12 d-flex justify-content-end">
                     {
-                        /**Função do mercado pago, para redirecionar o usuario ao sistema do mercado pago*
-                         *  @param props.valueDelivery Preço do frete que o cliente escolheu
-                         * */
+                        <MercadoPagoContainer />
                     }
-                    <a className="btn bc-cyan text-uppercase btn-mercadopago"
-                        onClick={() => mercadopago(props.valueDelivery)}>
-                        <small className="color-white-default">Pague com</small>
-                        <span className="fs">
-                            <span className="color-torea-bay"><b> mercado</b>
-                            </span><b className="color-white-default"> pago</b>
-                        </span>
-                    </a>
                 </div>
                 <div className="col-12 d-flex justify-content-center mt-3">
-                    <div class="alert alert-success alert-text fade" role="alert"></div>
+                    <div className="alert alert-success alert-text fade" role="alert"></div>
                 </div>
             </div>
         </>

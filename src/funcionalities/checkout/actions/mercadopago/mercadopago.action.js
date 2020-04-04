@@ -6,11 +6,6 @@ import { formattingObjectMercadoPago } from '../../services/formattingObjectMerc
 import { indexedDatabase, listingObjectStore } from '../../../../utils/indexed-db/core/database.js'
 import { formattingObjmongodb } from '../../helpers/formattingObjMongodb'
 import { message } from '../../helpers/message'
-import {
-    PAYMENT_APPROVED
-} from '../../constants/checkout.constants'
-
-//const info_client = (datas) => ({ type: PAYMENT_APPROVED, datas })
 
 const database = {
     name: "ecommerce-cart",
@@ -30,13 +25,11 @@ const searchCart = () => {
         indexedDatabase(database)
             .then(connection => {
                 listingObjectStore(connection, database)
-                    .then(response => {
-                        resolve(response)
-                    }).catch(error => (reject(error)))
+                    .then(response => resolve(response)
+                    ).catch(error => (reject(error)))
             }).catch(error => (reject(error)))
     })
 }
-
 
 //fazer a busca da url
 const payment = checkoutRoute.mercadoPago['payment']
@@ -46,12 +39,12 @@ const payment = checkoutRoute.mercadoPago['payment']
  * @param objMercadopago é o objeto a ser enviado ao mercadopago
  */
 export const mercadopago = async (objMercadopago) => {
+    //Função para aprensentar a mensagem de redirecionamento para o usuario
     message()
-
     verb.post(payment, header.defaultHeaders(), objMercadopago)
         .then(response => {
             //Redirecionar o usuario para a pagina do mercado pago
-            //redirectUser(response.redirect)
+            redirectUser(response.redirect)
         }).catch(err => new Error(err))
 }
 
@@ -69,6 +62,7 @@ const [searchAddress] = address()
  * @param valueDelivery Preço do frete
  */
 export const savePurchase = (valueDelivery) => {
+    console.log(valueDelivery)
     return (dispatch) => {
         searchCart()
             .then(response => {
@@ -76,9 +70,7 @@ export const savePurchase = (valueDelivery) => {
                 newObjectMercadopago['frete'] = valueDelivery
                 const newObjMongodb = formattingObjmongodb(newObjectMercadopago, client_id)
                 verb.post(purchaseRoute, headers, newObjMongodb)
-                    .then(response => {
-                        mercadopago(newObjectMercadopago)
-                    }
+                    .then(() => mercadopago(newObjectMercadopago) 
                     ).catch(error => new Error(error))
             })
     }

@@ -1,18 +1,19 @@
+/**
+ * Componnete para renderização dos produtos comprados pelo cliente
+ */
 import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
 
-const ListingProducts = props => {
+const ListingProductsComponent = props => {
     const [products, setProducts] = useState([])
-
+    const datas = props.datas
     useEffect(() => {
-        if (props.datas !== undefined) {
-            const { items } = props.datas
-            let teste = items
-            teste.pop()
-            setProducts(teste)
+        if (datas !== undefined) {
+            const { items } = datas
+            items.pop()
+            setProducts(items)
         }
 
-    })
+    }, [products, datas])
     return (
         <>
             {
@@ -31,5 +32,4 @@ const ListingProducts = props => {
     )
 }
 
-const mapStateToProps = store => ({ client: store.checkout.client })
-export default connect(mapStateToProps)(ListingProducts)
+export default ListingProductsComponent

@@ -22,6 +22,7 @@ export const products = () => {
         return verb.get(uriProduct,
             header.defaultHeaders())
             .then(response => {
+                console.log(response)
                 formattingObjectShopping(response)
                 dispatch(receiverProducts(response))
             })

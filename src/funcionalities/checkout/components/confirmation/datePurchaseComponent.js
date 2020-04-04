@@ -1,6 +1,9 @@
+/**
+ * Componente para renderização da Data de compra do produto
+ */
 import React, { useState, useEffect } from 'react'
 
-const DatePurchase = props => {
+const DatePurchaseComponent = props => {
     const datas = props.date
     let [day, setDay] = useState(0)
     let [month, setMonth] = useState(0)
@@ -13,7 +16,7 @@ const DatePurchase = props => {
             setMonth(date.getMonth())
             setYear(date.getFullYear())
         }
-    })
+    }, [datas])
     return (
         <>
             <a href="#">
@@ -23,5 +26,4 @@ const DatePurchase = props => {
     )
 }
 
-
-export default DatePurchase
+export default DatePurchaseComponent

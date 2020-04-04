@@ -1,15 +1,18 @@
+/**
+ * Componente para renderização do do valor total a ser pago pelo cliente
+ */
 import React, { useState, useEffect } from 'react'
 
-const ValuePurchase = (props) => {
+const ValuePurchaseComponent = (props) => {
     const datas = props.value
     let [purchase, setPurchase] = useState(0)
 
     useEffect(() => {
         if (datas !== undefined) {
             let valuePurchase = 0
-            datas.items.map((value) => {
+            datas.items.map((value) => (
                 valuePurchase += (value.unit_price * value.quantity)
-            })
+            ))
             setPurchase(valuePurchase)
         }
     }, [datas])
@@ -24,4 +27,4 @@ const ValuePurchase = (props) => {
     )
 }
 
-export default ValuePurchase
+export default ValuePurchaseComponent
