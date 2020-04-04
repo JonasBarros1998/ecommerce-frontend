@@ -1,7 +1,12 @@
+/**
+ * Container para fazer a chamada da função savePurchase da action mercadopago.action
+ * Quando o cliente clicar no botão de mercado pago, sua compra será salva, e
+ * será redirecionado ao sistema do mercado pago.
+ */
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { savePurchase, mercadopago } from '../../actions/mercadopago/mercadopago.action'
+import { savePurchase } from '../../actions/mercadopago/mercadopago.action'
 
 const MercadoPagoContainer = props => {
     return (
@@ -19,4 +24,5 @@ const MercadoPagoContainer = props => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({ savePurchase }, dispatch)
-export default connect(null, mapDispatchToProps)(MercadoPagoContainer)
+const mapStateToProps = store => ({ valueDelivery: store.checkout.valueDelivery })
+export default connect(mapStateToProps, mapDispatchToProps)(MercadoPagoContainer)

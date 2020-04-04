@@ -1,20 +1,23 @@
+/**
+ * Componente para listagem de todos os produtos 
+ */
 import React from 'react'
 import BannerCrumbComponent from '../../../../../components/banner/bannerCrumbComponent'
-import CategorieContainer from '../container/filter/categorie.cotainer'
 import FilterCategoriesComponent from './filterCategoriesComponent'
 import MakeComponent from './filterMakeComponent'
 import ShoppingComponent from './shoppingComponent'
+import MenuComponent from '../../../../../components/menu/MenuComponent'
 
 const ShopComponent = () => {
     return (
         <>
+            <MenuComponent />
             <BannerCrumbComponent />
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-xl-3 col-lg-4 col-md-5">
+                        {/**Filtro de categorias */}
                         <FilterCategoriesComponent />
-                        <CategorieContainer />
-
                         <div className="sidebar-filter mt-50">
                             <MakeComponent />
                         </div>
@@ -24,7 +27,7 @@ const ShopComponent = () => {
                         <div className="colorb-default pt-1 pb-2 pl-2 d-flex justify-content-end">
 
                             <div className="input-group pt-2 pb-1 col-3 ">
-                                {/**Filtro para definir como vai ser a listagem de produtos */}
+                                {/**Filtro para definir como vai ser a listagem de produtos**/}
                                 <select className="custom-select" id="inputGroupSelect01">
                                     <option defaultValue>Selecione...</option>
                                     <option value="1">Menor preço</option>

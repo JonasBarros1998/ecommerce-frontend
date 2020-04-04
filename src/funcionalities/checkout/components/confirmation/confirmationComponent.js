@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import BannerCrumbComponent from '../../../../components/banner/bannerCrumbComponent'
 import MenuComponent from '../../../../components/menu/MenuComponent'
 import { connect } from 'react-redux'
 import ConfirmationContainer from '../../containers/confirmation/confirmationContainer'
-import DatePurchase from './datePurchase'
-import ValuePurchase from './valuePurchase'
-import ListingProducts from './listingProducts'
+import DatePurchaseComponent from './datePurchaseComponent'
+import ValuePurchaseComponent from './valuePurchaseComponent'
+import ListingProductsComponent from './listingProductsComponent'
 import AddressComponent from './addressComponent'
+import ShippingComponent from './shippingComponent'
 
 const ConfirmationComponent = props => {
     const { client } = props
     const [datas] = client
-
-    const [shipping, setShipping] = useState(0)
-
-    useEffect(() => {
-        if (datas !== undefined) {
-
-            //Frete
-            setShipping(datas.frete)
-        }
-
-
-    })
-
 
     return (
         <div>
@@ -40,13 +28,13 @@ const ConfirmationComponent = props => {
                                 <h4>Informações do pedido</h4>
                                 <ul className="list">
                                     <li>
-                                        <DatePurchase date = {datas} />
+                                        <DatePurchaseComponent date = {datas} />
                                     </li>
 
                                     <li>
                                         <a href="#">
                                             <span>Total</span>
-                                            :<ValuePurchase value={datas} />
+                                            :<ValuePurchaseComponent value={datas} />
                                         </a>
                                     </li>
                                 </ul>
@@ -74,7 +62,7 @@ const ConfirmationComponent = props => {
                                 </thead>
                                 <tbody>
                                     {
-                                        <ListingProducts datas={datas} />
+                                        <ListingProductsComponent datas={datas} />
                                     }
                                     <tr>
                                         <td>
@@ -84,21 +72,18 @@ const ConfirmationComponent = props => {
                                             <h5></h5>
                                         </td>
                                         <td>
-                                            <p>{shipping.toLocaleString('pt-br', {
-                                                style: 'currency',
-                                                currency: "BRL"
-                                            })}</p>
+                                           {
+                                               <ShippingComponent shipping = {datas} />
+                                           }
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <h4>Valor total</h4>
                                         </td>
+                                        <td></td>
                                         <td>
-                                            <h5></h5>
-                                        </td>
-                                        <td>
-                                            <p><ValuePurchase  value={datas} /></p>
+                                            <p><ValuePurchaseComponent  value={datas} /></p>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -111,9 +96,5 @@ const ConfirmationComponent = props => {
     )
 }
 
-const mapStateToProps = store => {
-    return {
-        client: store.checkout.client
-    }
-}
+const mapStateToProps = store => ({client: store.checkout.client})
 export default connect(mapStateToProps)(ConfirmationComponent)

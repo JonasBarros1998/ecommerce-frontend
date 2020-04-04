@@ -1,14 +1,18 @@
+/**
+ * Componente para renderização do endereço de entrega
+ */
 import React, { useState, useEffect } from 'react'
 
 const AddressComponent = props => {
 
     const [address, setAddress] = useState([])
+    const dataAddress = props.address
 
     useEffect(() => {
-        if (props.address !== undefined) {
-            setAddress(props.address)
+        if (dataAddress !== undefined) {
+            setAddress(dataAddress)
         }
-    })
+    }, [address, dataAddress])
 
     return (
         <>

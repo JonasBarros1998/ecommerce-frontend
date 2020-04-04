@@ -34,24 +34,18 @@ export const checkout = (initState = state, action) => {
         loadingAddress: action.address
       })
 
-      //Adicionar para store a lista de todos os produtos do carrinho
-      case LISTING_ALL_PRODUCTS:
-        return Object.assign({}, initState, {
-          listingAllProduct: [...action.products]
-        })
-
-        //valor do frete
-        case DELIVERY_VALUE: 
-        return Object.assign({}, initState, {
-          valueDelivery: action.value
-        })
+    //Adicionar para store a lista de todos os produtos do carrinho
+    case LISTING_ALL_PRODUCTS:
+      return Object.assign({}, initState, {
+        listingAllProduct: [...action.products]
+      })
 
     //valor do frete
     case DELIVERY_VALUE:
       return Object.assign({}, initState, {
         valueDelivery: action.value
       })
-    
+
     case CONFIRMATION:
       return Object.assign({}, initState, {
         client: action.datas

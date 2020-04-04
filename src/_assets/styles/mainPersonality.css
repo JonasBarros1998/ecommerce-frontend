@@ -146,6 +146,13 @@ posiiton_image_slide{
 a{
     text-decoration: none;}
 
+.link {
+    text-transform: none;
+}
+.link:hover{
+    color: black;
+}
+
 /* responsividade do slide */
 @media only screen and (max-width: 768px){
     .clear_margin{
