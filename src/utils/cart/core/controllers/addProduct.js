@@ -3,25 +3,23 @@
  */
 import { indexedDatabase } from '../database/indexedDatabase'
 import { repeatItems } from '../services/repeatItems'
+import { property } from '../services/propertyQuantity'
 import {
     addObjectStore,
     listingObjectStore
 } from '../database/transactions'
 
 //`connection e database` são as configurações iniciais do banco
-const connection = {
-    name: "ecommerce-cart",
-    version: 1
-}
 const database = {
     name: "ecommerce-cart",
-    type: "readwrite"
+    type: "readwrite",
+    version: 1
 }
 
 //Função para adicionar um produto no indexedDb
 export const addProduct = (itemProduct) => {
-
-    indexedDatabase(connection)
+    property(itemProduct)
+    indexedDatabase(database)
         .then(connection => {
 
             //Listar todos os itens no localstorage

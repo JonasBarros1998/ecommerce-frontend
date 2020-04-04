@@ -7,7 +7,6 @@ const ValueTotal = props => {
     const [valueTotal, setValueTotal] = useState([])
 
     useEffect(() => {
-        console.log(props.value)
         if (props.value.length !== 0) {
             const sumTotal = total(props.value)
             setValueTotal(sumTotal)
