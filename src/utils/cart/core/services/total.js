@@ -1,5 +1,5 @@
 /**
- * Esse arquivo tem como responsabilidade somar o 
+ * Esse arquivo tem como responsabilidade somar o total do carrinho
  */
 export const update = (newValue) => ({ type: "UPDATE", newValue })
 let value = 0
@@ -12,6 +12,7 @@ let calculate = 0
 export const total = (cart = [], addValue = 0) => {
     if (addValue === 0) {
         for (let { price, quantity } of cart) {
+            console.log(price, quantity)          
             value = value + (quantity * price)
         }
         calculate += value

@@ -38,7 +38,7 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {/*adicionar a tbody */}
+                                    {/**Listagem dos produtos no carrinho */}
                                     <ListingAllProductContainer cart={cart} />
                                 </tbody>
                             </table>
