@@ -2080,7 +2080,7 @@ button:focus {
   overflow: hidden;
 }
 
-.single-product .product-details .prd-bottom .social-info span {
+.social-info span {
   position: relative;
   height: 30px;
   width: 30px;
@@ -2108,6 +2108,7 @@ button:focus {
   opacity: 0;
   visibility: hidden;
   z-index: -1;
+  cursor: pointer;
 }
 
 .single-product .product-details .prd-bottom .social-info .hover-text {

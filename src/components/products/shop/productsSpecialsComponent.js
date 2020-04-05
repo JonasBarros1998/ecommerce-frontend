@@ -33,7 +33,7 @@ const ProductsSpecials = props => {
                                     <p>Oferta especial de inauguração da loja jm ecommerce</p>
                                 </div>
                             </div>
-                            <a href={"block"} className="primary-btn">Veja agora</a>
+                            <Link to={"/shop"} className="primary-btn">Veja agora</Link>
                         </div>
                         <div className="col-lg-6 no-padding exclusive-right">
                             <div className="active-exclusive-product-slider">
@@ -59,13 +59,14 @@ const ProductsSpecials = props => {
                                                         <h4 className="color-black">{item.title}</h4>
                                                     </Link>
 
-                                                    <div className="add-bag d-flex align-items-center justify-content-center">
-                                                        <a className="add-btn" href={"http://localhost"}
-                                                            onClick={() =>addProduct(item)}>
-                                                            <span className="ti-bag"></span></a>
-                                                        <span className="add-text text-uppercase">
-                                                            Adicionar
-                                                            </span>
+                                                    <div className="add-bag d-flex align-items-center justify-content-center ">
+                                                        <div className="prd-bottom" 
+                                                        onClick={() => addProduct(item)}>
+                                                            <div class="social-info">
+                                                                <span class="ti-bag"></span>
+                                                                <p class="hover-text">Adicionar</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

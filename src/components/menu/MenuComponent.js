@@ -27,11 +27,13 @@ const Menu = () => {
                         </button>
                         <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
                             <ul className="nav navbar-nav menu_nav ml-auto">
-                                <li className="nav-item active"><a className="nav-link" href={"http://localhost:3000/"}>Pagina inicial</a></li>
+                                <li className="nav-item     ">
+                                    <Link to={"/"} className="nav-link">Pagina inicial</Link>
+                                </li>
 
-                                <li className="nav-item submenu dropdown">
-                                    <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Shop</a>
+                                <li className="nav-item">
+                                    <Link to={"/shop"} className="nav-link">Shop</Link>
+                                    {/**
                                     <ul className="dropdown-menu">
                                         <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Shop Category</a></li>
                                         <li className="nav-item"><a href={"localhost://3000"} className="nav-link">Product
@@ -42,7 +44,9 @@ const Menu = () => {
                                         <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Confirmation</a>
                                         </li>
                                     </ul>
+                                     */}
                                 </li>
+                                {/**
                                 <li className="nav-item submenu dropdown">
                                     <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Blog</a>
@@ -52,6 +56,7 @@ const Menu = () => {
                                         </li>
                                     </ul>
                                 </li>
+                                 
                                 <li className="nav-item submenu dropdown">
                                     <a href={"localhost://3000"} className="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                         aria-haspopup="true" aria-expanded="false">Pages</a>
@@ -61,16 +66,16 @@ const Menu = () => {
                                         <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Elements</a></li>
                                     </ul>
                                 </li>
-                                <li className="nav-item"><a className="nav-link" href={"localhost://3000"}>Contact</a></li>
+                                */}
+                                <li className="nav-item">
+                                    <Link className="nav-link" to={"/contatos"}>Contatos</Link>
+                                </li>
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
                                 <li className="nav-item">
                                     <Link to={"/carrinho"} className="cart">
                                         <span className="ti-bag"></span>
                                     </Link>
-                                </li>
-                                <li className="nav-item">
-                                    <button className="search"><span className="lnr lnr-magnifier" id="search"></span></button>
                                 </li>
                             </ul>
                         </div>
