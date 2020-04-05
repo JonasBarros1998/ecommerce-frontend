@@ -20,8 +20,9 @@ const Products = props => {
                         <div className="col-lg-6 text-center">
                             <div className="section-title">
                                 <h1>Principais produtos</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed
-                            o eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p>Veja os principais produtos vendidos pela 
+                                    J&M ecommerce
+                                </p>
                             </div>
                         </div>
                     </div>
