@@ -17,7 +17,6 @@
  */
 
 export const tratament = (url) => {
-
     const splitUrl = url.split('/')
     const categorie = splitUrl[2]
     const idProduct = splitUrl[splitUrl.length - 1]

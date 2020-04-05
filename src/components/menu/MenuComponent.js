@@ -27,7 +27,7 @@ const Menu = () => {
                         </button>
                         <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
                             <ul className="nav navbar-nav menu_nav ml-auto">
-                                <li className="nav-item     ">
+                                <li className="nav-item">
                                     <Link to={"/"} className="nav-link">Pagina inicial</Link>
                                 </li>
 
