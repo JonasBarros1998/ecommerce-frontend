@@ -19,7 +19,7 @@ const ProductDetails = props => {
     const { pathname } = props.location
     const { product } = props
     return (
-        <>
+        <div>
             {/*Parte 1: Esse componente, está alocado em um container, 
                Ele faz a chamada para a função listingProductDetails(),
                Essa função tem a responsabilidade de fazer a chamada para 
@@ -77,7 +77,7 @@ const ProductDetails = props => {
                     </div>
                 </div>
             </section> {/*FINAL, parte 3*/}
-        </>
+        </div>
     );
 }
 

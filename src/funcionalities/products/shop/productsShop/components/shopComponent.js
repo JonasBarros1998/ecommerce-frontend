@@ -1,5 +1,5 @@
 /**
- * Componente para listagem de todos os produtos 
+ * Componente para listagem de todos os produtos da pagina de shop
  */
 import React from 'react'
 import BannerCrumbComponent from '../../../../../components/banner/bannerCrumbComponent'
@@ -10,7 +10,7 @@ import MenuComponent from '../../../../../components/menu/MenuComponent'
 
 const ShopComponent = () => {
     return (
-        <>
+        <div>
             <MenuComponent />
             <BannerCrumbComponent />
             <div className="container mt-5">
@@ -46,7 +46,7 @@ const ShopComponent = () => {
                 </div>
             </div>
 
-        </>
+        </div>
     );
 }
 export default ShopComponent
