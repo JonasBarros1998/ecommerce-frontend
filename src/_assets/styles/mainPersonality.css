@@ -146,6 +146,10 @@ posiiton_image_slide{
 a{
     text-decoration: none;}
 
+.link-none{
+    text-decoration: none;
+}
+
 .link {
     text-transform: none;
 }

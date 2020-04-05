@@ -1,7 +1,7 @@
+/*Navtabs siguinifica os titulos que ficam acima de cada uma das tabs
+link examplo com bootstrap: https://getbootstrap.com/docs/4.3/components/navs/#tabs*/
 import React from 'react'
 
-/*class Navtabs siguinifica os titulos que ficam acima de cada uma das tabs
-link examplo com bootstrap: https://getbootstrap.com/docs/4.3/components/navs/#tabs*/
 const NavTabs = () => {
 
         return (

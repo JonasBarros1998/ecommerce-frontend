@@ -33,7 +33,7 @@ const ProductsSpecials = props => {
                                     <p>Oferta especial de inauguração da loja jm ecommerce</p>
                                 </div>
                             </div>
-                            <a href={"block"} className="primary-btn">Shop Now</a>
+                            <a href={"block"} className="primary-btn">Veja agora</a>
                         </div>
                         <div className="col-lg-6 no-padding exclusive-right">
                             <div className="active-exclusive-product-slider">
