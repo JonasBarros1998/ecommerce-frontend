@@ -7,6 +7,7 @@ import { Star } from '../../../utils/stars'
 const CommentContainer = props => {
     const { saveComment, productId } = props
     const [comment, setComment] = useState("")
+    const [username, setUsername] = useState("")
     const [avaliation, setAvaliation] = useState(1)
     useEffect(() => {
         const icons = document.querySelectorAll(`.stars-active`)
@@ -23,7 +24,7 @@ const CommentContainer = props => {
     return (
         <>
             <ul className="list">
-                <li><a href={"localhost://"} className="icon-stars">
+                <li><a className="icon-stars">
                     <Star className="fa fa-star stars stars-active"
                         note={5}></Star>
                 </a></li>
@@ -32,13 +33,18 @@ const CommentContainer = props => {
                 id="contactForm" onSubmit={e => {
                     e.preventDefault();
                     saveComment({
+                        product_id: productId,
+                        username: username.value,
                         comment: comment.value,
-                        product: productId,
                         avaliation: avaliation
                     })
                 }}>
                 <div className="col-md-12">
                     <div className="form-group">
+                        <input type="text" className="form-control mb-3" name="username"
+                        id="username" placeholder="nome do usuário"
+                        ref={(stateUsername) => setUsername(username => username = stateUsername)}/>
+
                         <textarea className="form-control" name="message"
                             id="message" rows="1" placeholder="Mensagem"
                             ref={(stateComment) => 

@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentContainer from '../../funcionalities/comments/container/comment.container'
+import CommentContainer from '../container/comment.container'
 
 const NewCommentComponent = props => {
     const { product } = props

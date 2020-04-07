@@ -4,16 +4,21 @@ import { convertDate } from '../../../../utils/dates/date'
 
 /**
  * Função para formatar o objeto para que seja enviado 
- * para o bakcend da forma em que ele aceita
+ * para o bakcend da forma em que ele permite
+ * 
+ * @param datas:O comentario do cliente
+ * @param date A data em que o cliente fez o comentario
  */
-export const formatting = (datas, userId = {}) => {
-    return Object.assign({}, datas, {
-        user_id: userId,
-        comment : datas.comment,
-        product: datas.product,
-        avaliation: datas.avaliation
+export const formatting = (datas, date) => {
+    return Object.defineProperties(datas, {
+        'date': {
+            value: date,
+            writable: true,
+            enumerable: true
+        }
     })
 }
+
 /**
  * Função com o objetivo de chamar as demais funções para
  * formatação de objetos. 
