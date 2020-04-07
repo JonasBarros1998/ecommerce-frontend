@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ListCommentContainer from '../../funcionalities/comments/container/list.container'
-import { Star } from '../../utils/stars'
+import ListCommentContainer from '../container/list.container'
+import { Star } from '../../../utils/stars'
 
 const ListCommentsComponent = props => {
     const { comments, products } = props
@@ -9,8 +9,8 @@ const ListCommentsComponent = props => {
         <>
             {/*Container para chamar a função na qual faz a chamada 
             para api requisitando os comentario dos produtos */
-                products.map((IdProduct, index) => (
-                    <ListCommentContainer key={index} productId={IdProduct.products.id} />
+                products.map((item, index) => (
+                    <ListCommentContainer key={index} productId={item.products.id} />
                 ))
             }
             <div className="col-lg-6">
@@ -67,7 +67,7 @@ const ListCommentsComponent = props => {
                                 <div className="review_item padding_top_bottom_1" key={index}>
                                     <div className="media">
                                         <div className="media-body">
-                                            <h4>{itemComment.name}</h4>
+                                            <h4>{itemComment.username}</h4>
                                                 <h5>{itemComment.date}</h5>
                                             <Star
                                                 className="fa fa-star color-stars-active"

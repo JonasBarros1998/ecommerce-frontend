@@ -5,18 +5,17 @@ import { listObjectComment } from '../helpers/Objects/formattingObject'
 
 const listComments = comments => ({ type: LIST_COMMENT, comments })
 
-export const saveComment = (productId) => {
+export const comments = (productId) => {
     const url = routes.comment.list(productId)
-    
     return dispatch => {
         return verb.get(url)
-            .then(response => {
+            .then(comment => {
                 /*listObjectComment: Função para formatação de objetos, 
                 com ela retiramos algumas responsabilidades do componente
                 como criação de função, execsso de 'map' do componente, 
                 porque listObjectComment() já deixa tudo pronto, para
                 renderização*/
-                dispatch(listComments(listObjectComment(response)))
+                dispatch(listComments(listObjectComment(comment.response)))
             })
             .catch(err => (new Error(err)))
     }
