@@ -62,9 +62,9 @@ const ProductsSpecials = props => {
                                                     <div className="add-bag d-flex align-items-center justify-content-center ">
                                                         <div className="prd-bottom" 
                                                         onClick={() => addProduct(item)}>
-                                                            <div class="social-info">
-                                                                <span class="ti-bag"></span>
-                                                                <p class="hover-text">Adicionar</p>
+                                                            <div className="social-info">
+                                                                <span className="ti-bag"></span>
+                                                                <p className="hover-text">Adicionar</p>
                                                             </div>
                                                         </div>
                                                     </div>
