@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import ListCommentContainer from '../container/list.container'
 import { Star } from '../../../utils/stars'
@@ -10,7 +10,9 @@ const ListCommentsComponent = props => {
             {/*Container para chamar a função na qual faz a chamada 
             para api requisitando os comentario dos produtos */
                 products.map((item, index) => (
-                    <ListCommentContainer key={index} productId={item.products.id} />
+                    <Fragment key={index}>
+                        <ListCommentContainer productId={item.products.id} />
+                    </Fragment>
                 ))
             }
             <div className="col-lg-6">
@@ -62,13 +64,13 @@ const ListCommentsComponent = props => {
                         </div>
                     </div>
                     {
-                        comments.map((itemComment, index) => {  
-                            return (<>
-                                <div className="review_item padding_top_bottom_1" key={index}>
+                        comments.map((itemComment, index) => {
+                            return (<Fragment key={index}>
+                                <div className="review_item padding_top_bottom_1" >
                                     <div className="media">
                                         <div className="media-body">
                                             <h4>{itemComment.username}</h4>
-                                                <h5>{itemComment.date}</h5>
+                                            <h5>{itemComment.date}</h5>
                                             <Star
                                                 className="fa fa-star color-stars-active"
                                                 note={itemComment.avaliation}>
@@ -77,7 +79,7 @@ const ListCommentsComponent = props => {
                                     </div>
                                     <p>{itemComment.comment}</p>
                                 </div>
-                            </>)
+                            </Fragment>)
                         })
                     }
                 </div>

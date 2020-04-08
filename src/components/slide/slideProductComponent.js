@@ -16,8 +16,8 @@ const SlideProductComponent = props => {
             <div className="s_Product_carousel">
                 <Slider {...settings}>
                     {
-                        images.media.map(image => (
-                            <div className="single-prd-item">
+                        images.media.map((image, index) => (
+                            <div className="single-prd-item" key={index}>
                                 <img className="img-fluid" alt="img-1" src={image} />
                             </div>
                         ))

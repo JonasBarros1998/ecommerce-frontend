@@ -1,7 +1,7 @@
 /** Esse componente é responsavel para alocar todos os componentes da pagina de 
  * detalhes de produtos, podemos dizer que é o "centro nervoso" da pagina detalhes de produtos
  */
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 /*Imports components*/
 import Menu from '../menu/MenuComponent'
@@ -35,7 +35,9 @@ const ProductDetails = props => {
                     <div className="row s_product_inner justify-content-md-center">
                         {
                             product.map((itensProduct, index) => (
-                                <SlideProductComponent images={itensProduct.products} />
+                                <Fragment key={index}>
+                                    <SlideProductComponent images={itensProduct.products} />
+                                </Fragment>
                             ))
                         }
                         <div className="col-lg-5 offset-lg-1">
