@@ -11,7 +11,7 @@ import { savePurchase } from '../../actions/mercadopago/mercadopago.action'
 const MercadoPagoContainer = props => {
     return (
         <>
-            <a className="btn bc-cyan text-uppercase btn-mercadopago"
+            <a href="/#" className="btn bc-cyan text-uppercase btn-mercadopago"
                 onClick={() => props.savePurchase(props.valueDelivery)}>
                 <small className="color-white-default">Pague com</small>
                 <span className="fs">

@@ -128,7 +128,7 @@
     height: 100%;}
 
 /*Especifico para o slide*/
-posiiton_image_slide{
+.posiiton_image_slide{
     left: 10%;}
 
 /* Css especifico para pagina de Comentarios*/
@@ -156,6 +156,27 @@ a{
 .link:hover{
     color: black;
 }
+
+.link-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .link-button:hover,
+  .link-button:focus {
+  text-decoration: none;
+  border: none;
+  }
+
+  .link:active{
+    text-decoration: none;
+    border: none;
+  }
 
 /* responsividade do slide */
 @media only screen and (max-width: 768px){

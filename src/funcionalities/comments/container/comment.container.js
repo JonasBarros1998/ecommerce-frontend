@@ -24,10 +24,10 @@ const CommentContainer = props => {
     return (
         <>
             <ul className="list">
-                <li><a className="icon-stars">
+                <li><button className="icon-stars link-button">
                     <Star className="fa fa-star stars stars-active"
                         note={5}></Star>
-                </a></li>
+                </button></li>
             </ul>
             <form className="row contact_form" method='post'
                 id="contactForm" onSubmit={e => {

@@ -28,14 +28,14 @@ const ConfirmationComponent = props => {
                                 <h4>Informações do pedido</h4>
                                 <ul className="list">
                                     <li>
-                                        <DatePurchaseComponent date = {datas} />
+                                        <DatePurchaseComponent date={datas} />
                                     </li>
 
                                     <li>
-                                        <a href="#">
+                                        <button className="link-button">
                                             <span>Total</span>
                                             :<ValuePurchaseComponent value={datas} />
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
@@ -44,7 +44,7 @@ const ConfirmationComponent = props => {
                             <div className="details_item mt-2">
                                 <h4>Endereço de entrega</h4>
                                 {
-                                    <AddressComponent address = { props.client }/>
+                                    <AddressComponent address={props.client} />
                                 }
                             </div>
                         </div>
@@ -68,13 +68,11 @@ const ConfirmationComponent = props => {
                                         <td>
                                             <h4>Valor da entrega</h4>
                                         </td>
+                                        <td></td>
                                         <td>
-                                            <h5></h5>
-                                        </td>
-                                        <td>
-                                           {
-                                               <ShippingComponent shipping = {datas} />
-                                           }
+                                            {
+                                                <ShippingComponent shipping={datas} />
+                                            }
                                         </td>
                                     </tr>
                                     <tr>
@@ -83,7 +81,7 @@ const ConfirmationComponent = props => {
                                         </td>
                                         <td></td>
                                         <td>
-                                            <p><ValuePurchaseComponent  value={datas} /></p>
+                                            <p><ValuePurchaseComponent value={datas} /></p>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -96,5 +94,5 @@ const ConfirmationComponent = props => {
     )
 }
 
-const mapStateToProps = store => ({client: store.checkout.client})
+const mapStateToProps = store => ({ client: store.checkout.client })
 export default connect(mapStateToProps)(ConfirmationComponent)

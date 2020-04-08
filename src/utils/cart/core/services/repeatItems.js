@@ -21,16 +21,3 @@ export const repeatItems = (itemCurrent, itens) => {
         }
     }
 }
-
-
-
-
-
-
-
-//const items1 = [{"nome": "jonas"}, {"nome": "mirian"}, {"nome":"cida"}]
-
-
- //console.log(AddItemCart)
-//return AddItemCart
-//const items1 = [{"nome": "jonas"}, {"nome": "mirian"}, {"nome":"cida"}]

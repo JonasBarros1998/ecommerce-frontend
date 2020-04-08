@@ -1,5 +1,4 @@
 import { verb } from "../../../utils/http/verbs"
-import { SAVE_COMMENT } from '../constants/comment.constants'
 import { routes } from '../routes/comment.routes'
 import { HttpHeaders as headers } from '../../../utils/header/headers'
 import { formatting } from '../helpers/Objects/formattingObject'

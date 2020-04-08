@@ -19,7 +19,7 @@ const DatePurchaseComponent = props => {
     }, [datas])
     return (
         <>
-            <a href="#">
+            <a href="/#">
                 <span>Data</span>
                 : {day <= 9 ? `0${day}` : day}/{month <= 9 ? `0${month}` : month}/{year}</a>
         </>

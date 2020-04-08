@@ -26,7 +26,7 @@ const FilterCategoriesComponent = props => {
                             return (<li className="main-nav-list"
                                 key={index}
                                 onClick={() => props.selectCategorie(item.categorie)}>
-                                <a href={"javascript:void(0)"}>{item.categorie}</a>
+                                <button className="link-button">{item.categorie}</button>
                             </li>
                             )
                         })
