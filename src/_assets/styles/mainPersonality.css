@@ -5,6 +5,7 @@
     --color-gris-defaut: #b1b1b1;
     --color-black: black;
     --color-gray97: #f7f7f7;
+    --color-gray: #777777;
 }
 
 /*Colors*/
@@ -14,10 +15,11 @@
 .color-stars-active{color: var(--color-stars-active);}
 .color-black{color: var(--color-black)}
 .color-gris-default{color: var(--color-gris-defaut)}
+.color-gray{color: var(--color-gray)}
 
 .colorb-default{background-color: var(--color-default);}
-
 .colorb-gray97{background-color: var(--color-gray97);}
+.colorb-gray{background-color: var(--color-gray);}
 
 /*Estilos de textos, h1, h2, h3, h4, h5, p*/
 .text_h3{

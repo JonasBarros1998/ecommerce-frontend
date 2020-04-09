@@ -7,6 +7,7 @@ import FilterCategoriesComponent from './filterCategoriesComponent'
 import MakeComponent from './filterMakeComponent'
 import ShoppingComponent from './shoppingComponent'
 import MenuComponent from '../../../../../components/menu/MenuComponent'
+import Footer from '../../../../../components/footer/footerComponent'
 
 const ShopComponent = () => {
     return (
@@ -36,7 +37,6 @@ const ShopComponent = () => {
                                 </select>
                             </div>
                         </div>
-
                         <section className="lattest-product-area pb-40 category-list">
                             <div className="row">
                                 <ShoppingComponent />
@@ -45,7 +45,7 @@ const ShopComponent = () => {
                     </div>
                 </div>
             </div>
-
+            <Footer />
         </div>
     );
 }

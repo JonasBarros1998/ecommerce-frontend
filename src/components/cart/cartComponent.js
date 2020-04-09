@@ -5,14 +5,18 @@
 import React from 'react'
 import BannerCrumbComponent from '../banner/bannerCrumbComponent'
 import Cart from '../../utils/cart/core/component/Cart'
+import Footer from '../footer/footerComponent'
 
-const CartComponent = props => {
+const CartComponent = () => {
 
     return (
         <>
             <BannerCrumbComponent />
             <div className="padding_top_6">
                 <Cart />
+                <div className="mt-5">
+                    <Footer />
+                </div>
             </div>
         </>
     );

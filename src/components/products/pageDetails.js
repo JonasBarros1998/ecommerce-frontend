@@ -14,6 +14,8 @@ import ProductContainer from '../../funcionalities/products/container/product.co
 import InfoProductComponent from './productsDetails/description&Especification&Info/infoProductComponent'
 import DescriptionComponent from './productsDetails/description&Especification&Info/descriptionComponent'
 import EspecificationComponent from './productsDetails/description&Especification&Info/especificationComponent'
+import Footer from '../footer/footerComponent.js'
+
 
 const ProductDetails = props => {
     const { pathname } = props.location
@@ -79,6 +81,8 @@ const ProductDetails = props => {
                     </div>
                 </div>
             </section> {/*FINAL, parte 3*/}
+
+            <Footer />
         </div>
     );
 }
