@@ -11,14 +11,14 @@ import { savePurchase } from '../../actions/mercadopago/mercadopago.action'
 const MercadoPagoContainer = props => {
     return (
         <>
-            <a href="/#" className="btn bc-cyan text-uppercase btn-mercadopago"
+            <button href="/#" className="btn bc-cyan text-uppercase btn-mercadopago"
                 onClick={() => props.savePurchase(props.valueDelivery)}>
                 <small className="color-white-default">Pague com</small>
                 <span className="fs">
                     <span className="color-torea-bay"><b> mercado</b>
                     </span><b className="color-white-default"> pago</b>
                 </span>
-            </a>
+            </button>
         </>
     )
 }

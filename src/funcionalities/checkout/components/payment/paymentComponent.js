@@ -7,6 +7,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MercadoPagoContainer from '../../containers/payment/mercadoPagoContainer'
 
+
 const PaymentComponent = props => {
     return (
         <>
@@ -26,6 +27,7 @@ const PaymentComponent = props => {
                     <div className="alert alert-success alert-text fade" role="alert"></div>
                 </div>
             </div>
+
         </>
     )
 }

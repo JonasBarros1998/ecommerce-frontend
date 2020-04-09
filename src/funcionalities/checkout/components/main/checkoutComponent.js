@@ -9,6 +9,7 @@ import BannerCrumbComponent from '../../../../components/banner/bannerCrumbCompo
 import DeliveryAddressComponent from '../deliveryAddress/deliveryAddressComponent'
 import PaymentComponent from '../payment/paymentComponent'
 import OrderItensComponent from '../orderItens/orderItensComponent'
+import Footer from '../../../../components/footer/footerComponent.js'
 
 const CheckoutComponent = () => {
     return (
@@ -32,6 +33,9 @@ const CheckoutComponent = () => {
                     <OrderItensComponent />
                 </div>
 
+            </div>
+            <div className="mt-5">
+                <Footer />
             </div>
         </>
     )

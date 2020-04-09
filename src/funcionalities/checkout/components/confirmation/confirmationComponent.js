@@ -8,6 +8,7 @@ import ValuePurchaseComponent from './valuePurchaseComponent'
 import ListingProductsComponent from './listingProductsComponent'
 import AddressComponent from './addressComponent'
 import ShippingComponent from './shippingComponent'
+import Footer from '../../../../components/footer/footerComponent.js'
 
 const ConfirmationComponent = props => {
     const { client } = props
@@ -90,6 +91,10 @@ const ConfirmationComponent = props => {
                     </div>
                 </div>
             </section>
+
+            <div>
+                <Footer />
+            </div>
         </div>
     )
 }
